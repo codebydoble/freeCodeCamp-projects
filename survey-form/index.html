@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>Survey Form freeCodeCamp</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">freeCodeCamp Survey Form</h1>
+      <p class="description-element" id="description">Thank you for taking the time to help us improve the platform</p>
+    </header>
+    <form id="survey-form" method="post" action="https://freecatphotoapp.com/submit-cat-photo">
+      <!-- Personal Information-->
+      <div>
+        <label for="name-label">Name <input id="name-label" name="name-label" type="text" placeholder="Enter your Name" required /></label>
+        <label for="email-label"
+          >Email <input id="email-label" name="email-label" type="email" placeholder="Enter your Email" required
+        /></label>
+        <label for="number-label"
+          >Age (optional) <input id="number-label" name="number-label" type="number" placeholder="Age" min="10" max="99"
+        /></label>
+      </div>
+      <div>
+        <p>Which option best describes your current role?</p>
+        <select id="dropdown" name="dropdown">
+          <option value="" selected disabled>Select current role</option>
+          <option value="dropdown-one">Student</option>
+          <option value="dropdown-two">Full Time Job</option>
+          <option value="dropdown-three">Full Time Learner</option>
+          <option value="dropdown-four">Prefer not to say</option>
+          <option value="dropdown-five">Other</option>
+        </select>
+      </div>
+      <div>
+        <p>Would you recommend freeCodeCamp to a friend?</p>
+        <label for="radio-ok"><input class="inline-radio" id="radio-ok" name="radio-label" type="radio" /> Definitely</label>
+        <label for="radio-maybe"><input class="inline-radio" id="radio-maybe" name="radio-label" type="radio" /> Maybe</label>
+        <label for="radio-not"><input class="inline-radio" id=" radio-not" name="radio-label" type="radio" /> Not sure</label>
+      </div>
+      <div>
+        <p>What is your favorite feature of freeCodeCamp?</p>
+        <select id="feature-drop" name="feature-drop">
+          <option value="" selected disabled>Select an option</option>
+          <option value="option-one">Challenges</option>
+          <option value="option-two">Projects</option>
+          <option value="option-three">Community</option>
+          <option value="option-four">Open Source</option>
+        </select>
+      </div>
+      <div>
+        <p>What would you like to see improved? (Check all that apply)</p>
+        <label for="frontend"
+          ><input class="inline-check" id="frontend" name="frontend" type="checkbox" value="frontend" /> Front-end Projects</label
+        >
+        <label for="backend"
+          ><input class="inline-check" id="backend" name="backend" type="checkbox" value="backend" /> Back-end Projects</label
+        >
+        <label for="data"><input class="inline-check" id="data" name="data" type="checkbox" value="data" /> Data Visualization</label>
+        <label for="challenges"
+          ><input class="inline-check" id="challenges" name="challenges" type="checkbox" value="challenges" /> Challenges</label
+        >
+        <label for="open-source"
+          ><input class="inline-check" id="open-source" name="open-source" type="checkbox" value="open-source" /> Open Source
+          Community</label
+        >
+        <label for="git"><input class="inline-check" id="git" name="git" type="checkbox" value="git" /> Gitter help rooms</label>
+        <label for="videos"><input class="inline-check" id="videos" name="videos" type="checkbox" value="videos" /> Videos</label>
+        <label for="meetups"><input class="inline-check" id="meetups" name="meetups" type="checkbox" value="meetups" /> City Meetups</label>
+        <label for="wiki"><input class="inline-check" id="wiki" name="wiki" type="checkbox" value="wiki" /> Wiki</label>
+        <label for="forum"><input class="inline-check" id="forum" name="forum" type="checkbox" value="forum" /> Forum</label>
+        <label for="courses"
+          ><input class="inline-check" id="courses" name="courses" type="checkbox" value="courses" /> Additional Courses</label
+        >
+      </div>
+      <div>
+        <p>Any comments or suggestions?</p>
+        <textarea id="comment-textarea" name="comment-textarea" rows="10" cols="150" placeholder="Enter your comment here..."></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
