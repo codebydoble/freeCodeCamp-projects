@@ -1,0 +1,111 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+.fondogris {
+  background-color: #dfdfe2;
+}
+
+.principal {
+  background-color: #dfdfe2;
+  margin: 30px 8px;
+  border-radius: 10px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.photo-fix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 94vw;
+}
+
+#img-div {
+  margin: 15px;
+}
+
+#image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin: 16px;
+}
+ul {
+  padding-left: 2rem;
+}
+
+ul li {
+  text-align: left;
+  width: 40vw;
+  padding: 10px 2rem 0 0;
+  line-height: 1.6;
+}
+
+.phrase {
+  text-align: justify;
+  width: 43vw;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.promo {
+  font-size: larger;
+  padding: 15px;
+}
+
+footer {
+  background-color: #2a2a40;
+  color: #dfdfe2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#logo-freecodecamp {
+  width: 15rem;
+  height: auto;
+  padding: 15px;
+}
+
+.site-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#link-freecodecamp {
+  color: #dfdfe2;
+}
+
+#link-freecodecamp:hover {
+  color: white;
+}
+
+#yellow-title {
+  color: #f1be32;
+  font-size: xx-large;
+}
+
+.author {
+  margin: 20px 20px;
+  margin-left: 0;
+}
