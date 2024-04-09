@@ -1,0 +1,74 @@
+/*RGB MODEL REPRESENTATION
+
+Primary colors
+Red rgb(255,0,0)
+Green rgb(0,255,0)
+Blue rgb(0,0,255)
+
+
+Black
+Black rgb(0,0,0)
+
+
+White
+White rgb(255,255,255)
+
+
+Secondary colors
+Yellow rgb(255, 255, 0)
+Cyan rgb(0, 255, 255)
+Magenta rgb(255, 0, 255)
+
+Tertiary colors
+Orange rgb(255, 127, 0)
+Spring green rgb(0, 255, 125)
+Violet rgb(127, 0, 255)
+Chartreuse green rgb(127, 255, 0)
+Azure rgb(0, 127, 255)
+Rose rgb(255, 0, 127)
+
+
+HEX MODEL REPRESENTATION
+Hex value
+0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+RGB representa dos lugares en HEX para total 6
+
+HSL MODEL REPRESENTATION
+The CSS hsl function accepts 3 values: a number from 0 to 360 for hue,
+a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness.
+
+If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue is at 240 degrees.
+
+Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. 
+You must add the percent sign % to the saturation and lightness values.
+
+Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, with 50% being neutral.
+background-color: hsl(240,100%,50%);**/
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+}
+
+.marker {
+    width: 200px;
+    height: 25px;
+    margin: 10px auto;
+}
+
+
+.one {
+    background-color: rgb(255, 0, 0);
+}
+
+.two {
+    background-color: rgb(0, 255, 255);
+}
+
+.three {
+    background-color: rgb(0, 0, 0);
+}

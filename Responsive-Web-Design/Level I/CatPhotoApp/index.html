@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Photo App</title>
+</head>
+
+<body>
+    <main>
+        <h1>CatPhotoApp</h1>
+        <section>
+            <h2>Cat Photos</h2>
+            <!-- TODO: Add link to cat photos -->
+            <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
+            <a href="https://freecatphotoapp.com"><img
+                    src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+                    alt="A cute orange cat lying on its back."></a>
+        </section>
+        <section>
+            <h2>Cat Lists</h2>
+            <h3>Things cats love:</h3>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+                    alt="A slice of lasagna on a plate.">
+                <figcaption>Cats <em>love</em> lasagna.</figcaption>
+            </figure>
+            <h3>Top 3 things cats hate:</h3>
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+                    alt="Five cats looking around a field.">
+                <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+            </figure>
+        </section>
+        <section>
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+                <!-- ** Atributo (required) cuando se desea que el input vaya con valor. Attr name si se pone igual solo
+                    * se selecciona uno de los dos radios
+                    *-->
+                <fieldset>
+                    <legend> Type of place: </legend>
+                    <label for="indoor"> <input type="radio" id="indoor" name="indoor-outdoor" value="indoor" checked>
+                        Indoor</label>
+                    <br>
+                    <label for="outdoor"> <input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor">
+                        Outdoor</label>
+                    <br>
+                </fieldset>
+                <fieldset>
+                    <legend>What's your cat's personality?</legend>
+                    <input id="loving" type="checkbox" name="personality" value="loving" checked> <label
+                        for="loving">Loving</label>
+                    <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+                    <input id="energetic" type="checkbox" name="personality" value="energetic"> <label
+                        for="energetic">Energetic</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Personalia:</legend>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"><br><br>
+                    <input type="submit" value="Submit">
+                </fieldset>
+                <input type="text" id="catphotourl" name="catphotourl" placeholder="cat photo URL" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section>
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <input type="range">
+            <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had
+                a great summer together with my family!</p>
+            <!-- ** Se muestra a un lado de la página web (aside)-->
+            <aside>
+                <h4>Epcot Center</h4>
+                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international
+                    pavilions, award-winning fireworks and seasonal special events.</p>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <small>No Copyright - <a href="https://www.freecodecamp.org" target="_blank"
+                    rel="noreferrer">freeCodeCamp.org</a></small>
+        </p>
+    </footer>
+</body>
+
+</html>
