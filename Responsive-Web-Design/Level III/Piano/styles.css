@@ -51,6 +51,7 @@ html {
   position: absolute;
   top: 23px;
 }
+/*Agregando elementos responsive con tamaño del dispositivo*/
 
 @media (max-width: 768px) {
   #piano {
