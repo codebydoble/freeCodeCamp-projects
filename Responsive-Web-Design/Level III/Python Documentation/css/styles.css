@@ -12,3 +12,8 @@ body {
   font-family: sans-serif;
   color: #0a0a23;
 }
+
+nav {
+  /* position: fixed;*/
+  border-right: 10px solid #0a0a23;
+}
