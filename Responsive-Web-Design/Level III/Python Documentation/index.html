@@ -267,13 +267,15 @@
               A recursive function named foo, which is passed a single parameter, x, and if the parameter is 0 will call a different function named bar and otherwise will call baz,
               passing x, and also call itself recursively, passing x-1 as the parameter, could be implemented like this in Python:
             </p>
-            <code>
-              def foo(x):<br />
-              if x == 0:<br />
-              bar()<br />
-              else:<br />
-              baz(x) foo(x - 1)
-            </code>
+            <div class="code-style">
+              <code>
+                def foo(x):<br />
+                if x == 0:<br />
+                bar()<br />
+                else:<br />
+                baz(x) foo(x - 1)
+              </code>
+            </div>
           </article>
         </section>
         <section id="Statements_and_control_flow" class="main-section">
@@ -447,65 +449,69 @@
               Python supports optional type annotations. These annotations are not enforced by the language, but may be used by external tools such as mypy to catch errors. Mypy
               also supports a Python compiler called mypyc, which leverages type annotations for optimization.
             </p>
-            <table>
-              <legend><strong>Summary of Python 3's built-in types</strong></legend>
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Mutability</th>
-                  <th>Description</th>
-                  <th>Syntax examples</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>bool</td>
-                  <td>immutable</td>
-                  <td>Boolean value</td>
-                  <td>
-                    <ol>
-                      <li>True</li>
-                      <li>False</li>
-                    </ol>
-                  </td>
-                </tr>
-                <tr>
-                  <td>bytearray</td>
-                  <td>mutable</td>
-                  <td>Sequence of bytes</td>
-                  <td>
-                    <ol>
-                      <li>bytearray(b'Some ASCII')</li>
-                      <li>bytearray(b"Some ASCII")</li>
-                      <li>bytearray([119, 105, 107, 105])</li>
-                    </ol>
-                  </td>
-                </tr>
-                <tr>
-                  <td>bytes</td>
-                  <td>immutable</td>
-                  <td>Sequence of bytes</td>
-                  <td>
-                    <ol>
-                      <li>b'Some ASCII'</li>
-                      <li>b"Some ASCII"</li>
-                      <li>bytes([119, 105, 107, 105])</li>
-                    </ol>
-                  </td>
-                </tr>
-                <tr>
-                  <td>complex</td>
-                  <td>immutable</td>
-                  <td>Complex number with real and imaginary parts</td>
-                  <td>
-                    <ol>
-                      <li>3+2.7j</li>
-                      <li>3 + 2.7j</li>
-                    </ol>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-wrap">
+              <table>
+                <caption>
+                  Summary of Python 3's built-in types
+                </caption>
+                <thead>
+                  <tr class="data">
+                    <th>Type</th>
+                    <th>Mutability</th>
+                    <th>Description</th>
+                    <th>Syntax examples</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>bool</td>
+                    <td>immutable</td>
+                    <td>Boolean value</td>
+                    <td>
+                      <ol>
+                        <li>True</li>
+                        <li>False</li>
+                      </ol>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>bytearray</td>
+                    <td>mutable</td>
+                    <td>Sequence of bytes</td>
+                    <td>
+                      <ol>
+                        <li>bytearray(b'Some ASCII')</li>
+                        <li>bytearray(b"Some ASCII")</li>
+                        <li>bytearray([119, 105, 107, 105])</li>
+                      </ol>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>bytes</td>
+                    <td>immutable</td>
+                    <td>Sequence of bytes</td>
+                    <td>
+                      <ol>
+                        <li>b'Some ASCII'</li>
+                        <li>b"Some ASCII"</li>
+                        <li>bytes([119, 105, 107, 105])</li>
+                      </ol>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>complex</td>
+                    <td>immutable</td>
+                    <td>Complex number with real and imaginary parts</td>
+                    <td>
+                      <ol>
+                        <li>3+2.7j</li>
+                        <li>3 + 2.7j</li>
+                      </ol>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </article>
         </section>
         <section id="Arithmetic_operators" class="main-section">
@@ -556,7 +562,7 @@
           <header>Hello world</header>
           <article>
             <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">"Hello, World!" program:</a><br /><br />
-            <code>print('Hello, world!')</code>
+            <div class="code-style"><code>print('Hello, world!')</code></div>
             <p>Program to calculate the factorial of a positive integer:</p>
             <code>
               <ol>
@@ -735,17 +741,12 @@
         <section id="References" class="main-section">
           <!--Reference-->
           <header>References</header>
-          <article>
-            <p>
-              "General Python FAQ – Python 3.9.2 documentation". docs.python.org. Archived from the original on 24 October 2012. Retrieved 28 March 2021. "Python 0.9.1 part 01/21".
-              alt.sources archives. Archived from the original on 11 August 2021. Retrieved 11 August 2021. "Why is Python a dynamic language and also a strongly typed language".
-              Python Wiki. Archived from the original on 14 March 2021. Retrieved 27 January 2021. "PEP 483 – The Theory of Type Hints". Python.org. Archived from the original on
-              14 June 2020. Retrieved 14 June 2018. "PEP 11 – CPython platform support | peps.python.org". Python Enhancement Proposals (PEPs). Retrieved 22 April 2024. "Download
-              Python for Other Platforms". Python.org. Archived from the original on 27 November 2020. Retrieved 18 August 2023. "test – Regression tests package for Python –
-              Python 3.7.13 documentation". docs.python.org. Archived from the original on 17 May 2022. Retrieved 17 May 2022. "platform – Access to underlying platform's
-              identifying data – Python 3.10.4 documentation". docs.python.org. Archived from the original on 17 May 2022. Retrieved 17 May 2022.
-            </p>
-          </article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Python_(programming_language)#Expressions">Wikipedia</a>
+            </li>
+          </ul>
         </section>
       </div>
     </main>
