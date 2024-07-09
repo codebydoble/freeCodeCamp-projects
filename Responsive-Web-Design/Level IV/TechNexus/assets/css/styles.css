@@ -1,3 +1,9 @@
+/* author: Yoandy Doble Herrera
+  date: 01/07/2024
+  license: MIT
+*/
+
+/*Reset*/
 :root {
   --background-cl: #8492a6;
   --blue: #2684ff;
@@ -22,7 +28,7 @@
   --light: #eff2f7;
   --dark: #273444;
   --neutral: #fff;
-  --night: #080f0f;
+  --night: #000;
   --indigo-dye: #344966;
   --white-powder: #fdfff7;
   --blue-dark: #1d1a39;
@@ -42,15 +48,89 @@
   box-sizing: border-box;
 }
 
-.heading {
-  background-color: var(--white-powder);
+/* Typography */
+/*
+html {
+  Apply font size
+  font-size: 80%;
+}*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  /*position: absolute;*/
 }
 
+h2,
+h3 {
+  font-family: "Anton", sans-serif;
+}
+
+/* Layout */
+
+/* Navigation */
+
 .hero {
+  background-color: var(--neutral);
   /*position: fixed;*/
-  background-color: var(--white-powder);
   min-width: 100%;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  border-bottom: 2px solid rgb(0 0 0 / 0.3);
 }
+
+.nav-header {
+  padding: 2dvh;
+}
+
+.lists {
+  list-style: none;
+  width: 100%;
+}
+
+.lists li {
+  margin-bottom: 0.3rem;
+  text-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--night);
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: rgb(0 0 0 / 0.5);
+}
+
+.btn-access {
+  margin-bottom: 0.5rem;
+  width: 40dvw;
+  height: min-content;
+  border-radius: 0%;
+  border: 1px hidden;
+  font-size: 1.2rem;
+  color: var(--neutral);
+  background-color: var(--night);
+}
+
+.heading {
+}
+
+/* UI-elements */
+.list-title {
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.form-register {
+  height: 10dvh;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Forms */
+
+/* Media Queries */
