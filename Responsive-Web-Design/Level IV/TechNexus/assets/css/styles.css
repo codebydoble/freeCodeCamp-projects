@@ -216,8 +216,8 @@ p {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
-  margin: 20px 10px;
   align-items: center;
+  margin: 20px 10px;
   border: 1px solid var(--blue-dark);
   border-radius: 5px;
 }
@@ -239,5 +239,32 @@ p {
 .btn-pay {
   font-size: 1rem;
   margin: 5px;
+}
+
+.sponsor {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+}
+
+.sponsor h3 {
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 250px;
+  /*justify-content: space-between;*/
 }
 /* Media Queries */
