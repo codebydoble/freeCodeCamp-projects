@@ -48,7 +48,9 @@
             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
             required
           />
-          <input class="inp-submit btn-access" type="submit" id="submit" name="submit" value="GET STARTED" />
+          <div class="btn-container">
+            <input type="submit" value="GET STARTED" class="inp-submit" id="submit" name="submit" />
+          </div>
         </form>
       </section>
       <!-- Section best features -->
@@ -82,34 +84,41 @@
       <!-- Section TechNexus products -->
       <section class="text" id="products">
         <article class="promo-product">
-          <img class="img-product" src="assets/img/website-64.png" alt="Logo ChatBot AI" loading="lazy" width="64" height="64" />
           <h3 class="list-title">SiteBuilder AI</h3>
-          <p>
-            A website creation platform that uses artificial intelligence to simplify the web design and development process. With <strong>SiteBuilder AI</strong>, even
-            non-technical users can create professional and attractive websites in minutes.
-          </p>
+          <div class="card-img">
+            <img class="img-product" src="assets/img/website-white-64.png" alt="Logo ChatBot AI" loading="lazy" width="64" height="64" />
+            <p>
+              A website creation platform that uses artificial intelligence to simplify the web design and development process. With <strong>SiteBuilder AI</strong>, even
+              non-technical users can create professional and attractive websites in minutes.
+            </p>
+          </div>
         </article>
         <article class="promo-product">
-          <img class="img-product" src="assets/img/database-100.png" alt="Logo DataInsights AI" loading="lazy" width="64" height="64" />
           <h3 class="list-title">DataInsights AI</h3>
-          <p>
-            A data analytics solution that uses artificial intelligence to extract valuable insights from large data sets. <strong>DataInsights AI</strong> helps companies make
-            more informed data-driven decisions, optimize their operations and improve customer experience.
-          </p>
+          <div class="card-img">
+            <img class="img-product" src="assets/img/database-white-100.png" alt="Logo DataInsights AI" loading="lazy" width="64" height="64" />
+            <p>
+              A data analytics solution that uses artificial intelligence to extract valuable insights from large data sets. <strong>DataInsights AI</strong> helps companies make
+              more informed data-driven decisions, optimize their operations and improve customer experience.
+            </p>
+          </div>
         </article>
         <article class="promo-product">
-          <img class="img-product" src="assets/img/chatbot-64.png" alt="Logo ChatBot AI" loading="lazy" width="64" height="64" />
           <h3 class="list-title">ChatBot AI</h3>
-          <p>
-            A chatbot platform that uses conversational artificial intelligence to create highly interactive, personalized chatbots. <strong>ChatBot AI</strong> enables businesses
-            to provide 24/7 customer support, increase sales and improve customer experience.
-          </p>
+          <div class="card-img">
+            <img class="img-product" src="assets/img/chatbot-white-64.png" alt="Logo ChatBot AI" loading="lazy" width="64" height="64" />
+            <p>
+              A chatbot platform that uses conversational artificial intelligence to create highly interactive, personalized chatbots. <strong>ChatBot AI</strong> enables
+              businesses to provide 24/7 customer support, increase sales and improve customer experience.
+            </p>
+          </div>
         </article>
       </section>
       <!-- Section video iframe-->
       <section class="section-video" id="promo-video">
         <iframe
           id="video"
+          class="video-container"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/HJ6_PhlB6WQ?si=eI6BBaxJOj9KXMyp"
@@ -129,7 +138,7 @@
           <p>Plantillas prediseñadas limitadas.</p>
           <p>Almacenamiento de datos de 1 GB.</p>
           <p>Soporte por correo electrónico.</p>
-          <form class="btn-access btn-buy" action="" method="post"><button class="">SELECT</button></form>
+          <form action="" method="post"><button class="btn-access btn-pay">SELECT</button></form>
         </div>
         <div class="plan-type">
           <h3 class="title-plan">PROFESSIONAL</h3>
@@ -139,7 +148,7 @@
           <p>Almacenamiento de datos de 10 GB.</p>
           <p>Soporte por teléfono y correo electrónico.</p>
           <p>Análisis básico de sitios web.</p>
-          <form class="btn-access btn-buy" action="" method="post"><button class="">SELECT</button></form>
+          <form action="" method="post"><button class="btn-access btn-pay">SELECT</button></form>
         </div>
         <div class="plan-type">
           <h3 class="title-plan">ENTERPRISE</h3>
@@ -150,7 +159,7 @@
           <p>Soporte prioritario por teléfono, correo electrónico y chat en vivo.</p>
           <p>Análisis avanzado de sitios web y datos.</p>
           <p>Integraciones con sistemas CRM y de marketing.</p>
-          <form class="btn-access btn-buy" action="" method="post"><button class="">SELECT</button></form>
+          <form action="" method="post"><button class="btn-access btn-pay">SELECT</button></form>
         </div>
       </section>
       <!-- Concept cards section -->
