@@ -12,4 +12,4 @@
 12. -Done- When you click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit)
 13. The navbar should always be at the top of the viewport
 14. -Done- Your product landing page should have at least one media query
-15. Your product landing page should utilize CSS flexbox at least once
+15. -Done- Your product landing page should utilize CSS flexbox at least once
