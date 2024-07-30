@@ -1,0 +1,17 @@
+/* Author: Yoandy Doble Herrera
+  Date: 21/07/2024
+  License: MIT
+*/
+:root {
+  --sky-blue: rgb(118 201 255);
+  --neutral: rgb(247 255 222);
+}
+
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
