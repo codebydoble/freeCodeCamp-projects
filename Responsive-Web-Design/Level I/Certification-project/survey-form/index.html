@@ -21,22 +21,22 @@
         <!-- Personal Information-->
         <div class="flex-card">
           <div class="containerInfo">
-            <label for="name-label" class="lblPerson">Name:</label>
-            <input id="name-label" class="inpPerson" name="name-label" type="text" placeholder="Enter your Name" required />
+            <label id="name-label" for="name-label" class="lblPerson">Name:</label>
+            <input id="name" class="inpPerson" name="name-label" type="text" placeholder="Enter your Name" required />
           </div>
           <div class="containerInfo">
-            <label for="email-label" class="lblPerson">Email:</label>
-            <input id="email-label" class="inpPerson" name="email-label" type="email" placeholder="Enter your Email" required />
+            <label id="email-label" for="email-label" class="lblPerson">Email:</label>
+            <input id="email" class="inpPerson" name="email-label" type="email" placeholder="Enter your Email" required />
           </div>
           <div class="containerInfo">
-            <label for="number-label" class="lblPerson">Age (optional):</label>
-            <input id="number-label" class="inpPerson" name="number-label" type="number" placeholder="Age" min="10" max="99" />
+            <label id="number-label" for="number-label" class="lblPerson">Age (optional):</label>
+            <input id="number" class="inpPerson" name="number-label" type="number" placeholder="Age" min="10" max="99" />
           </div>
         </div>
         <div class="slOccupation">
-          <p>Which option best describes your current role?</p>
+          <p>Where did you find us?</p>
           <select id="dropdown" name="dropdown" class="selectOccupation">
-            <option value="" selected disabled>Where did you find us?</option>
+            <option value="" selected disabled>Pick one</option>
             <option value="dropdown-one">Youtube</option>
             <option value="dropdown-two">Instagram</option>
             <option value="dropdown-three">Facebook</option>
@@ -47,9 +47,9 @@
           </select>
           <p>Would you recommend HardShop to a friend?</p>
           <div class="grid-container">
-            <div class="item"><input class="inline-radio" id="radio-ok" name="radio-label" type="radio" /><label for="radio-ok">Definitely</label></div>
-            <div class="item"><input class="inline-radio" id="radio-maybe" name="radio-label" type="radio" /><label for="radio-maybe"> Maybe</label></div>
-            <div class="item"><input class="inline-radio" id=" radio-not" name="radio-label" type="radio" /><label for="radio-not">Not sure</label></div>
+            <div class="item"><input class="inline-radio" id="radio-ok" name="radio-label" type="radio" value="definitely" /><label for="radio-ok">Definitely</label></div>
+            <div class="item"><input class="inline-radio" id="radio-maybe" name="radio-label" type="radio" value="maybe" /><label for="radio-maybe"> Maybe</label></div>
+            <div class="item"><input class="inline-radio" id=" radio-not" name="radio-label" type="radio" value="notsure" /><label for="radio-not">Not sure</label></div>
           </div>
           <p>What is your favorite section of HardShop?</p>
           <select id="feature-drop" name="feature-drop" class="selectOccupation">
@@ -110,13 +110,13 @@
           <textarea id="comment-textarea" name="comment-textarea" rows="10" cols="150" placeholder="Enter your comment here..."></textarea>
         </div>
         <div class="btn-container">
-          <input class="sbmButton" type="submit" value="Submit" />
+          <input id="submit" class="sbmButton" type="submit" value="Submit" />
         </div>
       </form>
     </div>
     <footer>
       <div class="footer-container">
-        <p>&copy; 2024 Project Responsive. All rights reserved</p>
+        <p>&copy; 2024 Project Responsive Web Design Certification. All rights reserved</p>
         <p>Author: Yoandy Doble Herrera</p>
         <p>Enviar correo electrónico a <a target="_blank" rel="noreferrer" href="mailto:yoandy.doble@gmail.com"> yoandy.doble@gmail.com</a></p>
       </div>
