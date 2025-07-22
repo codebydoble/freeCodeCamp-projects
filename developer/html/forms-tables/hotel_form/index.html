@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Paradise Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="description"
+        content="Paradise Hotel, located between Danang city and Hoi An, offers Vietnam's finest beach resort experience. Discover luxury, pristine shores, and exceptional hospitality.">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <h1>Hotel Feedback Form</h1>
+        <p>Thank you for staying with us. Please provide feedback on your recent stay.</p>
+    </header>
+    <main>
+        <form action="feedback.php" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div>
+                    <label for="inp-name">Name (required):</label>
+                    <input type="text" id="inp-name" name="inp-name" placeholder="Ex. John Doe" size="20" required>
+                </div>
+                <div>
+                    <label for="inp-email">Email address (required):</label>
+                    <input type="email" id="inp-email" name="inp-email" placeholder="example@email.com" size="20"
+                        required>
+                </div>
+                <div>
+                    <label for="inp-age">Age (optional):</label>
+                    <input type="number" id="inp-age" name="inp-age" min="3" max="100">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Was this your first time at our hotel?</legend>
+                <label for="inp-radio-yes">Yes
+                    <input type="radio" name="inp-radio" id="inp-radio-yes" value="yes">
+                </label>
+                <label for="inp-radio-no">No
+                    <input type="radio" name="inp-radio" id="inp-radio-no" value="no">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Why did you choose to stay at our hotel? (Check all that apply)</legend>
+                <div>
+                    <label for="inp-ads">Social Media Ads</label>
+                    <input type="checkbox" name="ads" id="inp-ads" value="ads">
+                </div>
+                <div>
+                    <label for="inp-recommendation">Personal Recommendation</label>
+                    <input type="checkbox" name="recommendation" id="inp-recommendation" value="recommendation">
+                </div>
+                <div>
+                    <label for="inp-location">Location</label>
+                    <input type="checkbox" name="location" id="inp-location" value="location">
+                </div>
+                <div>
+                    <label for="inp-reputation">Reputation</label>
+                    <input type="checkbox" name="reputation" id="inp-reputation" value="reputation" checked>
+                </div>
+                <div>
+                    <label for="inp-price">Price</label>
+                    <input type="checkbox" name="price" id="inp-price" value="price">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Ratings</legend>
+                <div>
+                    <label for="service">How was the service?</label>
+                    <select name="service" id="service">
+                        <option value="" disabled hidden selected>Please select...</option>
+                        <option value="poor">Poor</option>
+                        <option value="satisfactory">Satisfactory</option>
+                        <option value="good">Good</option>
+                        <option value="very-good">Very Good</option>
+                        <option value="excellent">Excellent</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="food">How was the food?</label>
+                    <select name="food" id="food">
+                        <option value="" disabled hidden selected>Please select...</option>
+                        <option value="poor">Poor</option>
+                        <option value="satisfactory">Satisfactory</option>
+                        <option value="good">Good</option>
+                        <option value="very-good">Very Good</option>
+                        <option value="excellent">Excellent</option>
+                    </select>
+                </div>
+            </fieldset>
+            <div>
+                <label for="txtarea-comments">Other Comments?</label>
+                <textarea name="comments" id="txtarea-comments" cols="30" rows="10"
+                    placeholder="Comments go here."></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+
+</html>
