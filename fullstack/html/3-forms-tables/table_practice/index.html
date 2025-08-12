@@ -19,9 +19,9 @@
             <caption id="tbfinalexam">Calculus Final Exam Grades</caption>
             <thead role="rowgroup">
                 <tr>
-                    <th role="columnheader">Last Name</th>
-                    <th role="columnheader">First Name</th>
-                    <th role="columnheader">Grade</th>
+                    <th role="columnheader" scope="col">Last Name</th>
+                    <th role="columnheader" scope="col">First Name</th>
+                    <th role="columnheader" scope="col">Grade</th>
                 </tr>
             </thead>
             <tbody role="rowgroup">
@@ -58,6 +58,62 @@
                 </tr>
             </tfoot>
         </table>
+        <section>
+            <h2>Pet's Table</h2>
+            <table>
+                <caption>Our Pets</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Nora</th>
+                        <td>5</td>
+                        <td>Dog</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Gino</th>
+                        <td>2</td>
+                        <td>Cat</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Pet's Group Table</h2>
+            <table>
+                <caption>Pet Store</caption>
+                <thead>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">Dogs</th>
+                        <td>Nora</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Gino</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">Cats</th>
+                        <td>Lulu</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Elizabeth</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer></footer>
 </body>
