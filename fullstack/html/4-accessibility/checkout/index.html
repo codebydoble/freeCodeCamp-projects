@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonsai & Joy</title>
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="description"
+        content="Online Store Specializing in Laptops | Browse and purchasing a curated selection of high-quality laptops.">
+    <meta name="robots" content="index,follow">
+</head>
+
+<body>
+    <main>
+        <h1>Checkout</h1>
+        <section aria-labelledby="cart-heading">
+            <h2 id="cart-heading">Your Cart</h2>
+            <figure>
+                <img src="assets/images/notebook-pb16250.webp" alt="A classic rubik cube.">
+                <figcaption>Dell Pro 16 Plus Laptop, 2025.</figcaption>
+            </figure>
+            <p>$1259.00 (New)<br>100+ bought last month.<br>Free delivery Wednesday, August 20.</p>
+            <button type="button">Add to Cart</button>
+            <button type="button">Buy Now</button>
+        </section>
+
+        <section aria-labelledby="payment-heading">
+            <h2 id="payment-heading">Payment Information</h2>
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Card Information</legend>
+
+                    <div>
+                        <label for="name">Name on Card:</label>
+                        <input type="text" id="name" name="inp-name" required>
+                    </div>
+
+                    <div>
+                        <label for="card">Card Number:</label>
+                        <input type="text" id="card" name="card" inputmode="numeric" autocomplete="cc-number"
+                            pattern="[0-9]{16,19}" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
+                    </div>
+
+                    <div>
+                        <label for="expiration-month">Expiration Date:</label>
+                        <div class="expiration-group">
+                            <select id="expiration-month" name="expiration-month" required>
+                                <option value="" disabled selected>MM</option>
+                                <option value="01">01</option>
+                            </select>
+                            <select id="expiration-year" name="expiration-year" required>
+                                <option value="" disabled selected>YY</option>
+                                <option value="25">25</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="cvv">Security Code (CVV):</label>
+                        <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
+                            pattern="[0-9]{3,4}" maxlength="4" aria-describedby="cvv-description" required>
+                        <p id="cvv-description">The CVV/CVC code (Card Verification Value/Code) is located on the back
+                            of
+                            your
+                            credit/debit card on the right side of the white signature strip.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Billing Address</legend>
+                    <div>
+                        <label for="inp-address">Address:</label>
+                        <input type="text" name="inp-address" id="inp-address" autocomplete="street-address">
+                    </div>
+                </fieldset>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
