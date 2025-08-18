@@ -1,12 +1,14 @@
-Build a Multimedia Player
+# Build a Multimedia Player
+
 Build an app that is functionally similar to this example project. Try not to copy the example project, give it your own personal style.
 
 In the prior lectures, you were introduced to working with audio and video elements. In this lab, you will build out a multimedia player that will display an audio track and video with a transcript.
 
 For the audio element, you will need to include a source element which is used to specify the media being used.
-Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
-User Stories:
+**Objective**: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+## User Stories:
 
 1. [x] You should have an h1 element for the main title of the page.
 2. [x] You should have three section elements.
