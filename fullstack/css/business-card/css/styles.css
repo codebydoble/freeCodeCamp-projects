@@ -1,0 +1,118 @@
+:root {
+    --background-main: rosybrown;
+    --background-body: seashell;
+    --paragraph-color: dimgray;
+    --heading-color: darkslategray;
+    --shadow-color: #888888;
+    --link-color: saddlebrown;
+}
+
+/* Remove default margin and padding in favour of better control in authored CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Box sizing rules */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+
+/* Set core body defaults */
+body {
+    background-color: var(--background-main);
+    min-height: 100dvh;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    text-wrap: balance;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+p {
+    text-wrap: pretty;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--paragraph-color);
+}
+
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+/* Div act as main */
+.business-card {
+    max-width: 300px;
+    background-color: var(--background-body);
+    padding: 20px;
+    /*margin: 100px auto; Used option 2 mandatory*/
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+    border: 4px solid saddlebrown;
+}
+
+/* Profile image*/
+.profile-image {
+    border: 2px solid rgb(230, 171, 129);
+    max-width: 150px;
+    width: 25vw;
+    height: auto;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px var(--shadow-color);
+}
+
+/* Links style */
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
