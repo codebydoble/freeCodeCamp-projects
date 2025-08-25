@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled To-Do List</title>
+    <meta name="description"
+        content="Stay on top of your day with this modern task manager. A straightforward to-do list app designed for maximum efficiency and a clutter-free experience.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+family=Poppins+family=Lato+family=Anton;display=swap">
+    <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="assets/images/icons/android-chrome-192x192.png" type="image/png" sizes="192x192">
+    <link rel="icon" href="assets/images/icons/android-chrome-512x512.png" type="image/png" sizes="512x512">
+    <link rel="icon" href="assets/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="assets/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="assets/images/icons/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header aria-labelledby="heading" class="heading-container">
+        <picture class="logo">
+            <source type="image/svg+xml" srcset="assets/images/logo.svg">
+            <source type="image/png" srcset="assets/images/icons/favicon-96x96.png 1x, 
+                assets/images/favicon-192x192.png 2x, 
+                assets/images/favicon-512x512.png 3x">
+            <img src="assets/images/favicon-96x96.png" alt="Logo To-Do List app, black background with TdL letters.">
+        </picture>
+        <h1 id="heading">QVA To-Do List</h1>
+    </header>
+    <main class="container">
+        <h2 class="container-header">My To-Do List</h2>
+        <ul class="todo-list">
+            <li>
+                <input type="checkbox" name="inp-css" id="inp-css">
+                <label for="inp-css">Learn CSS Grid</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link"
+                            href="https://dev.to/johnserranodev/css-grid-la-guia-completa-para-principiantes-y-avanzados-51f8"
+                            target="_blank" rel="noopener noreferrer" hreflang="es">Get more information with the best
+                            guide for beginners and advanced</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" name="inp-logo" id="inp-logo">
+                <label for="inp-logo">Make a moodboard for professional logo</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link"
+                            href="https://www.godaddy.com/resources/es/crearweb/como-crear-tu-propio-logo-para-tu-empresa"
+                            target="_blank" rel="noopener noreferrer" hreflang="es">Build the logo of your business</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" name="inp-pomodoro" id="inp-pomodoro">
+                <label for="inp-pomodoro">Apply Pomodoro's technique</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link"
+                            href="https://www.todoist.com/es/productivity-methods/pomodoro-technique" target="_blank"
+                            rel="noopener noreferrer" hreflang="en">Pomodoro's technique</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" name="inp-recipe" id="inp-recipe">
+                <label for="inp-recipe">Find a new recipe with chicken</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link" href="https://polloseldorado.co/blog/10-recetas-saludables-de-pollo/"
+                            target="_blank" rel="noopener noreferrer" hreflang="en">10 healthy chicken recipes</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        &copy; All rights reserved, QVA To-Do List, 2025
+    </footer>
+</body>
+
+</html>
