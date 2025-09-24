@@ -1,0 +1,298 @@
+/* Project: FestIA Digital Innovation Festival */
+/* Author: Yoandy Doble Herrera */
+
+:root {
+    /* Background and Text */
+    --bg-color: #F7F9FC;
+    /* Light gray for the main background, easy on the eyes */
+    --card-bg-color: #FFFFFF;
+    /* Pure white for cards and containers to create contrast */
+    --text-primary: #1F2937;
+    /* Dark charcoal for main headings and strong text */
+    --text-secondary: #6B7280;
+    /* Soft gray for body text and paragraphs */
+
+    /*Borders and Separators*/
+    --border-color: #E5E7EB;
+    /* A light gray to define elements subtly */
+
+    /* Brand and Accent Colors */
+    --brand-blue: #007BFF;
+    /* A vibrant, trusted blue for brand elements */
+    --accent-green: #10B981;
+    /* A fresh green for success states and positive actions */
+
+    /* Header Colors */
+    --header-bg: #F0F4F8;
+    /* A slightly darker gray to visually separate the header */
+    --header-text: var(--text-primary);
+
+    /* Link and Button States */
+    --link-color: var(--brand-blue);
+    --link-visited-color: #6C757D;
+    /* A muted gray for visited links */
+    --link-hover-color: #0056B3;
+    /* Darker blue on hover */
+    --link-focus-color: #0056B3;
+    /* Same as hover, with an outline _/
+--link-active-color: #004085; /* Very dark blue for active click */
+
+    /* Buttons */
+    --button-bg: var(--brand-blue);
+    --button-text: #141414;
+    --button-text-hvr: #FFFFFF;
+    --button-hover-bg: #0056B3;
+    --button-focus-bg: #0056B3;
+}
+
+/* Base styles and CSS Reset  */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Core body defaults */
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    /* Your body should have a top and bottom padding of 50px */
+    padding: 50px 0;
+    /* Your body should have a top and bottom margin of 0, and a left and right margin that centers itself */
+    margin: 0 auto;
+    /* Your body should have a width set relative to the width of the viewport. */
+    width: 70vw;
+    /* Your body should use the calc function to set its min-height property to 100% of the viewport's height minus all padding applied to the top and bottom of the body. */
+    min-height: calc(100vh - 100px);
+    color: var(--text-secondary);
+}
+
+/* Typography styles */
+*/ h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+/* Pretty text wrapping on headings */
+p {
+    text-wrap: pretty;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make images easier to work with */
+img,
+svg,
+picture,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reusable Components and Layout */
+.page-header {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.page-header_title {
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+.page-header p:nth-last-child(1) {
+    margin-bottom: 0.5rem;
+}
+
+.main-content {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1rem 3rem;
+}
+
+.section {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/* Combining selectors for shared properties */
+.section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.highlights-container {
+    display: flex;
+}
+
+.highlights-container_article {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem;
+    width: 40vw;
+    flex: 1;
+}
+
+.highlights-container_article h3 {
+    margin-bottom: 0.4rem;
+}
+
+.highlights-container_article p {
+    text-align: center;
+}
+
+.section-propaganda ul {
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.section-propaganda p {
+    padding-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-registration {
+    margin-bottom: 1.6rem;
+}
+
+.btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-wrap: nowrap;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-text-hvr);
+    font-weight: bold;
+}
+
+.divider {
+    width: 80%;
+    height: 1vh;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: var(--header-text);
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section-container article {
+    width: 20vw;
+    margin-left: 0.5rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.section-container_article {
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* --- Media Queries for Tablets --- */
+@media (max-width: 768px) {
+
+    /* Teblets */
+    body {
+        width: 90vw;
+        text-align: center;
+    }
+
+    /* "Highlights" y "Sponsors" stacking */
+    .highlights-container,
+    .section-container {
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .section-propaganda ul {
+        text-align: left;
+    }
+
+    .section-container_article {
+        margin-bottom: 1rem;
+    }
+
+    .section-container article {
+        width: 40vw;
+    }
+
+    .section-container_article:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+}
+
+/* --- Media Queries for Mobile --- */
+@media (max-width: 480px) {
+
+    /* Mobile css */
+    .main-content {
+        padding: 1rem;
+    }
+
+    /* Titles */
+    .page-header_title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .article-title {
+        font-size: 1.3rem;
+    }
+
+    .section-container article {
+        width: 50vw;
+    }
+}
