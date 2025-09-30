@@ -45,7 +45,7 @@
     --button-focus-bg: #0056B3;
 }
 
-/* Base styles and CSS Reset  */
+/* Base styles and CSS Reset */
 *,
 *::before,
 *::after {
@@ -78,7 +78,7 @@ body {
 }
 
 /* Typography styles */
-*/ h1,
+h1,
 h2,
 h3,
 h4,

@@ -65,3 +65,52 @@ img {
     border-radius: 8px;
     outline: 8px solid rgb(228, 63, 13, 0.6);
 }
+
+
+/* Links pseudo class */
+section:target {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 10px;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta-button::before {
+    content: "⭐";
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    font-size: 0.75rem;
+}
+
+.cta-button_arrow {
+    background-color: orange;
+    padding: 10px 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta-button_arrow::after {
+    content: '➡️';
+    position: absolute;
+    right: 5px;
+    bottom: 6px;
+    font-size: 1.125rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button_arrow:hover::after {
+    transform: translateX(2px);
+}

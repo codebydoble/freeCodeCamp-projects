@@ -183,3 +183,39 @@ Other types of absolute units include the following:
 - The cm (centimeters) unit, which is equal to 25.2/64 of an inch
 - The mm (millimeters) unit, which is equal to 1/10th of a centimeter
 - The q (quarter-millimeters) unit, which is equal to 1/40th of a centimeter
+
+# Pseudo-Classes
+
+**Here is a list of tree-structural pseudo-classes**:
+
+:root
+:empty
+:nth-child(n)
+:nth-last-child(n)
+:first-child
+:last-child
+:only-child
+:nth-of-type
+:first-of-type
+:last-of-type
+:only-of-type
+
+**Examples of functional pseudo-classes are**:
+
+:is()
+:where()
+:has()
+:not()
+
+# Pseudo-Elements
+
+:before
+::after
+::first-letter
+::marker pseudo-element which lets you select the marker
+
+- li::marker
+
+::placeholder
+::spelling-error
+::selection

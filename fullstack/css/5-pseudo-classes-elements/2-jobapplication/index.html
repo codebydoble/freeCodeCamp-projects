@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data+</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Data+, a technology, IT solutions, and Big Data company, dedicated to transforming the potential of information into strategic value for your business.">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Data+">
+    <link rel="manifest" href="assets/images/icons/site.webmanifest">
+</head>
+
+<body>
+    <header aria-labelledby="header-title" class="page-header">
+        <div class="page-header page-header_container">
+            <img src="assets/images/icons/favicon-96x96.png" alt="" aria-hidden="true">
+            <h1 id="header-title" class="page-header_title">Data+</h1>
+        </div>
+        <nav class="page-header_nav">
+            <ul>
+                <li>
+                    <a class="page-header_link" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="page-header_link" href="#application">Job Application</a>
+                </li>
+                <li>
+                    <a class="page-header_link" href="#about-us">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div role="main" id="application" class="container">
+        <form action="job-application.php" method="post">
+            <fieldset class="container-fieldset fieldset-css">
+                <legend>Personal Information:</legend>
+                <label class="container-label container-initial">Full Name:
+                    <input type="text" name="name" id="name" class="container-input" placeholder="Jhon Garcia Perez"
+                        required>
+                </label>
+                <label class="container-label">Email:
+                    <input type="email" name="email" id="email" class="container-input" autocomplete="email"
+                        placeholder="your.email@gmail.com" required>
+                </label>
+                <label class="container-label">Phone Number (Optional):
+                    <input type="tel" name="phone" id="phone" class="container-input" autocomplete="tel" inputmode="tel"
+                        pattern="^\+?[\d\s-()]{10,20}$" maxlength="20" placeholder="+1 212 555 0198">
+                </label>
+                <label class="container-label">Location:
+                    <input type="text" name="location" id="location" class="container-input"
+                        autocomplete="address-level2" placeholder="City, Country" required>
+                </label>
+            </fieldset>
+            <fieldset class="container-fieldset fieldset-css">
+                <legend>Professional Experience and Profile:</legend>
+                <label class="container-label">Curriculum Vitae (CV):
+                    <input type="file" name="curriculum" id="curriculum" class="container-input" required>
+                    <span>Only pdf or docx files. Maximum size: 5MB</span>
+                </label>
+                <label class="container-label">LinkedIn Profile (Optional):
+                    <input type="url" name="url" id="url" class="container-input"
+                        placeholder="https://www.linkedin.com/in/your-profile" required>
+                </label>
+                <label class="container-label">Portfolio / GitHub:
+                    <input type="url" name="portfolio" id="portfolio" class="container-input"
+                        placeholder="https://www.portfolio.com" required>
+                </label>
+            </fieldset>
+            <fieldset class="container-fieldset fieldset-css">
+                <legend>Key Questions:</legend>
+                <label class="container-label container-label_select">Position:
+                    <select name="position" id="position" class="container-select" required>
+                        <option value="" selected disabled>Select a position</option>
+                        <option value="frontend">Frontend Developer</option>
+                        <option value="backend">Backend Developer</option>
+                        <option value="fullstack">Full Stack Engineer</option>
+                        <option value="designer">Designer</option>
+                        <option value="tester">QA Tester</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                </label>
+                <div class="container-radio">
+                    <p>Do you have legal authorization to work in Canada?:</p>
+                    <div class="custom-radio">
+                        <input type="radio" name="employment" id="yes" class="container-input radio-group_radio"
+                            value="yes" required>
+                        <label for="yes" class="container-label container-radio_label label-inline ">Yes</label>
+                    </div>
+                    <div class="custom-radio">
+                        <input type="radio" name="employment" id="no" class="container-input radio-group_radio"
+                            value="no" required>
+                        <label for="no" class="container-label container-radio_label label-inline ">No</label>
+                    </div>
+                </div>
+                <label class="container-label">Salary Claim (Optional):
+                    <input type="text" name="salary" id="salary" class="container-input" inputmode="numeric"
+                        pattern="^\d{5,6}$" maxlength="6" placeholder="50 000 USD">
+                </label>
+                <label class="container-label container-label_select">How did you hear about this vacancy?:
+                    <select name="knowUser" id="knowUser" class="container-select" required>
+                        <option value="" selected disabled>Select an answer </option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="infojobs">InfoJobs</option>
+                        <option value="webjob">Employment Web</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset class="radio-group">
+                <legend>Availability:</legend>
+                <div class="custom-radio">
+                    <input type="radio" name="availability" id="fullTime" value="fullTime"
+                        class="container-input radio-group_radio" required>
+                    <label for="fullTime" class="container-label container-radio_label ">Full-Time</label>
+                </div>
+                <div class="custom-radio">
+                    <input type="radio" name="availability" id="partTime" value="partTime"
+                        class="container-input radio-group_radio" required>
+                    <label for="partTime" class="container-label container-radio_label ">Part-Time</label>
+                </div>
+            </fieldset>
+            <fieldset class="container-fieldset fieldset-textarea">
+                <label class="container-label_textarea">Why do you want this job?
+                    <textarea name="message" id="message" class="container-textarea" cols="30" rows="10"
+                        placeholder="Write your motivation"></textarea>
+                </label>
+            </fieldset>
+            <fieldset class="container-fieldset fieldset-policy">
+                <label class="container-label fieldset-policy_label ">
+                    <input type="checkbox" name="policy" id="policy" class="container-input check" required> I have read
+                    and
+                    accept the
+                    [Privacy Policy](link) and
+                    consent to
+                    the processing of my data for this selection process.
+                </label>
+            </fieldset>
+            <div class="btn">
+                <button class="btn-cta" type="submit">Send Application</button>
+            </div>
+        </form>
+    </div>
+    <footer id="about-us">
+        <p class="about-us_text">Copyright &copy; 2025. Made by Data+. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

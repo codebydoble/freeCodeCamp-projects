@@ -1,0 +1,648 @@
+/*
+Project freeCodeCamp: Job Application Form 
+Author: Yoandy Doble Herrera
+Date: 26-09-2025
+
+============================================
+--- COLOR PALETTE: LIGHT MODE ---
+============================================
+Based on the primary colors:
+- Light Blue (#87CEEB)
+- Dark Gray (#333333)
+- Light Green (#C6E2D9)
+- Dark Blue (#333399)
+- White (#FFFFFF)
+
+*/
+
+:root {
+  /* -- Base Colors -- */
+  --color-brand-primary: #333399;
+  /* Dark Blue: for main actions and branding. */
+  --color-accent-sky: #87CEEB;
+  /* Light Blue: for visual accents and focus states. */
+  --color-accent-mint: #C6E2D9;
+  /* Light Green: for subtle backgrounds or success states. */
+  --color-dark-gray: #333333;
+  /* Dark Gray: main color for text. */
+  --color-white: #FFFFFF;
+  /* White: for main backgrounds. */
+
+  /* 1. Background & Text */
+  --background-primary: var(--color-white);
+  --background-secondary: #f8f9fa;
+  /* A very light gray for featured sections. */
+  --text-primary: var(--color-dark-gray);
+  --text-secondary: #5a5a5a;
+  /* A softer gray for secondary text or placeholders. */
+  --text-on-brand: var(--color-white);
+  /* Text used on top of the brand color (e.g., in buttons). */
+
+  /* 2. Borders & Separators */
+  --border-primary: #dee2e6;
+  /* Standard border, subtle but visible. */
+  --border-interactive: #ced4da;
+  /* Border for interactive elements like inputs. */
+
+  /* 3. Brand & Accent Colors */
+  --brand-color: var(--color-brand-primary);
+  --focus-ring-color: var(--color-accent-sky);
+  /* Color for the outline in the :focus state, key for WCAG. */
+
+  /* 4. Header Colors */
+  --header-background: var(--background-primary);
+  --header-text-color: var(--text-primary);
+  --header-border-bottom: var(--border-primary);
+
+  /* 5. Link States */
+  --link-color: var(--color-brand-primary);
+  --link-color-visited: var(--color-brand-primary);
+  /* We maintain consistency; it doesn't change color when visited. */
+  --link-color-hover: #4d4dab;
+  /* A slightly lighter version of the brand color. */
+  --link-color-active: #292982;
+  /* A darker version for the moment of click. */
+
+  /* 6. Buttons */
+  /* Primary Button (e.g., "Submit Application") */
+  --button-primary-background: var(--color-brand-primary);
+  --button-primary-text: var(--text-on-brand);
+  --button-primary-background-hover: var(--link-color-hover);
+
+  /* Secondary Button (e.g., "Cancel") */
+  --button-secondary-background: transparent;
+  --button-secondary-text: var(--color-brand-primary);
+  --button-secondary-border: var(--color-brand-primary);
+  --button-secondary-background-hover: var(--color-accent-mint);
+  /* The light green works great as a subtle hover. */
+
+  /* 7. Input Fields */
+  --input-background: var(--color-white);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-secondary);
+  --input-border: var(--border-interactive);
+  --input-border-hover: #adb5bd;
+  --input-border-focus: var(--color-brand-primary);
+  --input-border-invalid: red;
+  --input-border-valid: green;
+  /* The border changes to the brand color on focus. */
+
+  /* Feedback States (very important in forms) */
+  --feedback-success-background: var(--color-accent-mint);
+  --feedback-success-text: #0f5132;
+  /* Dark green text with good contrast on the light green. */
+  --feedback-error-background: #f8d7da;
+  --feedback-error-text: #842029;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Avoid font inflation */
+html {
+  font-size: 16px;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Main content css*/
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  max-width: 90dvw;
+  min-height: 100dvh;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* Titles css*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-wrap: balance;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+/* Text and paragraph */
+p,
+label,
+legend,
+.page-header_link {
+  font-size: 1rem;
+  text-wrap: pretty;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* Make images easier to work */
+img,
+svg,
+figure,
+video {
+  display: block;
+  max-width: 100dvw;
+  height: auto;
+}
+
+/* Reusable Components and Layout */
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  border-bottom: 4px solid var(--header-border-bottom);
+  margin-bottom: 0.8rem;
+}
+
+.page-header_container {
+  flex-direction: row;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.page-header_nav {
+  margin-bottom: 1rem;
+}
+
+.page-header_nav li {
+  list-style: none;
+  text-align: center;
+}
+
+/* Navigation links*/
+.page-header_link {
+  text-decoration: none;
+}
+
+/* Links states link visited hover focus active */
+.page-header_link:link {
+  color: var(--link-color);
+}
+
+.page-header_link:visited {
+  color: var(--link-color-visited);
+}
+
+.page-header_link:hover {
+  color: var(--link-color-hover);
+}
+
+.page-header_link:active {
+  color: var(--link-color-active);
+}
+
+/* Form */
+.container,
+.container-fieldset,
+.radio-group {
+  background-color: var(--background-secondary);
+  border: 2px solid var(--border-primary);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.fieldset-textarea,
+.fieldset-policy {
+  border: none;
+}
+
+.container-fieldset {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.fieldset-css {
+  margin-bottom: 10px;
+}
+
+/* Config labels*/
+.container-label {
+  margin-bottom: 10px;
+}
+
+.container-label_select {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+label input {
+  width: 100%;
+}
+
+label input[type="checkbox"] {
+  width: 1rem;
+}
+
+/* Generic input */
+.container-fieldset input {
+  height: 2.5rem;
+  padding: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Generic select */
+.container-select {
+  height: 2.5rem;
+  border-radius: 4px;
+}
+
+/* Generic checkbox */
+.fieldset-policy {
+  padding: 0;
+}
+
+.fieldset-policy_label {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* Generic textarea */
+.container-textarea {
+  padding: 10px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  border-radius: 4px;
+}
+
+input[type="file"],
+textarea {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.fieldset-textarea {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.check {
+  margin-right: 0.5rem;
+}
+
+/* Actions */
+/* Add a :focus pseudo-class to the input and textarea elements to change their border color when focused. */
+.container-input:focus,
+.container-textarea:focus {
+  border-color: var(--input-border-focus);
+}
+
+/* The input, select and textarea elements should have an :invalid pseudo-class that changes the border color to red when invalid input is detected. */
+.container-input:invalid,
+.container-select:invalid,
+.container-textarea:invalid {
+  border-color: var(--input-border-invalid);
+}
+
+/* The input, select and textarea elements should have a :valid pseudo-class that changes the border color to green when valid input is entered. */
+.container-input:valid,
+.container-select:valid,
+.container-textarea:valid {
+  border-color: var(--input-border-valid);
+}
+
+.container-radio_label {
+  display: flex;
+  align-items: center;
+}
+
+/* Button styles */
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cta {
+  background-color: var(--button-primary-background);
+  color: var(--button-primary-text);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* The button element should have a :hover pseudo-class that changes the background color when hovered over. */
+.btn-cta:hover {
+  background-color: var(--button-primary-background-hover);
+  color: var(--button-primary-text);
+  cursor: pointer;
+}
+
+/* Use the :checked pseudo-class on .radio-group input[type="radio"] to add a border color, background color and a box shadow when the radio button is selected. */
+
+/* 1-- Native input hidden */
+.radio-group_radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+}
+
+.custom-radio {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Base style for the visual control (outer circle) */
+.container-radio_label::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--border-interactive);
+  margin-right: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Input focus state */
+.radio-group_radio:focus+.container-radio_label::before {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+.radio-group_radio:checked+.container-radio_label::before {
+  border-color: var(--color-brand-primary);
+}
+
+.radio-group_radio:checked+.container-radio_label {
+  color: var(--color-brand-primary);
+  font-weight: 500;
+}
+
+.radio-group_radio:checked+.container-radio_label::after {
+  content: '';
+  position: absolute;
+  top: 0.40rem;
+  left: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--color-brand-primary);
+}
+
+/* Add a :first-of-type pseudo-class to the input element to style the first input field differently. (e.g., rounded corners). */
+.container-initial :first-of-type {
+  border-radius: 4px;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  /* Text and paragraph */
+  p,
+  label,
+  legend,
+  .page-header_link {
+    font-size: 1.25rem;
+    text-wrap: pretty;
+  }
+
+  /* Header */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    border-bottom: 4px solid var(--header-border-bottom);
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header_container {
+    flex-direction: row;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .page-header_nav {
+    margin-bottom: 0;
+  }
+
+  .page-header_nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+  }
+
+  input[type="file"],
+  textarea {
+    padding-top: 0;
+  }
+
+  .radio-group_radio:checked+.container-radio_label::after {
+    top: 0.60rem;
+  }
+
+  .btn-cta {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1.50rem;
+  }
+
+  /* Text and paragraph */
+  p,
+  label,
+  legend,
+  .page-header_link {
+    font-size: 1.50rem;
+    text-wrap: pretty;
+  }
+
+  .radio-group_radio:checked+.container-radio_label::after {
+    top: 0.75rem;
+  }
+
+  .btn-cta {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 2.25rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1.75rem;
+  }
+
+  /* Text and paragraph */
+  p,
+  label,
+  legend,
+  .page-header_link {
+    font-size: 1.75rem;
+    text-wrap: pretty;
+  }
+
+  .container-fieldset input {
+    padding: 20px;
+  }
+
+  input[type="file"],
+  textarea {
+    padding: 0;
+  }
+
+  .radio-group_radio:checked+.container-radio_label::after {
+    top: 0.95rem;
+  }
+
+  .btn-cta {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 2rem;
+  }
+
+  /* Text and paragraph */
+  p,
+  label,
+  legend,
+  .page-header_link {
+    font-size: 2rem;
+    text-wrap: pretty;
+  }
+
+  .container-fieldset input {
+    padding: 25px;
+  }
+
+  input[type="file"],
+  textarea {
+    padding: 0;
+  }
+
+  .radio-group_radio:checked+.container-radio_label::after {
+    top: 1.15rem;
+  }
+
+  .btn-cta {
+    font-size: 2rem;
+  }
+}
