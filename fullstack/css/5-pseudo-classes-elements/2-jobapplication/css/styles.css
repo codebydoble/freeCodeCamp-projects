@@ -116,7 +116,7 @@ html {
 body {
   background-color: var(--background-primary);
   color: var(--text-primary);
-  max-width: 90dvw;
+  max-width: 100dvw;
   min-height: 100dvh;
   margin: 0 auto;
   font-family: "Inter", sans-serif;
@@ -192,6 +192,7 @@ video {
 
 /* Header */
 .page-header {
+  max-width: 100%;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
@@ -240,6 +241,11 @@ video {
 }
 
 /* Form */
+.container {
+  max-width: 90dvw;
+  margin: 0 auto;
+}
+
 .container,
 .container-fieldset,
 .radio-group {
@@ -306,6 +312,7 @@ textarea::placeholder {
 .fieldset-policy_label {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
 }
 
 /* Generic textarea */
@@ -504,6 +511,12 @@ textarea {
     width: 50vw;
   }
 
+  /* Container form */
+  .container {
+    max-width: 70dvw;
+    margin: 0 auto;
+  }
+
   input[type="file"],
   textarea {
     padding-top: 0;
@@ -515,6 +528,10 @@ textarea {
 
   .btn-cta {
     font-size: 1.25rem;
+  }
+
+  .fieldset-policy_label {
+    align-items: center;
   }
 }
 
@@ -546,12 +563,22 @@ textarea {
     text-wrap: pretty;
   }
 
+  /* Container form */
+  .container {
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
   .radio-group_radio:checked+.container-radio_label::after {
     top: 0.75rem;
   }
 
   .btn-cta {
     font-size: 1.5rem;
+  }
+
+  .fieldset-policy_label {
+    align-items: center;
   }
 }
 
@@ -583,6 +610,12 @@ textarea {
     text-wrap: pretty;
   }
 
+  /* Container form */
+  .container {
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
   .container-fieldset input {
     padding: 20px;
   }
@@ -598,6 +631,14 @@ textarea {
 
   .btn-cta {
     font-size: 1.75rem;
+  }
+
+  .fieldset-policy_label {
+    align-items: center;
+  }
+
+  label input[type="checkbox"] {
+    width: 1.5rem;
   }
 }
 
@@ -629,6 +670,12 @@ textarea {
     text-wrap: pretty;
   }
 
+  /* Container form */
+  .container {
+    max-width: 50dvw;
+    margin: 0 auto;
+  }
+
   .container-fieldset input {
     padding: 25px;
   }
@@ -644,5 +691,13 @@ textarea {
 
   .btn-cta {
     font-size: 2rem;
+  }
+
+  .fieldset-policy_label {
+    align-items: center;
+  }
+
+  label input[type="checkbox"] {
+    width: 2rem;
   }
 }
