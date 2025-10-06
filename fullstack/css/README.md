@@ -1,4 +1,4 @@
-# Design
+# 3 - Design
 
 Atomic Design is a methodology created by web designer Brad Frost to help you build user interfaces (UI) in a more structured and hierarchical way. It breaks down an interface into five distinct stages, similar to how chemistry breaks down matter.
 The goal is to move from small, foundational elements to a full, cohesive design. This approach promotes reusability, consistency, and scalability across your projects, which are all principles we've discussed.
@@ -152,7 +152,7 @@ Another design tool worth mentioning is **Canva**. You can use Canva to create a
 
 Other popular design tools developers should know are Framer, InVision, Adobe Photoshop, Adobe Illustrator, and Miro.
 
-# Absolute and relative units
+# 4 - Absolute and relative units
 
 **Absolute** length units are of fixed length and are not relative to anything else.
 
@@ -184,7 +184,76 @@ Other types of absolute units include the following:
 - The mm (millimeters) unit, which is equal to 1/10th of a centimeter
 - The q (quarter-millimeters) unit, which is equal to 1/40th of a centimeter
 
-# Pseudo-Classes
+# 5 - Pseudo Classes and Elements
+
+User Action Pseudo-classes
+Pseudo-classes Definition: These are special CSS keywords that allow you to select an element based on its specific state or position.
+User Action Pseudo-classes: These are special keywords that allow you to change the appearance of elements based on user interactions, improving the overall user experience.
+:active Pseudo-class: This pseudo-class lets you select the active state of an element, like clicking on a button.
+:hover Pseudo-class: This pseudo-class defines the hover state of an element.
+:focus Pseudo-class: This pseudo-class applies styles when an element gains focus, typically through keyboard navigation or when a user clicks into a form input.
+:focus-within Pseudo-class: This pseudo-class is used to apply styles to an element when it or any of its descendants have focus.
+Input Pseudo-classes
+Input Pseudo-classes: These pseudo-classes are used to target HTML input elements based on the state they are in before and after user interaction.
+:enabled Pseudo-class: This pseudo-class is used to target form buttons or other elements that are currently enabled.
+:disabled Pseudo-class: This pseudo-class lets you style an interactive element in disabled mode.
+:checked Pseudo-class: This pseudo-class is used to indicate to the user that it is checked.
+:valid Pseudo-class: This pseudo-class targets the input fields that meet the validation criteria.
+:invalid Pseudo-class: This pseudo-class targets the input fields that do not meet the validation criteria.
+:in-range and :out-of-range Pseudo-classes: These pseudo-classes apply styles to elements based on whether their values are within or outside specified range constraints.
+:required Pseudo-class: This pseudo-class targets input elements that have the required attribute. It signals to the user that they must fill out the field to submit the form.
+:optional Pseudo-class: This pseudo-class applies styles input elements that are not required and can be left empty.
+:autofill Pseudo-class: This pseudo-class applies styles to input fields that the browser automatically fills with saved data.
+Location Pseudo-classes
+Location Pseudo-classes: These pseudo-classes are used for styling links and elements that are targeted within the current document.
+:any-link Pseudo-class: This pseudo-class is a combination of the :link and :visited pseudo-classes. So, it matches any anchor element with an href attribute, regardless of whether it's visited or not.
+:link Pseudo-class: This pseudo-class allows you to target all unvisited links on a webpage. You can use it to style links differently before the user clicks on them.
+:local-link Pseudo-class: This pseudo-class targets links that point to the same document. It can be useful when you want to differentiate internal links from external ones.
+:visited Pseudo-class: This pseudo-class targets a link the user has visited.
+:target Pseudo-class: This pseudo-class is used to apply styles to an element that is the target of a URL fragment.
+:target-within Pseudo-class: This pseudo-class applies styles to an element when it or one of its descendants is the target of a URL fragment.
+Tree-structural Pseudo-classes
+Tree-structural Pseudo-classes: These pseudo-classes allow you to target and style elements based on their position within the document tree.
+:root Pseudo-class: This pseudo-class is usually the root html element. It helps you target the highest level in the document so you can apply a common style to the entire document.
+:empty Pseudo-class: Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an :empty pseudo-class to target empty elements.
+:nth-child(n) Pseudo-class: This pseudo-class allows you to select elements based on their position within a parent.
+:nth-last-child(n) Pseudo-class: This pseudo-class enables you to select elements by counting from the end.
+:first-child Pseudo-class: This pseudo-class selects the first element in a parent element or the document.
+:last-child Pseudo-class: This pseudo-class selects the last element in a parent element or the document.
+:only-child Pseudo-class: This pseudo-class selects the only element in a parent element or the document.
+:first-of-type Pseudo-class: This pseudo-class selects the first occurrence of a specific element type within its parent.
+:last-of-type Pseudo-class: This pseudo-class selects the last occurrence of a specific element type within its parent.
+:nth-of-type(n) Pseudo-class: This pseudo-class allows you to select a specific element within its parent based on its position among siblings of the same type.
+:only-of-type Pseudo-class: This pseudo-class selects an element if it's the only one of its type within its parent.
+Functional Pseudo-classes
+Functional Pseudo-classes: Functional pseudo-classes allow you to select elements based on more complex conditions or relationships. Unlike regular pseudo-classes which target elements based on a state (for example, :hover, :focus), functional pseudo-classes accept arguments.
+:is() Pseudo-class: This pseudo-class takes a list of selectors (ex. ol, ul) and selects an element that matches one of the selectors in the list.
+
+<p class="example">This text will change color.</p>
+<p>This text will not change color.</p>
+<p>This text will not change color.</p>
+<p class="this-works-too">This text will change color.</p>
+p:is(.example, .this-works-too) {
+    color: red;
+}
+:where() Pseudo-class: This pseudo-class takes a list of selectors (ex. ol, ul) and selects an element that matches one of the selectors in the list. The difference between :is and :where is that the latter will have a specificity of 0.
+:where(h1, h2, h3) {
+    margin: 0;
+    padding: 0;
+}
+:has() Pseudo-class: This pseudo-class is often dubbed the "parent" selector because it allows you to style elements that contain child elements specified in the selector list.
+article:has(h2) {
+    border: 2px solid hotpink;
+}
+:not() Pseudo-class: This pseudo-class is used to select elements that do not match the provided selector.
+p:not(.example) {
+  color: blue;
+}
+Pseudo-elements
+::before Pseudo-element: This pseudo-element uses the content property to insert cosmetic content like icons just before the element.
+::after Pseudo-element: This pseudo-element uses the content property to insert cosmetic content like icons just after the element.
+::first-letter Pseudo-element: This pseudo-element targets the first letter of an element's content, allowing you to style it.
+::marker Pseudo-element: This pseudo-element lets you select the marker (bullet or numbering) of list items for styling.
 
 **Here is a list of tree-structural pseudo-classes**:
 
@@ -207,7 +276,7 @@ Other types of absolute units include the following:
 :has()
 :not()
 
-# Pseudo-Elements
+## Pseudo-Elements
 
 :before
 ::after
@@ -219,3 +288,56 @@ Other types of absolute units include the following:
 ::placeholder
 ::spelling-error
 ::selection
+
+# 6 - Colors
+
+CSS Colors Review
+Color Theory
+Color Theory Definition: This is the study of how colors interact with each other and how they affect our perception. It covers color relationships, color harmony, and the psychological impact of color.
+Primary Colors: These colors which are yellow, blue, and red, are the fundamental hues from which all other colors are derived.
+Secondary Colors: These colors result from mixing equal amounts of two primary colors. Green, orange, and purple are examples of secondary colors.
+Tertiary Colors: These colors result from combining a primary color with a neighboring secondary color. Yellow-Green, Blue-Green, and Blue-Violet are examples of tertiary colors.
+Warm Colors: These colors which include reds, oranges, and yellows, evoke feelings of comfort, warmth, and coziness.
+Cool Colors: These colors which include blues, green, and purples, evoke feelings of calmness, serenity, and professionalism.
+Color Wheel: The color wheel is a circular diagram that shows how colors relate to each other. It's an essential tool for designers because it helps them to select color combinations.
+Analogous Color Schemes: These color schemes create cohesive and soothing experiences. They have analogous colors, which are adjacent to each other in the color wheel.
+Complementary Color Schemes: These color schemes create high contrast and visual impact. Their colors are located on the opposite ends of the color wheel, relative to each other.
+Triadic Color Scheme: This color scheme has vibrant colors. They are made from colors that are approximately equidistant from each other. If they are connected, they form an equilateral triangle on the color wheel.
+Monochromatic Color Scheme: For this color scheme, all the colors are derived from the same base color by adjusting its lightness, darkness, and saturation. This evokes a feeling of unity and harmony while still creating contrast.
+Different Ways to Work with Colors in CSS
+Named Colors: These colors are predefined color names recognized by browsers. Examples include blue, darkred, lightgreen.
+rgb() Function: RGB stands for Red, Green, and Blue — the primary colors of light. These three colors are combined in different intensities to create a wide range of colors. the rgb() function allows you to define colors using the RGB color model.
+p {
+color: rgb(255, 0, 0);
+}
+rgba() Function: This function adds a fourth value, alpha, that controls the transparency of the color. If not provided, the alpha value defaults to 1.
+div {
+background-color: rgba(0, 0, 255, 0.5);
+}
+hsl() Function: HSL stands for Hue, Saturation, and Lightness — three key components that define a color.
+p {
+color: hsl(120, 100%, 50%);
+}
+hsla() Function: This function adds a fourth value, alpha, that controls the opacity of the color.
+div {
+background-color: hsla(0, 100%, 50%, 0.5);
+}
+Hexadecimal: A hex code (short for hexadecimal code) is a six-character string used to represent colors in the RGB color model. The "hex" refers to the base-16 numbering system, which uses digits 0 to 9 and letters A to F.
+h1 {
+color: #FF5733; /_ A reddish-orange color _/
+}
+
+p {
+background-color: #4CAF50; /_ A shade of green _/
+}
+Linear and Radial Gradients
+Linear Gradients: These gradients create a gradual blend between colors along a straight line. You can control the direction of this line using keywords like to top, to right, to bottom right, or angles like 45deg. You can use any valid CSS color and as many color stops as you would like.
+.linear-gradient {
+background: linear-gradient(45deg, red, #33FF11, rgba(100, 100, 255, 0.5));
+height: 40vh;
+}
+Radial Gradients: These gradients create circular or elliptical gradients that radiate from a central point.
+.radial-gradient {
+background: radial-gradient(circle, red, blue);
+height: 40vh;
+}
