@@ -1,0 +1,323 @@
+/*
+Project: freeCodeCamp Music Video Player
+Author: Yoandy Doble Herrera
+Color Palette: Dark Mode
+*/
+
+:root {
+    /* -- Base Palette -- */
+    /* Deep navy blue. */
+    --color-background-deep: #1A1B26;
+
+    /* Slightly softened white. */
+    --color-text-bright: #F0F0F0;
+
+    /* Light gray. */
+    --color-text-muted: #A9A9A9;
+
+    /* Cyberpunk aesthetic. */
+    --color-brand-neon: #00BFFF;
+    /* Cyber Blue */
+    --color-accent-vivid: #F92672;
+    /* Hyper Pink */
+
+    /* Bright yellow. */
+    --color-focus-highlight: #FFD700;
+    /* Gold Rush */
+
+    /* 1. Background & Text */
+    --background-primary: var(--color-background-deep);
+    --background-secondary: #242535;
+    /* Cards or sections. */
+    --text-primary: var(--color-text-bright);
+    --text-secondary: var(--color-text-muted);
+    /* Vivid buttons. */
+    --text-on-brand: var(--color-background-deep);
+
+    /* 2. Borders & Separators */
+    --border-primary: #333448;
+    --border-interactive: #4A4B63;
+
+    /* 3. Brand & Accent Colors */
+    --brand-color: var(--color-brand-neon);
+    --focus-ring-color: var(--color-focus-highlight);
+
+    /* 4. Link States */
+    --link-color: var(--color-accent-vivid);
+    --link-color-visited: var(--color-accent-vivid);
+    --link-color-hover: #FF7ACC;
+    --link-color-active: #E6005C;
+
+    /* 5. Buttons */
+    /* Primary Button */
+    --button-primary-background: var(--color-brand-neon);
+    --button-primary-text: var(--text-on-brand);
+    --button-primary-background-hover: #66D9FF;
+
+    /* Secondary Button */
+    --button-secondary-background: transparent;
+    --button-secondary-text: var(--color-brand-neon);
+    --button-secondary-border: var(--color-brand-neon);
+    --button-secondary-background-hover: rgba(0, 191, 255, 0.1);
+
+    /* 6. Input Fields */
+    --input-background: #242535;
+    --input-text: var(--text-primary);
+    --input-placeholder: var(--text-secondary);
+    --input-border: var(--border-interactive);
+    --input-border-hover: var(--color-text-muted);
+    --input-border-focus: var(--brand-color);
+
+    /* 7. Feedback States */
+    --feedback-error-background: rgba(249, 38, 114, 0.1);
+    --feedback-error-text: var(--color-accent-vivid);
+    --input-border-error: var(--color-accent-vivid);
+
+    --feedback-success-background: rgba(0, 191, 255, 0.1);
+    --feedback-success-text: var(--color-brand-neon);
+    --input-border-success: var(--color-brand-neon);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    font-size: 100%;
+    text-size-adjust: none;
+}
+
+/* Default settings */
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    line-height: 1.5;
+}
+
+/* Titles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Slab", serif;
+    font-style: normal;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+/* clamp() adaptable and fluid typography 
+   font-size: clamp(MIN, PREFER, MAX);
+ */
+
+h1 {
+    /* Min 1.75rem, Max de 3rem. */
+    font-size: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
+}
+
+h2 {
+    /* Min 1.5rem, Max 2.5rem. */
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+h3 {
+    /* Min 1.25rem, Max 2rem. */
+    font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2rem);
+}
+
+/* Small heading and paragraph */
+h4,
+h5,
+h6,
+p {
+    /* Min 1rem, Max 1.125rem. */
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+/* Make images easier to work */
+img,
+svg,
+picture,
+audio,
+video {
+    display: block;
+    max-width: 100dvw;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 0.6rem;
+}
+
+/* Layout and Reusable Components */
+/* Header */
+.header-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.header-container,
+.main,
+.footer {
+    width: 90dvw;
+    /* Apply clam later*/
+    margin: 0.6rem auto;
+}
+
+/* Logo and Heading -header- */
+.header-container_div {
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.header-logo {
+    width: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
+    height: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
+    border-radius: 0.6rem;
+}
+
+/* Main heading */
+.header-title {
+    margin-left: 1rem;
+}
+
+/* List items */
+.header-list {
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.header-list_item {
+    list-style: none;
+    text-align: center;
+    background-color: var(--background-secondary);
+}
+
+.header-list_link {
+    color: var(--text-primary);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+.header-list_link:hover {
+    color: var(--text-secondary);
+}
+
+.header-list_link:active {
+    color: var(--link-color-active);
+}
+
+.main-article {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.section-landing {
+    /*background: no-repeat center/cover url("../assets/images/promo.webp");*/
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("../assets/images/promo.webp") no-repeat center/cover;
+    width: 100%;
+    height: 90dvh;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Text */
+.article-text_secondary {
+    color: var(--text-secondary);
+}
+
+/* Text strong element */
+.highlights {
+    color: var(--text-primary);
+}
+
+.video-file {
+    margin: 0.6rem auto;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Links like buttons */
+.article-link {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-text);
+    padding: 0.7rem 1.5rem;
+    border-radius: 1.8rem;
+    text-wrap: nowrap;
+}
+
+.article-link:visited {
+    color: var(--button-primary-text);
+}
+
+.article-link:hover {
+    background-color: var(--button-primary-background-hover);
+}
+
+.audio-file {
+    margin: 0.6rem auto;
+    height: 3.5rem;
+}
+
+.footer-text {
+    margin: 1.2rem auto;
+}
+
+@media screen and (width >=768px) {
+
+    /* Header */
+    .header-container {
+        flex-flow: row nowrap;
+    }
+
+    .header-container_div {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .header-list {
+        width: 14rem;
+        height: auto;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}
