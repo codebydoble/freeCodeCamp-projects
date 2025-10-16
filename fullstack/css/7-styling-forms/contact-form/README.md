@@ -17,11 +17,11 @@ Build an app that is functionally similar to this example project. Try not to co
 4.  [x] Each input and textarea elements should have their corresponding label element with a for attribute set to the element's id.
 5.  [x] The .form-container element should have a background color, and have values for border-radius, padding, and width.
 6.  [x] The label elements should have a margin and a font color.
-7.  [] The input and textarea elements should have values for:
+7.  [x] The input and textarea elements should have values for:
     - width.
     - padding.
     - Margin on the bottom.
-8.  [] The button element should have a:
+8.  [x] The button element should have a:
     - Background color
     - Font size apart from the default.
     - The button should have a hover effect that changes the background color.
