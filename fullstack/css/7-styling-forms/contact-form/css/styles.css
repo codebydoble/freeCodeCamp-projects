@@ -240,6 +240,13 @@ button {
     color: var(--feedback-error-color);
 }
 
+.btn-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-form {
     background-color: var(--button-background);
     color: var(--button-text);
