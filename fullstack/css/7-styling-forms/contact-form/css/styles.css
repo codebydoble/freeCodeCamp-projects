@@ -1,0 +1,289 @@
+/*
+============================================
+--- COLOR PALETTE: CONTACT FORM (DARK MODE) ---
+============================================
+Project: Contact Form freeCodeCamp
+Author: Yoandy Doble Herrera
+Date: 13-10-2025
+Color theory: Navy blue and gray.
+*/
+
+:root {
+    /* -- Base Palette -- */
+    /* A deep navy blue. */
+    --color-navy-deep: #0A192F;
+    /* A light, slate-blue gray. */
+    --color-slate-light: #CCD6F6;
+    /* Muted gray. */
+    --color-slate-muted: #8892B0;
+    /* Gold as the accent color for all interactive elements. */
+    --color-accent-gold: #FFC107;
+
+
+    /* --- Functional Assignment --- */
+
+    /* 1. Backgrounds */
+    --background-primary: var(--color-navy-deep);
+    --background-secondary: #112240;
+
+    /* 2. Typography */
+    --text-primary: var(--color-slate-light);
+    --text-secondary: var(--color-slate-muted);
+    --text-on-accent: #0A141F;
+
+    /* 3. Links */
+    --link-color: var(--color-accent-gold);
+    --link-color-visited: var(--color-accent-gold);
+    --link-color-hover: #FFD54F;
+    --link-color-active: #FFA000;
+
+    /* 4. Buttons - Primary */
+    --button-background: var(--color-accent-gold);
+    --button-text: var(--text-on-accent);
+    --button-background-hover: var(--link-color-hover);
+
+    /* 5. Borders & Outlines */
+    --border-color: #233554;
+    --outline-color-focus: var(--color-accent-gold);
+
+    /* 6. Shadows */
+    /* Glows or deeper tones. */
+    --drop-shadow-color: rgba(2, 12, 27, 0.7);
+
+    /* 7. Input Fields */
+    --input-background: var(--background-secondary);
+    --input-text: var(--text-primary);
+    --input-placeholder: var(--text-secondary);
+    --input-border: var(--border-color);
+    --input-border-hover: var(--color-slate-muted);
+    --input-border-focus: var(--outline-color-focus);
+
+    /* 8. Feedback States */
+    /* Colors for displaying success or error messages after submission. */
+    --feedback-success-color: #64FFDA;
+    --feedback-error-color: #FF5252;
+    --input-border-success: var(--feedback-success-color);
+    --input-border-error: var(--feedback-error-color);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    font-size: 100%;
+    text-size-adjust: none;
+}
+
+/* Main configuration */
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-wrap: balance;
+    max-width: 100%;
+    min-height: 100dvh;
+
+
+    /*margin: 0.8rem auto 0;*/
+    line-height: 1.5;
+}
+
+/* Heading */
+h1,
+h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.1;
+}
+
+h1 {
+    /*font-size: 2rem;*/
+    font-size: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
+}
+
+h2 {
+    /*font-size: 1.5rem;*/
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+/* Text */
+p {
+    text-wrap: pretty;
+}
+
+/* List */
+li {
+    list-style: none;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 0.4rem 0;
+    color: inherit;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+/* Layer and reusable components */
+.header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0.8rem auto;
+}
+
+.header-title,
+.header-nav_list {
+    margin-bottom: 0.8rem;
+}
+
+/* Links */
+.header-nav_link {
+    color: var(--link-color);
+}
+
+.header-nav_link:hover {
+    color: var(--link-color-hover);
+}
+
+.header-nav_link:visited {
+    color: var(--link-color-visited);
+}
+
+.header-nav_link:active {
+    color: var(--link-color-active);
+}
+
+/* Form */
+.form-container {
+    background-color: var(--background-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    width: 90%;
+    margin: 0.8rem auto;
+}
+
+.fieldset {
+    border: none;
+    margin-bottom: 0.9rem;
+}
+
+.fieldset-input,
+.fieldset-textarea {
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    margin-bottom: auto;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+}
+
+.fieldset-input::placeholder,
+.fieldset-textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+.fieldset-input:valid,
+.fieldset-textarea:valid {
+    outline: 2px solid var(--input-border-success);
+    border: 2px solid var(--input-border-success);
+}
+
+.fieldset-input:invalid,
+.fieldset-textarea:invalid {
+    outline: 2px solid var(--input-border-error);
+    border: 2px solid var(--input-border-error);
+}
+
+.fieldset-input:hover,
+.fieldset-textarea:hover {
+    border: 2px solid var(--input-border-hover);
+    outline: 2px solid var(--input-border-hover);
+}
+
+.fieldset-input:focus,
+.fieldset-textarea:focus {
+    outline: 2px solid var(--outline-color-focus);
+    border: 2px solid var(--outline-color-focus);
+}
+
+.fieldset-textarea {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.label-required {
+    color: var(--feedback-error-color);
+}
+
+.btn-form {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.btn-form:hover {
+    background-color: var(--button-background-hover);
+}
+
+.footer-text {
+    margin-left: 2vw;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 0.8rem;
+    }
+
+    .header-nav_list {
+        width: 20vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 60ch;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form-container {
+        width: 70ch;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .header-nav_list {
+        width: 15vw;
+    }
+}

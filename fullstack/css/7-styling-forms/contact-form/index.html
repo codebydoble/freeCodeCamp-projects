@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <meta name="description"
+        content="Form that allows users to send messages, inquiries, or requests directly to the CODEBYDOBLE LTD through our website.">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="CODEBYDOBLE">
+    <link rel="manifest" href="assets/images/icons/site.webmanifest">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">CODEBYDOBLE LTD</h1>
+        <nav>
+            <ul class="header-nav_list">
+                <li>
+                    <a href="#" class="header-nav_link">Home</a>
+                </li>
+                <li>
+                    <a href="#headerSubtitle" class="header-nav_link">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div role="main" class="form-container" aria-labelledby="headerSubtitle">
+        <form action="contact.php" method="post">
+            <h2 id="headerSubtitle" class="header-title">Contact Us</h2>
+            <fieldset class="fieldset">
+                <label for="name">Full name <span class="label-required">*</span></label>
+                <input type="text" name="name" id="name" class="fieldset-input" placeholder="Yoandy Doble Herrera"
+                    autocomplete="name" required>
+            </fieldset>
+            <fieldset class="fieldset">
+                <label for="email">Email <span class="label-required">*</span></label>
+                <input type="email" name="email" id="email" class="fieldset-input" placeholder="email@codebydoble.com"
+                    autocomplete="email" inputmode="email" required>
+            </fieldset>
+            <fieldset class="fieldset">
+                <label for="message">Leave us a few words <span class="label-required">*</span></label>
+                <textarea class="fieldset-textarea" name="message" id="message" cols="30" rows="10"
+                    placeholder="Write your message" required></textarea>
+            </fieldset>
+            <button type="submit" class="btn-form">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p class="footer-text">&copy; freeCodeCamp, @codebydoble, 2025. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
