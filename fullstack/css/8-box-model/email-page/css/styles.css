@@ -1,0 +1,190 @@
+/*
+Project: Confidential email for freeCodeCamp
+Author: Yoandy Doble Herrera - codebydoble
+Section: The Box Model
+Date: 16-10-2025 
+A secure, professional, and accessible dark-mode palette.
+*/
+
+:root {
+    /* Desaturated blue-gray. */
+    --color-gray-deep: #111827;
+    /* A slightly lighter gray for secondary surfaces like cards or input fields. */
+    --color-gray-medium: #1F2937;
+    /* A bright, readable gray for primary text content. */
+    --color-text-primary-base: #E5E7EB;
+    /* A muted gray for secondary text, labels, and placeholders. */
+    --color-text-muted-base: #9CA3AF;
+
+    /* A secure teal serves as the primary accent for all interactive elements. */
+    --color-brand-secure: #10B981;
+    /* A vivid blue reserved specifically for the focus ring to ensure it's always visible. */
+    --color-focus-highlight: #3B82F6;
+
+
+    /* --- Functional Assignment --- */
+
+    /* 1. Backgrounds */
+    --background-primary: var(--color-gray-deep);
+    --background-secondary: var(--color-gray-medium);
+
+    /* 2. Typography */
+    --text-primary: var(--color-text-primary-base);
+    --text-secondary: var(--color-text-muted-base);
+    /* Text used on top of brand-colored elements. */
+    --text-on-brand: var(--color-gray-deep);
+
+    /* 3. Borders & Separators */
+    --border-primary: #374151;
+    /* For static dividers and containers. */
+    --border-interactive: #4B5563;
+    /* For elements the user can interact with. */
+
+    /* 4. Links & Interactive Text */
+    --link-color: var(--color-brand-secure);
+    --link-color-visited: var(--color-brand-secure);
+    --link-color-hover: #34D399;
+    /* A slightly lighter teal for hover. */
+    --link-color-active: #059669;
+    /* A slightly darker teal for the active/click state. */
+
+    /* 5. Primary Buttons */
+    --button-primary-background: var(--color-brand-secure);
+    --button-primary-text: var(--text-on-brand);
+    --button-primary-border: var(--color-brand-secure);
+    --button-primary-background-hover: var(--link-color-hover);
+
+    /* 6. Secondary Buttons */
+    --button-secondary-background: transparent;
+    --button-secondary-text: var(--link-color);
+    --button-secondary-border: var(--border-interactive);
+    --button-secondary-background-hover: rgba(16, 185, 129, 0.1);
+    /* Subtle teal glow on hover. */
+    --button-secondary-border-hover: var(--link-color);
+
+
+
+    /* 8. Highly visible ring on keyboard navigation. */
+    --focus-ring-color: var(--color-focus-highlight);
+
+    /* 9. Feedback States */
+    /* -- Success -- */
+    --feedback-success-text: #34D399;
+    --feedback-success-background: rgba(16, 185, 129, 0.1);
+    --feedback-success-border: #059669;
+
+    /* -- Error -- */
+    --feedback-error-text: #F87171;
+    --feedback-error-background: rgba(239, 68, 68, 0.1);
+    --feedback-error-border: #DC2626;
+
+    /* -- Warning -- */
+    --feedback-warning-text: #FBBF24;
+    --feedback-warning-background: rgba(251, 191, 36, 0.1);
+    --feedback-warning-border: #D97706;
+}
+
+/* CSS Normalize */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid inflation text*/
+html {
+    font-size: 100%;
+    text-size-adjust: none;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-wrap: balance;
+    max-width: 100%;
+    min-height: 100dvh;
+    line-height: 1.5;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+
+h1,
+h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* Layout and reusable components */
+.header {
+    width: 100%;
+    height: 20dvh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.header-title {
+    text-align: center;
+}
+
+/* Main configuration */
+/* Your #email element should have padding of 50px, a top margin of 50px, a width of 500px, and a border that's 2px. */
+#email {
+    /* Not recommended */
+    padding: 50px;
+    margin-top: 50px;
+    width: 500px;
+    border: 2px solid var(--border-primary);
+    /* The total width of your #email element, including paddings and borders, should be 500px. */
+    box-sizing: border-box;
+}
+
+#confidential,
+#top-secret {
+    /* Not recommended */
+    /*Your #confidential and #top-secret elements should have a display of inline-block.*/
+    display: inline-block;
+    /* Your #confidential and #top-secret elements should have a padding, a left margin, and a border. */
+    padding: 0.6rem;
+    margin-left: 0.6rem;
+    border: 10px solid var(--feedback-error-border);
+    /* Your #confidential and #top-secret elements should be rotated using a CSS transform. */
+    transform: rotate(-25deg) translate(200px, 100px);
+}
+
+.main {
+    min-height: 100dvh;
+    margin: 0 auto;
+    background-color: var(--background-secondary);
+    border-radius: 10px;
+}
+
+.text {
+    margin-top: 5px;
+}
+
+.blurred {
+    /* You should have a blurred selector that blurs the element 3px using a CSS filter. */
+    filter: blur(3px);
+}
+
+.footer-text {
+    margin-left: 1rem;
+}
