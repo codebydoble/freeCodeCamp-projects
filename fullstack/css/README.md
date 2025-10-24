@@ -341,3 +341,20 @@ Radial Gradients: These gradients create circular or elliptical gradients that r
 background: radial-gradient(circle, red, blue);
 height: 40vh;
 }
+
+CLAMP FUNTION
+Ejemplo 1: Tipografía Fluida (El uso más común)
+h1 {
+font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+Ejemplo 2: Ancho de Contenedor (Layout)
+.container {
+width: clamp(20rem, 90vw, 70ch);
+margin: 0 auto;
+}
+
+Ejemplo 3: Espaciado (Padding)
+.hero-section {
+padding: clamp(2rem, 5vw, 4rem);
+}

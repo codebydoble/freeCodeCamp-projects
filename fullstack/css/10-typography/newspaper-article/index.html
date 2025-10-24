@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="description"
+        content="Live news, investigations, opinion, photos and video by the journalists of The Codebydoble Newspaper around the world. Subscribe for coverage of international news and technology.">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
+    <title>The Codebydoble Newspaper</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header-page">
+        <div role="heading" class="heading">
+            <nav class="header-page_nav">
+                <ul class="header-page_list header-page_list_mobile">
+                    <li><a href="#" class="header-page_link"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+                <ul class="header-page_list header-page_list_desktop">
+                    <li><a href="#" class="header-page_link"><i class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"></i>SEARCH</a>
+                    </li>
+                    <li><a href="#newsletter" class="header-page_link"><i class="fa-regular fa-envelope"
+                                aria-hidden="true"></i>NEWSLETTER</a></li>
+                </ul>
+            </nav>
+            <h1 class="header-page_title">Code Times</h1>
+            <nav class="header-page_nav">
+                <ul class="header-page_list header-page_list_mobile">
+                    <li><a href="#" class="header-page_link"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+                <ul class="header-page_list header-page_list_desktop">
+                    <li><a href="#newsletter" class="header-page_link"><i class="fa-solid fa-user"
+                                aria-hidden="true"></i> LOG IN</a>
+                    </li>
+                    <li><a href="#" class="header-page_link">
+                            Subscribe <br> for $0.25/week</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <ul class="header-page_list header-page_list_mobile heading">
+            <li><a href="#" class="header-page_link">HOME</a></li>
+            <li><a href="#newsletter" class="header-page_link">WATCHLIST</a></li>
+            <li><a href="#" class="header-page_link">SUBSCRIBE</a></li>
+        </ul>
+    </header>
+    <main class="main-container">
+        <article id="newsletter" class="newspaper">
+            <h2 class="name">The Digital Chronicle</h2>
+            <h3 class="headline">The CSS Revolution: How Modern Layouts are Ditching Grids for a Fluid Future</h3>
+            <h4 class="sub-headline">Developers are embracing intrinsic design principles, creating websites that adapt
+                seamlessly to any screen size without rigid breakpoints.</h4>
+            <time datetime="2025-10-19T09:00:00" class="date">Oct. 19, 2025</time>
+            <p class="author">By Yoandy Doble Herrera</p>
+            <p class="text">For years, web developers have relied on a system of rigid breakpoints and media queries to
+                make websites responsive. This approach, while functional, often resulted in jarring shifts in layout as
+                a user resized their browser window. But a paradigm shift is underway, driven by a philosophy known as
+                "intrinsic design." Instead of dictating how a layout should look at specific screen sizes, developers
+                are now creating components that intrinsically know how to adapt, resulting in a truly fluid and elegant
+                user experience.
+            </p>
+            <p class="text">
+                At the heart of this revolution are modern CSS features like Flexbox, Grid, and powerful functions such
+                as
+                clamp(). These tools allow elements to grow, shrink, and wrap based on the available space, not on
+                predefined pixel widths. A navigation bar might gracefully stack its links on a narrow screen and spread
+                them out on a wide one, all with a few lines of declarative code. This approach not only simplifies the
+                stylesheet but also future-proofs the design, ensuring it looks great on devices that don't even exist
+                yet.
+            </p>
+            <p class="text">
+                Flexbox, for instance, has fundamentally changed component-level design. By treating elements as
+                flexible
+                items within a container, it allows for effortless alignment and distribution of space along a single
+                axis.
+                This one-dimensional control is perfect for lining up items in a header, centering a button in a card,
+                or
+                ensuring that footer elements space themselves out evenly, regardless of the text length. The days of
+                complex float-based hacks or table layouts for simple alignment tasks are now a distant memory.
+            </p>
+            <p class="text">
+                While Flexbox excels at one-dimensional layouts, CSS Grid handles the more complex, two-dimensional
+                challenges of overall page structure. It allows developers to define columns and rows, creating a
+                sophisticated scaffold for content that was previously only achievable with cumbersome frameworks. From
+                magazine-style articles with overlapping images to complex dashboards with multiple panels, Grid
+                provides a
+                native, powerful, and surprisingly readable way to manage the entire page canvas with precision.
+            </p>
+            <p class="text">
+                Perhaps the most subtle yet impactful innovation is the rise of fluid typography and spacing using the
+                clamp() function. This function acts like a smart thermostat for CSS properties, defining a minimum
+                size, a
+                maximum size, and a preferred, scalable value tied to the screen's width. Headlines and paragraphs now
+                grow
+                and shrink smoothly as the viewport changes, eliminating the need for multiple font-size declarations in
+                media queries. This ensures text is always perfectly sized and readable on any device.
+            </p>
+            <p class="text">
+                This shift toward intrinsic design is also fostering a more collaborative relationship between designers
+                and
+                developers. Instead of designing static mockups for a handful of screen sizes, teams are now building
+                robust
+                design systems based on flexible components and rules. The conversation has moved from "how should this
+                look
+                on an iPhone?" to "how should this component behave when it has more or less space?" This
+                component-driven
+                mindset leads to more consistent, maintainable, and scalable products.
+            </p>
+            <p class="text">
+                The journey doesn't end here. The recent widespread adoption of container queries represents the next
+                frontier, allowing components to respond to the dimensions of their parent container rather than the
+                entire
+                viewport. A single "card" component could display as a compact block in a narrow sidebar and expand into
+                a
+                detailed, multi-column layout when placed in a wider main content area. This level of contextual
+                awareness
+                solidifies the web's evolution into a truly dynamic and adaptive medium.
+            </p>
+        </article>
+    </main>
+    <footer class="footer-page">
+        <p class="footer-page_text">&copy; 2025 freeCodeCamp. All rigths reserved. Made with <i
+                class="fa-solid fa-heart fa-beat"></i> by @codebydoble</p>
+    </footer>
+</body>
+
+</html>
