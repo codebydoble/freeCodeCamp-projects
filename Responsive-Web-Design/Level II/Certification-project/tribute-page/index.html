@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tribute page of Steve Jobs" />
-    <link rel="icon" type="img/png" href="resources/apple-64px.png" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Tribute Page</title>
-  </head>
 
-  <body>
-    <!--layout gris-->
-    <main class="principal" id="main">
-      <header class="header">
-        <h1 id="title">Steve Jobs</h1>
-        <p>Pioneer of the personal computer revolution</p>
-        <div class="photo-fix">
-          <figure id="img-div">
-            <img id="image" alt="Fotografía de Steve Jobs" src="resources/steve-jobs-main-image.jpg" />
-            <figcaption class="caption" id="img-caption">Photography "An Enduring Force", photographer Albert Watson.</figcaption>
-          </figure>
-        </div>
-      </header>
-      <h2>Here's a time line of Steve's life:</h2>
-      <ul id="tribute-info">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A tribute page for Steve Jobs: pioneer of the personal computer revolution.">
+  <meta name="author" content="Yoandy Doble Herrera">
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="icon" type="image/png" href="assets/images/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+  <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="assets/images/icons/site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Steve Jobs</title>
+</head>
+
+<body>
+  <!--layout gris-->
+  <header class="header" aria-label="title">
+    <a href="#" class="header-link header-link_mobile"><i class="fa-solid fa-bars" aria-hidden="true"></i></a>
+    <a href="#" class="header-link header-link_desktop">HOME</a>
+    <a href="#" class="header-link header-link_desktop">JOB'S LIFE</a>
+    <h1 id="title" class="header-title">Job's Legacy</h1>
+    <a href="#" class="header-link header-link_compound"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <p class="text text-desktop">SEARCH</p>
+    </a>
+  </header>
+  <main class="main" id="main">
+    <figure id="img-div" class="main-img_div">
+      <img id="image" class="main-img" alt="Iconic picture of Steve Jobs" src="assets/images/steve-jobs-main-image.jpg">
+      <figcaption class="main-caption" id="img-caption">Photography "An Enduring Force", photographer Albert Watson.
+      </figcaption>
+    </figure>
+    <article class="main-article">
+      <h2 class="header-subtitle">Steve's Job life:</h2>
+      <ul id="tribute-info" class="main-list">
         <li><strong>1955</strong> - Born in San Francisco, California.</li>
         <li><strong>1972</strong> - Jobs attends Reed College in Portland, Oregon, but drops out after six months.</li>
-        <li><strong>1974</strong> - Steve Jobs gets a job at Atari, a video game company, where he meets Steve Wozniak.</li>
+        <li><strong>1974</strong> - Steve Jobs gets a job at Atari, a video game company, where he meets Steve Wozniak.
+        </li>
         <li><strong>1976</strong> - Jobs and Wozniak found Apple Computer, Inc. in Jobs' parents' garage.</li>
         <li><strong>1977</strong> - The Apple II, Apple's first successful personal computer, is launched.</li>
-        <li><strong>1980</strong> - Apple goes public and becomes one of the most successful initial public offerings in history.</li>
+        <li><strong>1980</strong> - Apple goes public and becomes one of the most successful initial public offerings in
+          history.</li>
         <li><strong>1983</strong> - Apple's Lisa computer is launched, the first with a graphical user interface.</li>
-        <li><strong>1984</strong> - Apple launches the Macintosh, a revolutionary personal computer with a mouse and graphical user interface.</li>
-        <li><strong>1985</strong> - Jobs is fired from Apple after a power struggle with the company's then-CEO, John Sculley.</li>
+        <li><strong>1984</strong> - Apple launches the Macintosh, a revolutionary personal computer with a mouse and
+          graphical user interface.</li>
+        <li><strong>1985</strong> - Jobs is fired from Apple after a power struggle with the company's then-CEO, John
+          Sculley.</li>
         <li><strong>1986</strong> - Steve Jobs co-founds NeXT Inc., a computer and software development company.</li>
         <li><strong>1986</strong> - Purchases The Graphics Group, which eventually becomes Pixar Animation Studios.</li>
-        <li><strong>1996</strong> - Apple acquires NeXT Inc., and Steve Jobs returns to the company as an advisor and later becomes interim CEO.</li>
+        <li><strong>1996</strong> - Apple acquires NeXT Inc., and Steve Jobs returns to the company as an advisor and
+          later becomes interim CEO.</li>
         <li><strong>1997</strong> - Jobs becomes Apple's CEO permanently and leads the company's restructuring.</li>
-        <li><strong>2001</strong> - The iPod is launched, a digital music player that revolutionizes the music industry.</li>
+        <li><strong>2001</strong> - The iPod is launched, a digital music player that revolutionizes the music industry.
+        </li>
         <li>
-          <strong>2007</strong> - Steve Jobs introduces the iPhone, a device that combines a mobile phone, iPod, and communications device into one, ushering in the era of the
+          <strong>2007</strong> - Steve Jobs introduces the iPhone, a device that combines a mobile phone, iPod, and
+          communications device into one, ushering in the era of the
           smartphone.
         </li>
         <li><strong>2010</strong> - The iPad, a tablet that redefines mobile computing, is launched.</li>
         <li><strong>2011</strong> - Dies at the age of 56.</li>
       </ul>
-      <p class="phrase">"The people who are crazy enough to think they can change the world are the ones who do."</p>
+      <p class="text phrase">"The people who are crazy enough to think they can change the world are the ones who do."
+      </p>
       <p class="phrase">-- Steven Paul Jobs --</p>
       <p class="promo">
-        <strong
-          >If you have time, you should read more about this incredible human being on his
-          <a id="tribute-link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Steve_Jobs">Wikipedia entry</a>.</strong
-        >
+        <strong>If you have time, you should read more about this incredible human being on his
+          <a id="tribute-link" class="header-link" target="_blank" rel="noopener noreferrer"
+            href="https://en.wikipedia.org/wiki/Steve_Jobs">Wikipedia entry</a>.</strong>
       </p>
-    </main>
-    <footer>
-      <!--Pie de página-->
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
       <div class="direction">
-        <img id="logo-freecodecamp" alt="Logo freeCodeCamp" src="resources/logo_freecodecamp.png" />
-        <a id="link-freecodecamp" target="_blank" rel="noopener noreferrer" href="https://www.freecodecamp.org/">freeCodeCamp</a>
+        <h3>Job's Legacy</h3>
+        <a id="link-freecodecamp" target="_blank" rel="noopener noreferrer" href="https://www.freecodecamp.org/"
+          hreflang="en-US" title="freeCodeCamp website" class="header-link"
+          aria-label="Link of freeCodeCamp website."><img id="logo-freecodecamp" class="footer-img"
+            alt="Logo freeCodeCamp" src="assets/images/logo_freecodecamp.png"></a>
       </div>
-      <div class="site-title">
-        <p><strong id="yellow-title">Tribute Page</strong></p>
-      </div>
-      <div class="author">
-        <address>Matanzas, Cuba<br />Calle Industria #9 entre Genios y Refugio</address>
-        <p>Created by Yoandy Doble Herrera</p>
-        <p>2023</p>
-      </div>
-    </footer>
-  </body>
+      <address class="footer-address">
+        <p>Contact the author of this page:</p>
+        <a href=" mailto:yoandy.doble@gmail.com" class="header-link">yoandy.doble@gmail.com</a><br />
+        <a href="tel:+14155550132" class="header-link">+1 (415) 555‑0132</a>
+      </address>
+    </div>
+    <p class="footer-text">&copy; 2023. Created by Yoandy Doble Herrera. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
