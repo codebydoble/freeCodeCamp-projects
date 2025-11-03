@@ -358,3 +358,167 @@ Ejemplo 3: Espaciado (Padding)
 .hero-section {
 padding: clamp(2rem, 5vw, 4rem);
 }
+
+# 12 - Positioning
+
+Working With Floats
+Definition: Floats are used to remove an element from its normal flow on the page and position it either on the left or right side of its container. When this happens, the text will wrap around that floated content.
+float: left;
+float: right;
+Clearing Floats: The clear property is used to determine if an element needs to be moved below the floated content. When you have multiple floated elements stacked next to each other, there could be issues with overlap and collapsing in the layouts. So a clearfix hack was created to fix this issue.
+.clearfix::after {
+content: "";
+display: block;
+clear: both;
+}
+Static, Relative and Absolute Positioning
+Static Positioning: This is the normal flow for the document. Elements are positioned from top to bottom and left to right one after another.
+Relative Positioning: This allows you to use the top, left, right and bottom properties to position the element within the normal document flow. You can also use relative positioning to make elements overlap with other elements on the page.
+.relative {
+position: relative;
+top: 30px;
+left: 30px;
+}
+Absolute Positioning: This allows you to take an element out of the normal document flow, making it behave independently from other elements.
+.positioned {
+position: absolute;
+top: 30px;
+left: 30px;
+background-color: coral;
+}
+Fixed and Sticky Positioning
+Fixed Positioning: When an element is positioned with position: fixed, it is removed from the normal document flow and placed relative to the viewport, meaning it stays in the same position even when the user scrolls. This is often used for elements like headers or navigation bars that need to remain visible at all times.
+.navbar {
+position: fixed;
+top: 0;
+width: 100%;
+}
+Sticky Positioning: This type of positioning will act as a relative positioned element as you scroll down the page. If you specify a top, left, right or bottom property, then the element will stop acting like a relatively positioned element and start behaving like a fixed position element.
+.positioned {
+position: sticky;
+top: 30px;
+left: 30px;
+}
+Working With the z-index Property
+Definition: The z-index property in CSS is used to control the vertical stacking order of positioned elements that overlap on the page.
+.container {
+position: relative;
+width: 300px;
+height: 300px;
+border: 1px solid black;
+}
+
+.box1 {
+position: absolute;
+z-index: 1;
+background: lightcoral;
+top: 20px;
+left: 20px;
+width: 100px;
+height: 100px;
+}
+
+**GENERAL**
+
+1. Cómo Agregar los Protocolos (El Código)
+   Ambos protocolos viven en el <head> de tu página. Open Graph (OG) es la base que usan Facebook, LinkedIn, Pinterest y WhatsApp. Twitter Cards usa las etiquetas de OG como fallback, pero te permite un control más específico para la plataforma X (Twitter).
+
+La mejor práctica es implementar OG primero y luego añadir las etiquetas específicas de Twitter.
+
+📜 Ejemplo Completo para tu <head>
+Aquí tienes un ejemplo práctico y listo para usar que combina ambos.
+
+HTML
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Título de tu Página Web</title>
+  
+  <meta name="description" content="Esta es la descripción normal de tu página para Google.">
+
+  <meta property="og:title" content="Un Título Atractivo para Redes Sociales">
+  
+  <meta property="og:description" content="Una descripción concisa y llamativa que invite al clic cuando se comparta.">
+  
+  <meta property="og:url" content="https://www.tu-sitio-web.com/pagina-actual">
+  
+  <meta property="og:type" content="website">
+  
+  <meta property="og:image" content="https://www.tu-sitio-web.com/assets/imagen-social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta property="og:site_name" content="Nombre de tu Sitio Web">
+
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@TuUsuarioDeTwitter">
+  
+  <meta name="twitter:title" content="Un Título Atractivo para Redes Sociales">
+  <meta name="twitter:description" content="Una descripción concisa y llamativa que invite al clic.">
+  <meta name="twitter:image" content="https://www.tu-sitio-web.com/assets/imagen-social.jpg">
+
+</head>
+Mejores Prácticas Clave:
+
+URLs Absolutas: Siempre usa URLs completas (https://...) para og:url y og:image. Las rutas relativas (/assets/img.jpg) fallarán.
+
+Imagen: La og:image es lo más importante. Una mala imagen (o ninguna) reducirá los clics drásticamente.
+
+2. Cómo Validarlos Localmente (La Solución)
+   Como mencioné, los rastreadores de Facebook/Twitter no pueden acceder a localhost. Tienes que exponer tu servidor local a Internet temporalmente.
+
+La mejor herramienta para esto es ngrok.
+
+ngrok crea un "túnel" seguro desde una URL pública (ej. https://aleatorio.ngrok.io) directamente a tu puerto local (ej. localhost:3000).
+
+🛠️ Paso a Paso para Validar con ngrok
+Inicia tu proyecto: Primero, asegúrate de que tu servidor de desarrollo esté corriendo.
+
+Bash
+
+npm run dev
+
+# (Tu proyecto ahora corre en http://localhost:3000)
+
+Instala ngrok: Si no lo tienes, puedes descargarlo desde su sitio web o usar npm:
+
+Bash
+
+npm install ngrok -g
+Inicia ngrok: En una nueva terminal (sin cerrar la del paso 1), dile a ngrok qué puerto debe exponer.
+
+Bash
+
+ngrok http 3000
+Obtén tu URL pública: ngrok te dará una URL en la línea "Forwarding".
+
+Session Status online
+Forwarding https://8a9b-190-23-11-5.ngrok.io -> http://localhost:3000
+Tu URL pública y temporal es https://8a9b-190-23-11-5.ngrok.io.
+
+Actualiza tu código (Temporalmente): Ve a tu <head> y asegúrate de que og:url y og:image usen esta nueva URL pública de ngrok.
+
+<meta property="og:url" content="https://8a9b-190-23-11-5.ngrok.io">
+
+<meta property="og:image" content="https://8a9b-190-23-11-5.ngrok.io/assets/imagen-social.jpg"> (Nota: Algunos frameworks modernos pueden manejar esto automáticamente, pero hacerlo manual es más seguro para probar).
+
+Valida en las Herramientas Oficiales: Ahora puedes copiar esa URL de ngrok y pegarla en los validadores oficiales. Ellos sí podrán ver tu proyecto.
+
+Facebook/WhatsApp/LinkedIn: Facebook Sharing Debugger
+
+Twitter (X): Twitter Card Validator
+
+LinkedIn: LinkedIn Post Inspector
+
+Si ves algún error (como una imagen faltante), puedes corregirlo en tu código local, guardar, y volver a hacer clic en "Scrape Again" (en Facebook) o "Preview Card" (en Twitter) para ver el cambio al instante.
+
+Método Alternativo Rápido (Sin ngrok)
+Si solo quieres una vista previa visual rápida y no una validación real del rastreador, puedes usar extensiones de navegador:
+
+Social Share Preview (Chrome/Firefox)
+
+OpenGraph Preview (Chrome)
+
+Estas extensiones leen tu HTML local directamente y te muestran cómo debería verse, pero no confirman si el rastreador de Facebook podrá acceder a tu imagen. Recomiendo siempre usar ngrok para una prueba real.
