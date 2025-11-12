@@ -126,42 +126,41 @@
  * 
  * See https://adrianroselli.com/2017/12/tweaking-text-level-styles.html
  */
- :where(del, ins, s)::before, 
- :where(del, ins, s)::after 
- {
-   clip-path: inset(100%);
-   clip: rect(1px, 1px, 1px, 1px);
-   height: 1px;
-   width: 1px;
-   overflow: hidden;
-   position: absolute;
-   white-space: nowrap;
-   content: "test"
- }
- 
- :where(s)::before {
-   content: "stricken text start ";
- }
- 
- :where(s)::after {
-   content: " stricken text end";
- }
- 
- :where(del)::before {
-   content: "deletion start ";
- }
- 
- :where(del)::after {
-   content: " deletion end";
- }
- 
- :where(ins)::before {
-   content: "insertion start ";
-  }
- 
- :where(ins)::after {
-   content: " insertion end";
- }
+:where(del, ins, s)::before,
+:where(del, ins, s)::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  content: "test"
+}
+
+:where(s)::before {
+  content: "stricken text start ";
+}
+
+:where(s)::after {
+  content: " stricken text end";
+}
+
+:where(del)::before {
+  content: "deletion start ";
+}
+
+:where(del)::after {
+  content: " deletion end";
+}
+
+:where(ins)::before {
+  content: "insertion start ";
+}
+
+:where(ins)::after {
+  content: " insertion end";
+}
 
 /**
  * Avoid overflow caused by embedded content
@@ -223,9 +222,11 @@
  * Remove the rounded corners of search inputs on macOS and IOS 
  * and normalize the background color
  */
+/* 
 :where([type="search"]) {
   -webkit-appearance: textfield;
-}
+  }
+*/
 
 /* iOS only */
 @supports (-webkit-touch-callout: none) {
@@ -244,9 +245,7 @@
  *
  * See https://rtlstyling.com/posts/rtl-styling#form-inputs
  */
-:where([type="tel"], [type="url"], [type="email"], [type="number"]):not(
-    :placeholder-shown
-  ) {
+:where([type="tel"], [type="url"], [type="email"], [type="number"]):not( :placeholder-shown) {
   direction: ltr;
 }
 
@@ -289,6 +288,7 @@
 }
 
 @starting-style {
+
   :where(dialog[open]),
   :where(dialog[open])::backdrop {
     opacity: 0;
