@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <meta name="description"
+        content="Stop paying for features you don't use. Select the exact tools you need with ModulA and build a custom software plan that scales with your business.">
+    <meta name="robots" content="index,follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="ModulA">
+    <link rel="manifest" href="assets/images/icons/site.webmanifest">
+    <title>ModulA: Selection Feature Page</title>
+</head>
+
+<body>
+    <header class="header-page">
+        <picture class="logo">
+            <source type="image/svg+xml" srcset="assets/images/logo.svg">
+            <source type="image/png" srcset="assets/images/favicon-96x96.png 1x, 
+                assets/images/favicon-192x192.png 2x, 
+                assets/images/favicon-512x512.png 3x">
+            <img src="assets/images/favicon-96x96.png" alt=".">
+        </picture>
+        <h1 class="header-title">Feature Selection</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Features</a>
+                </li>
+                <li>
+                    <a href="#">Pricing</a>
+                </li>
+                <li>
+                    <a href="#">Integrations</a>
+                </li>
+                <li>
+                    <a href="#">Log In</a>
+                </li>
+                <li>
+                    <a href="#">Start Free Trial</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div role="main" class="feature-card-container">
+        <p class="para">FOR AGENCIES & GROWING TEAMS</p>
+        <h2 class="subheader">The Power You Need. Nothing You Don't.</h2>
+        <p class="para">Save Costs. Streamline Workflows. Scale Smarter.</p>
+        <form action="module.php" method="post">
+            <fieldset>
+                <label class="feature-card">
+                    Unlimited Projects<br>
+                    Manage all your client work and internal tasks from one central
+                    dashboard
+                    <input type="checkbox" name="inp-project" id="inp-project">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Team Collaboration<br>
+                    Invite team members and clients to review, comment, and approve
+                    work in real-time
+                    <input type="checkbox" name="inp-team" id="inp-team">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Advanced Cloud Storage (1TB)<br>Securely store, version, and access all your project assets and
+                    deliverables
+                    <input type="checkbox" name="inp-cloud" id="inp-cloud">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Workflow Automations<br>Save 10+ hours a week by automating repetitive tasks and approval
+                    flows
+                    <input type="checkbox" name="inp-workflow" id="inp-workflow">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Custom Analytics & Reporting<br>Track project profitability and team performance with
+                    custom-built reports
+                    <input type="checkbox" name="inp-analytics" id="inp-analytics">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    API & Zapier Integration<br>Connect ModulA to the 5,000+ apps you already use, like Slack,
+                    Google Drive, and Figma
+                    <input type="checkbox" name="inp-api" id="inp-api">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Priority Support<br>Get 24/7 expert support via dedicated chat and
+                    email
+                    <input type="checkbox" name="inp-support" id="inp-support">
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="feature-card">
+                    Advanced Security & SSO<br>Ensure enterprise-grade security and compliance with Single
+                    Sign-On (SSO)
+                    <input type="checkbox" name="inp-security" id="inp-security">
+                </label>
+            </fieldset>
+            <button id="ctabtn" class="btn" type="submit" aria-describedby="ctabtn ctatext">Build Your Plan & See
+                Instant
+                Pricing</button>
+            <p id="ctatext" class="para">No credit card required. 14-day free trial on all features.</p>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 ModulA. All rights reserved. Made by <strong class="highlight">codebydoble</strong></p>
+    </footer>
+</body>
+
+</html>

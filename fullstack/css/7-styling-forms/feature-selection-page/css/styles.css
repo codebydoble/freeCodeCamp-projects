@@ -1,0 +1,121 @@
+/*
+==============================================
+--- PALETTE: "FEATURE" (LIGHT MODE) ---
+==============================================
+Project: ModulA: Selection Feature Page
+Author: Yoandy Doble Herrera
+Date: 13-11-2025
+*/
+
+
+:root {
+    /* -- Base Palette (5 Colors) -- */
+    --color-white: #FFFFFF;
+    /* 1. Base for backgrounds */
+    --color-dark-slate: #1F2937;
+    /* 2. Base for primary text */
+    --color-brand-blue: #2563EB;
+    /* 3. Primary action & interactive elements (WCAG AA) */
+    --color-secure-green: #059669;
+    /* 4. Success feedback */
+    --color-mid-gray: #6B7280;
+    /* 5. Secondary text & non-interactive UI elements */
+
+
+    /* --- Functional Assignment --- */
+
+    /* 1. Backgrounds */
+    --background-primary: var(--color-white);
+    --background-secondary: #F9FAFB;
+    /* A subtle gray for section differentiation */
+
+    /* 2. Typography */
+    --text-primary: var(--color-dark-slate);
+    /* (Contrast: 15.6:1 -> Passes AAA) */
+    --text-secondary: var(--color-mid-gray);
+    /* (Contrast: 4.63:1 -> Passes AA) */
+    --text-on-brand: var(--color-white);
+    /* (Contrast: 4.54:1 -> Passes AA) */
+
+    /* 3. Borders & Separators */
+    --border-primary: #E5E7EB;
+    /* For static dividers and containers. */
+    --border-interactive: #D1D5DB;
+    /* For elements the user can interact with. */
+
+
+    /* 4. Header & Footer */
+    --header-background: var(--color-white);
+    --header-text-color: var(--text-primary);
+    --header-border-bottom: var(--border-primary);
+
+    /* 5. Links & Interactive Elements */
+    --link-color: var(--color-brand-blue);
+    --link-color-visited: var(--color-brand-blue);
+    --link-color-hover: var(--color-dark-slate);
+    --link-color-focus: var(--color-dark-slate);
+    --link-color-active: var(--color-dark-slate);
+
+    /* 6. Buttons */
+    /* -- Primary Button -- */
+    --button-primary-background: var(--color-brand-blue);
+    --button-primary-text: var(--text-on-brand);
+    --button-primary-border: var(--color-brand-blue);
+    --button-primary-background-hover: #1D4ED8;
+    /* Darker blue */
+
+    /* 7. Secondary Buttons */
+    --button-secondary-background: var(--color-white);
+    --button-secondary-text: var(--text-secondary);
+    --button-secondary-border: var(--border-interactive);
+    --button-secondary-background-hover: var(--background-secondary);
+    --button-secondary-border-hover: var(--text-secondary);
+
+    /* 8. Focus State (WCAG/WAI-ARIA) */
+    --focus-ring-color: var(--color-brand-blue);
+    /* Used for outline: 2px solid var(--focus-ring-color); */
+
+    /* 9. Feedback States */
+    /* -- Success -- */
+    /* Derived from --color-secure-green */
+    --feedback-success-text: var(--color-secure-green);
+    --feedback-success-background: #D1FAE5;
+    --feedback-success-border: #6EE7B7;
+
+    /* 10. Input checkbox */
+    --checkbox-background: var(--color-white);
+    --checkbox-border: var(--border-interactive);
+    --checkbox-background-checked: var(--color-brand-blue);
+    --checkbox-border-checked: var(--color-brand-blue);
+    --checkbox-color-content: var(--color-white);
+    /* The checkmark icon */
+
+    /* -- Error -- */
+    /* Derived from a functional red */
+    --feedback-error-text: #B91C1C;
+    --feedback-error-background: #FEE2E2;
+    --feedback-error-border: #FCA5A5;
+
+    /* -- Warning -- */
+    /* Derived from a functional yellow/amber */
+    --feedback-warning-text: #B45309;
+    --feedback-warning-background: #FEF3C7;
+    --feedback-warning-border: #FCD34D;
+}
+
+/*
+.zilla-slab-light {
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-sans-<uniquifier> {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/
