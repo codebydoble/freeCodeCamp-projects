@@ -348,10 +348,30 @@ h1 {
 font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 
+**Personal style**
+h1 {
+font-size: clamp(5vw, 2.5rem, 5rem);
+}
+
+h2 {
+font-size: clamp(4vw, 2rem, 4rem);
+}
+
+h3 {
+font-size: clamp(3vw, 1.5rem, 3rem);
+}
+
 Ejemplo 2: Ancho de Contenedor (Layout)
 .container {
 width: clamp(20rem, 90vw, 70ch);
 margin: 0 auto;
+}
+
+**Personal Style**
+.container {
+width: clamp(18rem, 90vw, 70ch);
+margin: 0.5rem 1.5rem 0 clamp(2rem, 3rem, 5rem); //article with ul/ol
+margin: 0.5rem auto;
 }
 
 Ejemplo 3: Espaciado (Padding)
