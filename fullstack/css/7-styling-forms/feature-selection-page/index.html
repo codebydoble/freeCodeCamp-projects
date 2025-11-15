@@ -22,35 +22,38 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="ModulA">
     <link rel="manifest" href="assets/images/icons/site.webmanifest">
+    <link rel="stylesheet" href="css/styles.css">
     <title>ModulA: Selection Feature Page</title>
 </head>
 
 <body>
     <header class="header-page">
-        <picture class="logo">
-            <source type="image/svg+xml" srcset="assets/images/logo.svg">
-            <source type="image/png" srcset="assets/images/favicon-96x96.png 1x, 
-                assets/images/favicon-192x192.png 2x, 
-                assets/images/favicon-512x512.png 3x">
-            <img src="assets/images/favicon-96x96.png" alt=".">
-        </picture>
-        <h1 class="header-title">Feature Selection</h1>
+        <div class="header-container">
+            <picture class="logo">
+                <source type="image/svg+xml" srcset="assets/images/logo.svg">
+                <source type="image/png" srcset="assets/images/favicon-96x96.png 1x, 
+                    assets/images/favicon-192x192.png 2x, 
+                    assets/images/favicon-512x512.png 3x">
+                <img src="assets/images/favicon-96x96.png" alt="Logo ModulA. M letter color black background white.">
+            </picture>
+            <h1 class="header-title">Feature Selection</h1>
+        </div>
         <nav>
             <ul>
                 <li>
-                    <a href="#">Features</a>
+                    <a href="#" class="header-link">Features</a>
                 </li>
                 <li>
-                    <a href="#">Pricing</a>
+                    <a href="#" class="header-link">Pricing</a>
                 </li>
                 <li>
-                    <a href="#">Integrations</a>
+                    <a href="#" class="header-link">Integrations</a>
                 </li>
                 <li>
-                    <a href="#">Log In</a>
+                    <a href="#" class="header-link">Log In</a>
                 </li>
                 <li>
-                    <a href="#">Start Free Trial</a>
+                    <a href="#" class="header-link">Start Free Trial</a>
                 </li>
             </ul>
         </nav>
@@ -60,68 +63,70 @@
         <h2 class="subheader">The Power You Need. Nothing You Don't.</h2>
         <p class="para">Save Costs. Streamline Workflows. Scale Smarter.</p>
         <form action="module.php" method="post">
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-project" class="feature-card">
                     Unlimited Projects<br>
                     Manage all your client work and internal tasks from one central
                     dashboard
-                    <input type="checkbox" name="inp-project" id="inp-project">
                 </label>
+                <input type="checkbox" name="inp-project" id="inp-project">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-team" class="feature-card">
                     Team Collaboration<br>
                     Invite team members and clients to review, comment, and approve
                     work in real-time
-                    <input type="checkbox" name="inp-team" id="inp-team">
                 </label>
+                <input type="checkbox" name="inp-team" id="inp-team">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-cloud" class="feature-card">
                     Advanced Cloud Storage (1TB)<br>Securely store, version, and access all your project assets and
                     deliverables
-                    <input type="checkbox" name="inp-cloud" id="inp-cloud">
                 </label>
+                <input type="checkbox" name="inp-cloud" id="inp-cloud">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-workflow" class="feature-card">
                     Workflow Automations<br>Save 10+ hours a week by automating repetitive tasks and approval
                     flows
-                    <input type="checkbox" name="inp-workflow" id="inp-workflow">
                 </label>
+                <input type="checkbox" name="inp-workflow" id="inp-workflow">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-analytics" class="feature-card">
                     Custom Analytics & Reporting<br>Track project profitability and team performance with
                     custom-built reports
-                    <input type="checkbox" name="inp-analytics" id="inp-analytics">
                 </label>
+                <input type="checkbox" name="inp-analytics" id="inp-analytics">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-api" class="feature-card">
                     API & Zapier Integration<br>Connect ModulA to the 5,000+ apps you already use, like Slack,
                     Google Drive, and Figma
-                    <input type="checkbox" name="inp-api" id="inp-api">
                 </label>
+                <input type="checkbox" name="inp-api" id="inp-api">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-support" class="feature-card">
                     Priority Support<br>Get 24/7 expert support via dedicated chat and
                     email
-                    <input type="checkbox" name="inp-support" id="inp-support">
                 </label>
+                <input type="checkbox" name="inp-support" id="inp-support">
             </fieldset>
-            <fieldset>
-                <label class="feature-card">
+            <fieldset class="fieldset-card">
+                <label for="inp-security" class="feature-card">
                     Advanced Security & SSO<br>Ensure enterprise-grade security and compliance with Single
                     Sign-On (SSO)
-                    <input type="checkbox" name="inp-security" id="inp-security">
                 </label>
+                <input type="checkbox" name="inp-security" id="inp-security">
             </fieldset>
-            <button id="ctabtn" class="btn" type="submit" aria-describedby="ctabtn ctatext">Build Your Plan & See
-                Instant
-                Pricing</button>
-            <p id="ctatext" class="para">No credit card required. 14-day free trial on all features.</p>
+            <div class="container-btn">
+                <button id="ctabtn" class="btn" type="submit" aria-describedby="ctabtn ctatext">Build Your Plan & See
+                    Instant
+                    Pricing</button>
+                <p id="ctatext" class="para">No credit card required. 14-day free trial on all features.</p>
+            </div>
         </form>
     </div>
     <footer>

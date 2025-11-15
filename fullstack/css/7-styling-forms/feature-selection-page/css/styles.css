@@ -9,113 +9,316 @@ Date: 13-11-2025
 
 
 :root {
-    /* -- Base Palette (5 Colors) -- */
-    --color-white: #FFFFFF;
-    /* 1. Base for backgrounds */
-    --color-dark-slate: #1F2937;
-    /* 2. Base for primary text */
-    --color-brand-blue: #2563EB;
-    /* 3. Primary action & interactive elements (WCAG AA) */
-    --color-secure-green: #059669;
-    /* 4. Success feedback */
-    --color-mid-gray: #6B7280;
-    /* 5. Secondary text & non-interactive UI elements */
+  /* -- Base Palette (5 Colors) -- */
+  --color-white: #FFFFFF;
+  /* 1. Base for backgrounds */
+  --color-dark-slate: #1F2937;
+  /* 2. Base for primary text */
+  --color-brand-blue: #2563EB;
+  /* 3. Primary action & interactive elements */
+  --color-secure-green: #059669;
+  /* 4. Success feedback */
+  --color-mid-gray: #6B7280;
+  /* 5. Secondary text & non-interactive UI elements */
 
 
-    /* --- Functional Assignment --- */
+  /* --- Functional Assignment --- */
 
-    /* 1. Backgrounds */
-    --background-primary: var(--color-white);
-    --background-secondary: #F9FAFB;
-    /* A subtle gray for section differentiation */
+  /* 1. Backgrounds */
+  --background-primary: var(--color-white);
+  --background-secondary: #F9FAFB;
+  /* A subtle gray for section differentiation */
 
-    /* 2. Typography */
-    --text-primary: var(--color-dark-slate);
-    /* (Contrast: 15.6:1 -> Passes AAA) */
-    --text-secondary: var(--color-mid-gray);
-    /* (Contrast: 4.63:1 -> Passes AA) */
-    --text-on-brand: var(--color-white);
-    /* (Contrast: 4.54:1 -> Passes AA) */
+  /* 2. Typography */
+  --text-primary: var(--color-dark-slate);
+  /* (Contrast: 15.6:1 -> Passes AAA) */
+  --text-secondary: var(--color-mid-gray);
+  /* (Contrast: 4.63:1 -> Passes AA) */
+  --text-on-brand: var(--color-white);
+  /* (Contrast: 4.54:1 -> Passes AA) */
 
-    /* 3. Borders & Separators */
-    --border-primary: #E5E7EB;
-    /* For static dividers and containers. */
-    --border-interactive: #D1D5DB;
-    /* For elements the user can interact with. */
+  /* 3. Borders & Separators */
+  --border-primary: #E5E7EB;
+  /* For static dividers and containers. */
+  --border-interactive: #D1D5DB;
+  /* For elements the user can interact with. */
 
 
-    /* 4. Header & Footer */
-    --header-background: var(--color-white);
-    --header-text-color: var(--text-primary);
-    --header-border-bottom: var(--border-primary);
+  /* 4. Header & Footer */
+  --header-background: var(--color-white);
+  --header-text-color: var(--text-primary);
+  --header-border-bottom: var(--border-primary);
 
-    /* 5. Links & Interactive Elements */
-    --link-color: var(--color-brand-blue);
-    --link-color-visited: var(--color-brand-blue);
-    --link-color-hover: var(--color-dark-slate);
-    --link-color-focus: var(--color-dark-slate);
-    --link-color-active: var(--color-dark-slate);
+  /* 5. Links & Interactive Elements */
+  --link-color: var(--color-brand-blue);
+  --link-color-visited: var(--color-brand-blue);
+  --link-color-hover: var(--color-dark-slate);
+  --link-color-focus: var(--color-dark-slate);
+  --link-color-active: var(--color-dark-slate);
 
-    /* 6. Buttons */
-    /* -- Primary Button -- */
-    --button-primary-background: var(--color-brand-blue);
-    --button-primary-text: var(--text-on-brand);
-    --button-primary-border: var(--color-brand-blue);
-    --button-primary-background-hover: #1D4ED8;
-    /* Darker blue */
+  /* 6. Buttons */
+  /* -- Primary Button -- */
+  --button-primary-background: var(--color-brand-blue);
+  --button-primary-text: var(--text-on-brand);
+  --button-primary-border: var(--color-brand-blue);
+  --button-primary-background-hover: #1D4ED8;
+  /* Darker blue */
 
-    /* 7. Secondary Buttons */
-    --button-secondary-background: var(--color-white);
-    --button-secondary-text: var(--text-secondary);
-    --button-secondary-border: var(--border-interactive);
-    --button-secondary-background-hover: var(--background-secondary);
-    --button-secondary-border-hover: var(--text-secondary);
+  /* 7. Secondary Buttons */
+  --button-secondary-background: var(--color-white);
+  --button-secondary-text: var(--text-secondary);
+  --button-secondary-border: var(--border-interactive);
+  --button-secondary-background-hover: var(--background-secondary);
+  --button-secondary-border-hover: var(--text-secondary);
 
-    /* 8. Focus State (WCAG/WAI-ARIA) */
-    --focus-ring-color: var(--color-brand-blue);
-    /* Used for outline: 2px solid var(--focus-ring-color); */
+  /* 8. Focus State (WCAG/WAI-ARIA) */
+  --focus-ring-color: var(--color-brand-blue);
+  /* Used for outline: 2px solid var(--focus-ring-color); */
 
-    /* 9. Feedback States */
-    /* -- Success -- */
-    /* Derived from --color-secure-green */
-    --feedback-success-text: var(--color-secure-green);
-    --feedback-success-background: #D1FAE5;
-    --feedback-success-border: #6EE7B7;
+  /* 9. Feedback States */
+  /* -- Success -- */
+  /* Derived from --color-secure-green */
+  --feedback-success-text: var(--color-secure-green);
+  --feedback-success-background: #D1FAE5;
+  --feedback-success-border: #6EE7B7;
 
-    /* 10. Input checkbox */
-    --checkbox-background: var(--color-white);
-    --checkbox-border: var(--border-interactive);
-    --checkbox-background-checked: var(--color-brand-blue);
-    --checkbox-border-checked: var(--color-brand-blue);
-    --checkbox-color-content: var(--color-white);
-    /* The checkmark icon */
+  /* 10. Input checkbox */
+  --checkbox-background: var(--color-white);
+  --checkbox-border: var(--border-interactive);
+  --checkbox-background-checked: var(--color-brand-blue);
+  --checkbox-border-checked: var(--color-brand-blue);
+  --checkbox-color-content: var(--color-white);
+  /* The checkmark icon */
 
-    /* -- Error -- */
-    /* Derived from a functional red */
-    --feedback-error-text: #B91C1C;
-    --feedback-error-background: #FEE2E2;
-    --feedback-error-border: #FCA5A5;
+  /* -- Error -- */
+  /* Derived from a functional red */
+  --feedback-error-text: #B91C1C;
+  --feedback-error-background: #FEE2E2;
+  --feedback-error-border: #FCA5A5;
 
-    /* -- Warning -- */
-    /* Derived from a functional yellow/amber */
-    --feedback-warning-text: #B45309;
-    --feedback-warning-background: #FEF3C7;
-    --feedback-warning-border: #FCD34D;
+  /* -- Warning -- */
+  /* Derived from a functional yellow/amber */
+  --feedback-warning-text: #B45309;
+  --feedback-warning-background: #FEF3C7;
+  --feedback-warning-border: #FCD34D;
 }
 
-/*
-.zilla-slab-light {
-  font-family: "Zilla Slab", serif;
-  font-weight: 300;
-  font-style: normal;
+/* Normalize CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.ibm-plex-sans-<uniquifier> {
+/* Avoid text inflation */
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  font-size: 100%;
+}
+
+/* Core styles */
+body {
+  min-height: 100dvh;
   font-family: "IBM Plex Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  text-wrap: balance;
 }
+
+/* Heading */
+h1,
+h2 {
+  font-family: "Zilla Slab", serif;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1.1;
+  text-wrap: pretty;
+}
+
+/* Aligment */
+h1,
+h2,
+ul,
+.para {
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(5vw, 2.5rem, 5rem);
+  margin-left: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(4vw, 2rem, 4rem);
+}
+
+/* Text style */
+p {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+}
+
+
+/*List */
+li {
+  list-style: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+/* Styling for better work */
+picture,
+img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+fieldset:first-of-type {
+  margin-top: 1rem;
+}
+
+label,
+button,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+
+/* Input checkbox inside feature card container 
+ [x] Create a selector that targets the checkboxes, and apply the following styling:    
 */
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  /* [x] All of your checkbox elements should be set to appearance: none; in your CSS. */
+  appearance: none;
+  /* [x] All of your checkbox elements should have a border width, color and style of your choosing. */
+  border-width: 0.125rem;
+  border-color: var(--color-mid-gray);
+  border-style: solid;
+  /* border: 2px solid var(--color-mid-gray); shorthand */
+  background-color: var(--checkbox-background);
+  border-radius: 0.25rem;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--checkbox-background-checked);
+  border: 0.125rem solid var(--checkbox-border-checked);
+  line-height: 1.1;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  font-weight: bold;
+  color: white;
+}
+
+input[type="checkbox"]:hover {
+  border: 0.125rem solid var(--color-dark-slate);
+}
+
+button {
+  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+footer {
+  margin-left: 1rem;
+}
+
+/* Layout and reusable components */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+}
+
+.header-link:visited {
+  color: var(--link-color-visited);
+}
+
+.header-link:hover {
+  color: var(--link-color-hover);
+}
+
+.header-link:focus {
+  outline: 2px solid var(--link-color-focus);
+  border-radius: 2px;
+}
+
+.header-link:active {
+  color: var(--link-color-active);
+}
+
+.feature-card-container {
+  width: clamp(18rem, 90vw, 70ch);
+  min-height: 100dvh;
+  margin: 0.5rem auto;
+  padding: 0.6rem;
+  background-color: var(--background-secondary);
+  border: 0.25rem solid var(--border-primary);
+  border-radius: 0.6rem;
+  box-shadow: 10px 5px 10px var(--color-mid-gray);
+}
+
+/* Fieldset class */
+.fieldset-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 0.25rem solid var(--border-primary);
+  border-radius: 0.4rem;
+}
+
+/* Label class */
+.feature-card {
+  width: 85%;
+}
+
+/* Button CTA */
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  background-color: var(--button-primary-background);
+  color: var(--button-primary-text);
+  font-weight: bold;
+  border: 0.25rem solid var(--button-primary-border);
+  border-radius: 0.4rem;
+}
+
+.btn:hover {
+  background-color: var(--button-primary-background-hover);
+}
+
+/* Media Breackpoints */
+@media screen and (width<=320px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
