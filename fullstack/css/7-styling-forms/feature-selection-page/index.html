@@ -39,7 +39,7 @@
             <h1 class="header-title">Feature Selection</h1>
         </div>
         <nav>
-            <ul>
+            <ul class="header-list">
                 <li>
                     <a href="#" class="header-link">Features</a>
                 </li>
@@ -53,76 +53,90 @@
                     <a href="#" class="header-link">Log In</a>
                 </li>
                 <li>
-                    <a href="#" class="header-link">Start Free Trial</a>
+                    <a href="#" class="header-link header-link_cta btn">Start Free Trial</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div role="main" class="feature-card-container">
+    <div class="feature-card-container">
         <p class="para">FOR AGENCIES & GROWING TEAMS</p>
         <h2 class="subheader">The Power You Need. Nothing You Don't.</h2>
         <p class="para">Save Costs. Streamline Workflows. Scale Smarter.</p>
         <form action="module.php" method="post">
-            <fieldset class="fieldset-card">
-                <label for="inp-project" class="feature-card">
-                    Unlimited Projects<br>
-                    Manage all your client work and internal tasks from one central
-                    dashboard
+            <div class="fieldset-card">
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-project" id="inp-project">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Unlimited Projects</span>
+                        <span class="feature-description">Manage all your client work and internal tasks from one
+                            central
+                            dashboard</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-project" id="inp-project">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-team" class="feature-card">
-                    Team Collaboration<br>
-                    Invite team members and clients to review, comment, and approve
-                    work in real-time
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-team" id="inp-team">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Team Collaboration</span>
+                        <span class="feature-description">Invite team members and clients to review, comment, and
+                            approve
+                            work in real-time</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-team" id="inp-team">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-cloud" class="feature-card">
-                    Advanced Cloud Storage (1TB)<br>Securely store, version, and access all your project assets and
-                    deliverables
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-cloud" id="inp-cloud">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Advanced Cloud Storage (1TB)</span>
+                        <span class="feature-description">Securely store, version, and access all your
+                            project assets and
+                            deliverables</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-cloud" id="inp-cloud">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-workflow" class="feature-card">
-                    Workflow Automations<br>Save 10+ hours a week by automating repetitive tasks and approval
-                    flows
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-workflow" id="inp-workflow">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Workflow Automations</span>
+                        <span class="feature-description">Save 10+ hours a week by automating repetitive tasks and
+                            approval
+                            flows</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-workflow" id="inp-workflow">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-analytics" class="feature-card">
-                    Custom Analytics & Reporting<br>Track project profitability and team performance with
-                    custom-built reports
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-analytics" id="inp-analytics">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Custom Analytics & Reporting</span>
+                        <span class="feature-description">Track project profitability and team performance with
+                            custom-built reports
+                        </span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-analytics" id="inp-analytics">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-api" class="feature-card">
-                    API & Zapier Integration<br>Connect ModulA to the 5,000+ apps you already use, like Slack,
-                    Google Drive, and Figma
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-api" id="inp-api">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">API & Zapier Integration Connect</span>
+                        <span class="feature-description">ModulA to the 5,000+ apps you already use, like Slack, Google
+                            Drive, and Figma</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-api" id="inp-api">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-support" class="feature-card">
-                    Priority Support<br>Get 24/7 expert support via dedicated chat and
-                    email
+                <label class="feature-card">
+                    <input type="checkbox" name="inp-support" id="inp-support">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Priority Support</span>
+                        <span class="feature-description">Get 24/7 expert support via dedicated chat and
+                            email</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-support" id="inp-support">
-            </fieldset>
-            <fieldset class="fieldset-card">
-                <label for="inp-security" class="feature-card">
-                    Advanced Security & SSO<br>Ensure enterprise-grade security and compliance with Single
-                    Sign-On (SSO)
+                <label class="feature-card feature-card-last">
+                    <input type="checkbox" name="inp-security" id="inp-security">
+                    <div class="feature-text-wrapper">
+                        <span class="feature-title">Advanced Security & SSO</span>
+                        <span class="feature-description">Ensure enterprise-grade security and compliance with Single
+                            Sign-On (SSO)</span>
+                    </div>
                 </label>
-                <input type="checkbox" name="inp-security" id="inp-security">
-            </fieldset>
+            </div>
             <div class="container-btn">
-                <button id="ctabtn" class="btn" type="submit" aria-describedby="ctabtn ctatext">Build Your Plan & See
+                <button id="ctabtn" class="btn" type="submit" aria-describedby="ctabtn ctatext">Build Your Plan &
+                    See
                     Instant
                     Pricing</button>
                 <p id="ctatext" class="para">No credit card required. 14-day free trial on all features.</p>

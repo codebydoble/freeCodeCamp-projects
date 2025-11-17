@@ -351,6 +351,9 @@ font-size: clamp(1.5rem, 5vw, 2.5rem);
 **Personal style**
 h1 {
 font-size: clamp(5vw, 2.5rem, 5rem);
+
+Better
+font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
 }
 
 h2 {

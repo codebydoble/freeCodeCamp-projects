@@ -12,7 +12,7 @@ Date: 13-11-2025
   /* -- Base Palette (5 Colors) -- */
   --color-white: #FFFFFF;
   /* 1. Base for backgrounds */
-  --color-dark-slate: #1F2937;
+  --color-dark-slate: #1f2937;
   /* 2. Base for primary text */
   --color-brand-blue: #2563EB;
   /* 3. Primary action & interactive elements */
@@ -90,17 +90,6 @@ Date: 13-11-2025
   --checkbox-color-content: var(--color-white);
   /* The checkmark icon */
 
-  /* -- Error -- */
-  /* Derived from a functional red */
-  --feedback-error-text: #B91C1C;
-  --feedback-error-background: #FEE2E2;
-  --feedback-error-border: #FCA5A5;
-
-  /* -- Warning -- */
-  /* Derived from a functional yellow/amber */
-  --feedback-warning-text: #B45309;
-  --feedback-warning-background: #FEF3C7;
-  --feedback-warning-border: #FCD34D;
 }
 
 /* Normalize CSS */
@@ -115,7 +104,6 @@ Date: 13-11-2025
 /* Avoid text inflation */
 html {
   text-size-adjust: none;
-  -webkit-text-size-adjust: none;
   font-size: 100%;
 }
 
@@ -123,13 +111,12 @@ html {
 body {
   min-height: 100dvh;
   font-family: "IBM Plex Sans", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   background-color: var(--background-primary);
   color: var(--text-primary);
   line-height: 1.5;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 /* Heading */
@@ -139,7 +126,6 @@ h2 {
   font-weight: 900;
   font-style: normal;
   line-height: 1.1;
-  text-wrap: pretty;
 }
 
 /* Aligment */
@@ -151,7 +137,7 @@ ul,
 }
 
 h1 {
-  font-size: clamp(5vw, 2.5rem, 5rem);
+  font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
   margin-left: 0.5rem;
 }
 
@@ -184,26 +170,19 @@ img {
   height: 2rem;
 }
 
-fieldset:first-of-type {
-  margin-top: 1rem;
-}
-
 label,
 button,
 input[type="checkbox"] {
   cursor: pointer;
 }
 
-label {
-  display: block;
-}
-
 /* Input checkbox inside feature card container 
  [x] Create a selector that targets the checkboxes, and apply the following styling:    
 */
 input[type="checkbox"] {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
   /* [x] All of your checkbox elements should be set to appearance: none; in your CSS. */
   appearance: none;
   /* [x] All of your checkbox elements should have a border width, color and style of your choosing. */
@@ -213,22 +192,39 @@ input[type="checkbox"] {
   /* border: 2px solid var(--color-mid-gray); shorthand */
   background-color: var(--checkbox-background);
   border-radius: 0.25rem;
+  transition: border-color 0.3s;
 }
 
 input[type="checkbox"]:checked {
   background-color: var(--checkbox-background-checked);
   border: 0.125rem solid var(--checkbox-border-checked);
-  line-height: 1.1;
 }
 
-input[type="checkbox"]:checked::before {
+input[type="checkbox"]:checked:hover {
+  border: 0.125rem solid var(--color-dark-slate);
+}
+
+input[type="checkbox"]:checked::after {
   content: "✓";
+  display: block;
+  text-align: center;
   font-weight: bold;
   color: white;
+  line-height: 1.4;
 }
 
 input[type="checkbox"]:hover {
   border: 0.125rem solid var(--color-dark-slate);
+}
+
+input[type="checkbox"]:focus {
+  outline: 0.125rem solid var(--focus-ring-color);
+  outline-offset: 0.125rem;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 0.125rem solid var(--focus-ring-color);
+  outline-offset: 0.125rem;
 }
 
 button {
@@ -251,12 +247,20 @@ footer {
   color: var(--header-text-color);
 }
 
+.header-list li:last-child {
+  margin: 0.8rem auto 1.4rem;
+}
+
 .header-link:visited {
   color: var(--link-color-visited);
 }
 
 .header-link:hover {
   color: var(--link-color-hover);
+}
+
+.header-link_cta:hover {
+  color: var(--color-white);
 }
 
 .header-link:focus {
@@ -276,22 +280,56 @@ footer {
   background-color: var(--background-secondary);
   border: 0.25rem solid var(--border-primary);
   border-radius: 0.6rem;
-  box-shadow: 10px 5px 10px var(--color-mid-gray);
+  box-shadow: 0.625rem 0.3125rem 0.625rem rgba(31, 41, 55, 0.4);
 }
 
 /* Fieldset class */
 .fieldset-card {
   display: flex;
-  justify-content: space-around;
+  flex-flow: column wrap;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
-  border: 0.25rem solid var(--border-primary);
-  border-radius: 0.4rem;
+  border: none;
 }
 
 /* Label class */
 .feature-card {
   width: 85%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 0.125rem solid var(--border-primary);
+  border-radius: 0.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  border-color: var(--focus-ring-color);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 102, 204, 0.1);
+}
+
+.feature-card-last {
+  margin-bottom: 1.25rem;
+}
+
+.feature-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.feature-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.feature-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* Button CTA */
@@ -319,6 +357,56 @@ footer {
 /* Media Breackpoints */
 @media screen and (width<=320px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (width>=768px) {
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .header-page,
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-page {
+    justify-content: space-around;
+  }
+
+  .header-list {
+    justify-content: center;
+
+  }
+
+  li:first-of-type {
+    margin-left: 0.5rem;
+  }
+
+  li {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (width>=1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (width>=1440px) {
+  .header-link {
+    font-size: 1.125rem;
+  }
+
+  .feature-title {
+    font-size: 1.125rem;
+  }
+
+  .feature-description {
+    font-size: 1rem;
   }
 }
