@@ -28,3 +28,40 @@ main {
     background-color: #4da3b2;
     align-self: flex-end;
 }
+
+a[href] {
+    text-decoration: none;
+    color: black;
+}
+
+a[title] {
+    color: chocolate;
+}
+
+a[href][title] {
+    color: blueviolet;
+}
+
+a[class~="primary"] {
+    color: #4da3b2;
+}
+
+a[href^="https://"] {
+    font-weight: bold;
+}
+
+a[href$=".com"] {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p[lang="en"] {
+    font-style: italic;
+}
+
+p[data-lang="fr"] {
+    color: blue;
+}
+
+p[lang|="es"] {
+    color: chartreuse;
+}
