@@ -1,0 +1,352 @@
+/* 
+Project: Book Inventory App
+Author: Yoandy Doble Herrera
+Stack: HTML/CSS
+Date:21-11-2025
+*/
+
+:root {
+    /* Base Colors - Foundation palette */
+    --color-primary: #2c5f8d;
+    /* Deep blue for main elements */
+    --color-primary-light: #4a8bc2;
+    /* Lighter blue for accents */
+    --color-primary-dark: #1a3a54;
+    /* Darker blue for depth */
+
+    --color-secondary: #7c5295;
+    /* Purple for complementary elements */
+    --color-secondary-light: #9a6fb5;
+    --color-secondary-dark: #5a3a6e;
+
+    /* Status-specific colors */
+    --color-read: #2d6a4f;
+    /* Forest green - completed */
+    --color-read-light: #40916c;
+    --color-read-dark: #1b4332;
+
+    --color-to-read: #d97706;
+    /* Warm orange - pending */
+    --color-to-read-light: #f59e0b;
+    --color-to-read-dark: #b45309;
+
+    --color-in-progress: #0891b2;
+    /* Cyan - active */
+    --color-in-progress-light: #06b6d4;
+    --color-in-progress-dark: #0e7490;
+
+    /* Rating colors */
+    --color-rating-empty: #e5e7eb;
+    /* Light gray for empty stars */
+    --color-rating-filled: #f59e0b;
+    /* Amber for filled stars */
+    --color-rating-gold: #eab308;
+    /* Gold variation */
+
+    /* Neutral colors - Text and backgrounds */
+    --color-background: #ffffff;
+    --color-background-alt: #f9fafb;
+    /* Subtle gray for alternating rows */
+    --color-surface: #f3f4f6;
+    /* Card/surface background */
+    --color-surface-dark: #e5e7eb;
+
+    --color-text-primary: #111827;
+    /* Almost black for main text */
+    --color-text-secondary: #6b7280;
+    /* Medium gray for secondary text */
+    --color-text-tertiary: #9ca3af;
+    /* Light gray for hints */
+    --color-text-on-dark: #f9fafb;
+    /* Text for dark backgrounds */
+
+    /* Border colors */
+    --color-border: #d1d5db;
+    /* Standard border */
+    --color-border-light: #e5e7eb;
+    /* Lighter border */
+    --color-border-dark: #9ca3af;
+    /* Darker border for emphasis */
+
+    /* Gradient definitions for backgrounds */
+    --gradient-read: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
+    --gradient-to-read: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    --gradient-in-progress: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+
+    /* Gradient definitions for status badges */
+    --gradient-read-badge: linear-gradient(135deg, #52b788 0%, #2d6a4f 100%);
+    --gradient-to-read-badge: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+    --gradient-in-progress-badge: linear-gradient(135deg, #22d3ee 0%, #0891b2 100%);
+
+    /* Gradient definitions for ratings */
+    --gradient-rating-one: linear-gradient(135deg, #fde68a 0%, #fbbf24 100%);
+    --gradient-rating-two: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+    --gradient-rating-three: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    --rating: #fbbf24;
+    --rating-border: #d97706;
+    --gradient-rating-one-hover: linear-gradient(135deg, #fcd64f 0%, #fcb70a 100%);
+    --gradient-rating-two-hover: linear-gradient(135deg, #b19437 0%, #b87605 100%);
+    --gradient-rating-three-hover: linear-gradient(135deg, #8d6b13 0%, #8b4b02 100%);
+
+    /* Interactive state colors - for hover, focus, active */
+    --color-hover-overlay: rgba(0, 0, 0, 0.05);
+    --color-focus-ring: #3b82f6;
+    /* Blue for focus indicators */
+    --color-active-overlay: rgba(0, 0, 0, 0.1);
+    --gradient-read-badge-hover: linear-gradient(135deg, #6eb996 0%, #3d6e58 100%);
+    --gradient-to-read-badge-hover: linear-gradient(135deg, #fdb57a 0%, #eb6d2a 100%);
+    --gradient-in-progress-badge-hover: linear-gradient(135deg, #57e3f3 0%, #499cb1 100%);
+
+    /* Status badge specific colors with WCAG compliant text */
+    --color-read-text: #ffffff;
+    --color-to-read-text: #ffffff;
+    --color-in-progress-text: #ffffff;
+
+    /* Shadow definitions for depth */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* Spacing scale */
+    --spacing-small: 0.1rem;
+    --spacing-xs: 0.25rem;
+    --spacing-xst: 0.2rem;
+    --spacing-xsx: 0.3rem;
+    --spacing-sm: 0.5rem;
+    --spacing-smx: 0.6rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border radius scale */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-full: 9999px;
+
+    /* Transition timing for smooth interactions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    /* Font scale */
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-medium: 1.3rem;
+    --font-size-xl: 1.5rem;
+    --font-size-big: 1.6rem;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* Core */
+body {
+    min-height: 100dvh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Heading */
+h1,
+caption {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Main */
+main {
+    max-width: 100dvw;
+    min-height: 85dvh;
+}
+
+/* Table*/
+table {
+    border-collapse: collapse;
+    margin: var(--spacing-md) auto;
+    border: var(--spacing-xsx) solid var(--color-border-dark);
+    letter-spacing: 0.064rem;
+}
+
+/* Table heading */
+caption {
+    font-size: 1.2rem;
+}
+
+thead {
+    background-color: var(--color-background-alt);
+}
+
+th,
+td {
+    border: var(--spacing-xst) solid var(--color-border-light);
+    padding: var(--spacing-sm) var(--spacing-smx);
+}
+
+/* 8. You should create three attribute selectors to target the elements with the class of read, to-read, and in-progress, and set their background-image property to use a linear-gradient of your choice. */
+tr[class="read"] {
+    background-image: var(--gradient-read);
+}
+
+
+tr[class="to-read"] {
+    background-image: var(--gradient-to-read);
+}
+
+tr[class="in-progress"] {
+    background-image: var(--gradient-in-progress);
+}
+
+/* 9. You should set the display property of each span element to inline-block. */
+span {
+    display: inline-block;
+}
+
+/* 10. [] You should use an attribute selector to target the span elements with the class of status that are descendants of tr elements with the class of to-read and set their border and background-image properties. */
+tr[class="to-read"] span[class="status"] {
+    border: var(--spacing-small) solid var(--color-to-read-dark);
+    background-image: var(--gradient-to-read-badge);
+    color: var(--color-to-read-text);
+    padding: 0.25rem;
+    border-radius: var(--radius-lg);
+    transition: background-image 250ms ease-in-out;
+}
+
+tr[class="to-read"] span[class="status"]:hover {
+    background-image: var(--gradient-to-read-badge-hover);
+}
+
+/* 11. [] You should use an attribute selector to target the span elements with the class of status that are descendants of tr elements with the class of read and set their border and background-image properties. */
+tr[class="read"] span[class="status"] {
+    border: var(--spacing-small) solid var(--color-read-dark);
+    background-image: var(--gradient-read-badge);
+    color: var(--color-read-text);
+    padding: 0.25rem;
+    border-radius: var(--radius-lg);
+    transition: background-image 250ms ease-in-out;
+}
+
+tr[class="read"] span[class="status"]:hover {
+    background-image: var(--gradient-read-badge-hover);
+}
+
+/* 12. [] You should use an attribute selector to target the span elements with the class of status that are descendants of tr elements with the class of in-progress and set their border and background-image properties. */
+tr[class="in-progress"] span[class="status"] {
+    border: var(--spacing-small) solid var(--color-in-progress-dark);
+    background-image: var(--gradient-in-progress-badge);
+    color: var(--color-in-progress-text);
+    padding: 0.25rem;
+    border-radius: var(--radius-lg);
+    transition: background-image 250ms ease-in-out;
+}
+
+tr[class="in-progress"] span[class="status"]:hover {
+    background-image: var(--gradient-in-progress-badge-hover);
+}
+
+/* 13. [] You should use an attribute selector to target the span elements with the class of status and the span elements with the class value starting with rate and set their height, width, and padding properties. */
+span[class="status"],
+span[class^="rate"] {
+    height: 100%;
+    width: 100%;
+    padding: 0.25rem;
+}
+
+/* 14. [] You should use an attribute selector to target the span elements which are direct children of span elements with the class value starting with rate and set their border, border-radius, margin, height, width, and background-color properties. */
+span[class^="rate"]>span {
+    border: 0.2rem solid var(--rating-border);
+    border-radius: var(--radius-md);
+    margin: 0 var(--spacing-xs);
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--color-rating-empty);
+}
+
+span[class^="rate"]>span:hover {
+    background-color: var(--color-background-alt);
+}
+
+/* 15. [] You should use an attribute selector to target the first descendant of span elements that have the word one as a part of their class value and set its background-image property to use a linear-gradient. */
+span[class~="one"] span:nth-child(1) {
+    background-image: var(--gradient-rating-one);
+}
+
+span[class~="one"] span:nth-child(1):hover {
+    background-image: var(--gradient-rating-one-hover);
+}
+
+/* 16. [] You should use an attribute selector to target the first two descendants of span elements that have the word two as a part of their class value and set their background-image property to use a linear-gradient. */
+span[class~="two"] span:nth-child(-n+2) {
+    background-image: var(--gradient-rating-two);
+}
+
+span[class~="two"] span:nth-child(-n+2):hover {
+    background-image: var(--gradient-rating-two-hover);
+}
+
+/* 17. [] You should use an attribute selector to target the three span elements that are descendants of span elements that have the word three as a part of their class value and set their background-image property to use a linear-gradient. */
+span[class~="three"] span {
+    background-image: var(--gradient-rating-three);
+}
+
+span[class~="three"] span:hover {
+    background-image: var(--gradient-rating-three-hover);
+}
+
+/* Reusable components */
+.page-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* fit 320px adjust for other sizes*/
+    align-items: center;
+    gap: 1rem;
+}
+
+.data-status {
+    text-align: center;
+}
+
+/* span element container on rate column */
+.rate {
+    display: flex;
+}
+
+@media screen and (width>=1024px) {
+    caption {
+        font-size: var(--font-size-xl);
+    }
+
+    td,
+    th {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media screen and (width>=2560px) {
+    caption {
+        font-size: var(--font-size-big);
+    }
+
+    td,
+    th {
+        font-size: var(--font-size-medium);
+    }
+}
