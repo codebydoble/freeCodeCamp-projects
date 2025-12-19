@@ -1,0 +1,117 @@
+/*
+===========
+*Variables*
+===========
+Date: 09/12/2025
+Author: codebydoble
+*/
+
+:root {
+    --background-color: #faf8f3;
+    --text-color: #000;
+    /* Main background color */
+    --main-color: #3498db;
+    --btn-bg-color: #3498db;
+
+}
+
+/* Normalize CSS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Set core body defaults */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100dvh;
+    font-family: system-ui, sans-serif;
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   */
+    text-wrap: balance;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Roboto, sans-serif;
+    line-height: 1.4;
+    text-wrap: pretty;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
+
+/* Good hack for margin */
+main>* {
+    margin-top: 1rem;
+}
+
+/* Layout and reusable components */
+.page-header {
+    width: 100dvw;
+    margin: 0 auto;
+    /* Only one element use margin. You should use flex/grid for many elements */
+}
+
+.page-header_title {
+    text-align: center;
+}
+
+.main-content {
+    min-height: 100dvh;
+    max-width: 90dvw;
+    /* Use clamp */
+    margin: 0 auto;
+}
+
+/* Button */
+.btn {
+    background-color: var(--btn-bg-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* One of the key features of custom properties is that they follow the CSS
+cascade. This means that you can redefine them for specific elements or
+contexts: */
+.alert {
+    --main-color: #e74c3c;
+    background-color: var(--main-color);
+}
+
+/* Custom properties also support fallback values */
+.main-content_title {
+    color: var(--main-color, black);
+}

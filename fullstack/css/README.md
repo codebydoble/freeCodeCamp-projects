@@ -152,7 +152,7 @@ Another design tool worth mentioning is **Canva**. You can use Canva to create a
 
 Other popular design tools developers should know are Framer, InVision, Adobe Photoshop, Adobe Illustrator, and Miro.
 
-# 4 - Absolute and relative units
+## 4 - Absolute and relative units
 
 **Absolute** length units are of fixed length and are not relative to anything else.
 
