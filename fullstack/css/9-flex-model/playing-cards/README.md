@@ -4,9 +4,9 @@ Build an app that is functionally similar to this example project. Try not to co
 
 **Objective**: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
-## User Stories:
+## User Stories
 
-1. [] You should build a webpage that displays at least three playing cards.
+1. [x] You should build a webpage that displays at least three playing cards.
 2. [x] You should have a main element with an ID of playing-cards.
 3. [x] Within your #playing-cards element, you should have at least three div elements, each with a class of card.
 4. [x] Within each .card element, you should have three div elements, the first with a class of left, the second with a class of middle, and the third with a class of right.
