@@ -370,6 +370,17 @@ width: clamp(20rem, 90vw, 70ch);
 margin: 0 auto;
 }
 
+Typography Scale
+--font-size-base: 1rem;
+--font-size-lg: 1.13rem;
+--font-size-xl: 1.25rem;
+--font-size-2xl: 1.5rem;
+
+--font-size-h1-mobile: 2rem;
+--font-size-h1-tablet: 2.25rem;
+--font-size-h1-desktop: 2.5rem;
+--font-size-h1-4k: 2.75rem;
+
 **Personal Style**
 .container {
 width: clamp(18rem, 90vw, 70ch);
