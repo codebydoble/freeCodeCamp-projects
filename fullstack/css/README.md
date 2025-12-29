@@ -170,7 +170,7 @@ Other popular design tools developers should know are Framer, InVision, Adobe Ph
 
 **vw** stands for "viewport width," and 1vw is equal to 1% of the viewport's width.
 
-**Note**
+**Note**:
 
 - Sometimes you might use pixels for margins, padding, and borders.
 - Remember, percentages are always relative to something. For horizontal properties like width, they're relative to the parent's width. For vertical properties like height, they're usually relative to the parent's height (if specified).
@@ -184,7 +184,7 @@ Other types of absolute units include the following:
 - The mm (millimeters) unit, which is equal to 1/10th of a centimeter
 - The q (quarter-millimeters) unit, which is equal to 1/40th of a centimeter
 
-# 5 - Pseudo Classes and Elements
+## 5 - Pseudo Classes and Elements
 
 User Action Pseudo-classes
 Pseudo-classes Definition: These are special CSS keywords that allow you to select an element based on its specific state or position.
@@ -233,21 +233,22 @@ Functional Pseudo-classes: Functional pseudo-classes allow you to select element
 <p>This text will not change color.</p>
 <p>This text will not change color.</p>
 <p class="this-works-too">This text will change color.</p>
+
 p:is(.example, .this-works-too) {
-    color: red;
+color: red;
 }
 :where() Pseudo-class: This pseudo-class takes a list of selectors (ex. ol, ul) and selects an element that matches one of the selectors in the list. The difference between :is and :where is that the latter will have a specificity of 0.
 :where(h1, h2, h3) {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 }
 :has() Pseudo-class: This pseudo-class is often dubbed the "parent" selector because it allows you to style elements that contain child elements specified in the selector list.
 article:has(h2) {
-    border: 2px solid hotpink;
+border: 2px solid hotpink;
 }
 :not() Pseudo-class: This pseudo-class is used to select elements that do not match the provided selector.
 p:not(.example) {
-  color: blue;
+color: blue;
 }
 Pseudo-elements
 ::before Pseudo-element: This pseudo-element uses the content property to insert cosmetic content like icons just before the element.
@@ -289,7 +290,7 @@ Pseudo-elements
 ::spelling-error
 ::selection
 
-# 6 - Colors
+## 6 - Colors
 
 CSS Colors Review
 Color Theory
@@ -324,11 +325,11 @@ background-color: hsla(0, 100%, 50%, 0.5);
 }
 Hexadecimal: A hex code (short for hexadecimal code) is a six-character string used to represent colors in the RGB color model. The "hex" refers to the base-16 numbering system, which uses digits 0 to 9 and letters A to F.
 h1 {
-color: #FF5733; /_ A reddish-orange color _/
+color: #FF5733; /_A reddish-orange color_ /
 }
 
 p {
-background-color: #4CAF50; /_ A shade of green _/
+background-color: #4CAF50; /_A shade of green_/
 }
 Linear and Radial Gradients
 Linear Gradients: These gradients create a gradual blend between colors along a straight line. You can control the direction of this line using keywords like to top, to right, to bottom right, or angles like 45deg. You can use any valid CSS color and as many color stops as you would like.
@@ -393,7 +394,7 @@ Ejemplo 3: Espaciado (Padding)
 padding: clamp(2rem, 5vw, 4rem);
 }
 
-# 12 - Positioning
+## 12 - Positioning
 
 Working With Floats
 Definition: Floats are used to remove an element from its normal flow on the page and position it either on the left or right side of its container. When this happens, the text will wrap around that floated content.
@@ -494,6 +495,7 @@ HTML
   <meta name="twitter:image" content="https://www.tu-sitio-web.com/assets/imagen-social.jpg">
 
 </head>
+
 Mejores Prácticas Clave:
 
 URLs Absolutas: Siempre usa URLs completas (https://...) para og:url y og:image. Las rutas relativas (/assets/img.jpg) fallarán.
@@ -514,7 +516,7 @@ Bash
 
 npm run dev
 
-# (Tu proyecto ahora corre en http://localhost:3000)
+[Tu proyecto ahora corre en](http://localhost:3000)
 
 Instala ngrok: Si no lo tienes, puedes descargarlo desde su sitio web o usar npm:
 
@@ -529,8 +531,8 @@ ngrok http 3000
 Obtén tu URL pública: ngrok te dará una URL en la línea "Forwarding".
 
 Session Status online
-Forwarding https://8a9b-190-23-11-5.ngrok.io -> http://localhost:3000
-Tu URL pública y temporal es https://8a9b-190-23-11-5.ngrok.io.
+[Forwarding https://8a9b-190](ttp://localhost:3000)
+[Tu URL pública y temporal es](https://8a9b-190-23-11-5.ngrok.io).
 
 Actualiza tu código (Temporalmente): Ve a tu <head> y asegúrate de que og:url y og:image usen esta nueva URL pública de ngrok.
 
@@ -556,3 +558,50 @@ Social Share Preview (Chrome/Firefox)
 OpenGraph Preview (Chrome)
 
 Estas extensiones leen tu HTML local directamente y te muestran cómo debería verse, pero no confirman si el rastreador de Facebook podrá acceder a tu imagen. Recomiendo siempre usar ngrok para una prueba real.
+
+## 16 Animations and Accesibility
+
+A CSS animation consists of two main components: the @keyframes rule and the animation property.
+
+The animation property is actually a shorthand for several individual properties:
+
+animation-name which specifies the @keyframes rule to use.
+
+animation-duration which sets how long the animation should take to complete.
+
+animation-timing-function which defines how the animation progresses over time - such as ease, linear, ease-in-out.
+
+animation-delay which specifies a delay before the animation starts.
+
+animation-iteration-count which sets how many times the animation should repeat.
+
+animation-direction which determines whether the animation should play forwards, backwards, or alternate.
+
+animation-fill-mode which specifies how the element should be styled before and after the animation.
+
+animation-play-state which allows you to pause and resume the animation.
+
+Animations concerns: Discomfort, phisical harm, distraction,focus on read.
+
+To address these concerns, CSS provides the prefers-reduced-motion media query. This feature allows web developers to detect if the user has requested minimal animations or motion effects at the system level.
+
+@media (prefers-reduced-motion: reduce) {
+
+- {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+  }
+  }
+
+Alternative
+.animated-element {
+transition: transform 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+.animated-element {
+transition: none;
+}
+}
