@@ -1,0 +1,146 @@
+/*
+===============================
+========== MOON ORBIT =========
+===============================
+*/
+
+/* Normalize CSS
+1- Remove margin and paddig on each html element. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1- Change box model from content-box to border-box*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 1- Avoid text size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/*
+1. [X] You should align all the elements to the center of the page by setting the height to 100% of the viewport and setting a flexbox layout in the body element.
+*/
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: days 5s linear infinite;
+}
+
+/* Layout and reusable elements */
+/*
+5. [X] he div element with a class of space should be centered on the page and have a width and height of 200px. 
+6. [X] The div element with a class of space should use relative positioning.
+*/
+/* Space element all elements inside him */
+.space {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+/*
+7. [x] The .earth element should use absolute positioning. Position the center of the .earth element at the halfway point of its parent on both the vertical (top) and horizontal (left) axes. After that, shift the .earth element back by half its own width and height, to center it within its parent, the .space element.
+8. [X] The .earth element should have a width and height of 100px.
+*/
+
+/* Earth element */
+/*
+14. [X] The .earth selector should have a background color and a border-radius of 50%.
+*/
+
+.earth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: url("../assets/images/earth-americas-solid-full.webp") center / 100px 100px no-repeat;
+    background-color: transparent;
+    border-radius: 50%;
+    animation: lights 5s linear infinite;
+}
+
+/*
+9. [X] The .orbit element should have a width and height of 200px.
+10. [] The .orbit element should be positioned using absolute positioning. Its bottom right corner should be at the center of the .space element using a transform property that shifts it by -50% on both the vertical and horizontal axes.
+*/
+.orbit {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    animation: orbit 5s linear infinite;
+}
+
+/*
+11. [x] The orbit path for the moon around the Earth should be a circle.
+12. [X] The .moon element should be positioned using absolute positioning and have a width and height of 30px. The .moon element should position itself at the top of the .orbit element and be centered horizontally.
+13. [x] You should further adjust the horizontal positioning of the .moon element by moving the element to the left by half of its width.
+15. [x] The .moon selector should have a background color and a border-radius of 50%.
+*/
+.moon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../assets/images/moon-solid-full.webp") center / 30px 30px no-repeat;
+    background-color: transparent;
+    border-radius: 50%;
+    animation: lights 5s linear infinite;
+}
+
+/*
+16. [X] You should define a @keyframes orbit animation that rotates the .orbit element 360 degrees around its center. You should apply this animation to the .orbit element with a duration of 5 seconds,
+a linear timing function,
+and infinite iterations.
+*/
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes days {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes lights {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
