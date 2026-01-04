@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+.container {
+    max-width: 60dvw;
+    min-height: 60dvh;
+    margin: 1rem auto;
+    border: 2px solid indigo;
+}
+
+.box1,
+.box2,
+.box3 {
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem auto;
+}
+
+.box1 {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background-color: black;
+    color: white;
+    z-index: 5;
+}
+
+.box2 {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    background-color: gold;
+    color: black;
+    z-index: 3;
+}
+
+.box3 {
+    position: absolute;
+    background-color: crimson;
+    color: white;
+    z-index: 2;
+}

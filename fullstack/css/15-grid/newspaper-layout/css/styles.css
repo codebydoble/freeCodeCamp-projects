@@ -1,0 +1,576 @@
+:root {
+  /* ================================ */
+  /* ----  PRIMARY COLOR PALETTE ---- */
+  /* ================================ */
+
+  /* Brand Colors - Electric Magenta (Mexican pink modernized) */
+  --color-brand-primary: #d946ef;
+  /* Vibrant magenta - main brand */
+  --color-brand-primary-light: #e879f9;
+  /* Lighter magenta - accents */
+  --color-brand-primary-dark: #a21caf;
+  /* Deep magenta - emphasis */
+
+  /* Accent Colors - Turquoise (Ancient Aztec turquoise modernized) */
+  --color-accent-primary: #06b6d4;
+  /* Bright cyan - tech feel */
+  --color-accent-light: #22d3ee;
+  /* Light cyan - highlights */
+  --color-accent-dark: #0891b2;
+  /* Deep cyan - depth */
+
+  /* Secondary Accent - Amber (Mexican sun/gold) */
+  --color-accent-secondary: #f59e0b;
+  /* Rich amber - warmth */
+  --color-accent-secondary-light: #fbbf24;
+  --color-accent-secondary-dark: #d97706;
+
+  /* ================================ */
+  /* --- NEUTRAL SCALE --- */
+  /* ================================ */
+
+  /* Grays - For text, backgrounds, borders */
+  --color-neutral-50: #fafafa;
+  /* Lightest - subtle bg */
+  --color-neutral-100: #f4f4f5;
+  /* Very light - card bg */
+  --color-neutral-200: #e4e4e7;
+  /* Light - borders */
+  --color-neutral-300: #d4d4d8;
+  /* Medium-light - dividers */
+  --color-neutral-400: #a1a1aa;
+  /* Medium - muted text */
+  --color-neutral-500: #71717a;
+  /* Medium-dark - secondary text */
+  --color-neutral-600: #52525b;
+  /* Dark - body text alternative */
+  --color-neutral-700: #3f3f46;
+  /* Darker - emphasis */
+  --color-neutral-800: #27272a;
+  /* Very dark - headings */
+  --color-neutral-900: #18181b;
+  /* Darkest - main text */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ================================ */
+  /* --- SEMANTIC COLOR SYSTEM --- */
+  /* ================================ */
+
+  /* Backgrounds */
+  --bg-primary: var(--color-white);
+  /* Main page background */
+  --bg-secondary: var(--color-neutral-50);
+  /* Section backgrounds */
+  --bg-tertiary: var(--color-neutral-100);
+  /* Card backgrounds */
+  --bg-header: var(--color-neutral-900);
+  /* Header/footer dark bg */
+  --bg-accent: var(--color-brand-primary-light);
+  /* Highlight backgrounds */
+
+  /* Text Colors */
+  --text-primary: var(--color-neutral-900);
+  /* Main body text */
+  --text-secondary: var(--color-neutral-600);
+  /* Secondary text */
+  --text-tertiary: var(--color-neutral-500);
+  /* Muted text */
+  --text-heading: var(--color-neutral-900);
+  /* Headings */
+  --text-on-dark: var(--color-neutral-50);
+  /* Text on dark backgrounds */
+  --text-on-brand: var(--color-white);
+  /* Text on brand colors */
+  --text-accent: var(--color-brand-primary);
+  /* Accent text/links */
+
+  /* Border Colors */
+  --border-light: var(--color-neutral-200);
+  /* Subtle borders */
+  --border-medium: var(--color-neutral-300);
+  /* Standard borders */
+  --border-dark: var(--color-neutral-400);
+  /* Emphasized borders */
+  --border-accent: var(--color-brand-primary);
+  /* Accent borders */
+
+  /* ================================ */
+  /* --- SPACING SYSTEM --- */
+  /* ================================ */
+
+  /* Base spacing scale (8px base unit) */
+  --spacing-0: 0.125rem;
+  /* 2px */
+  --spacing-1: 0.25rem;
+  /* 4px */
+  --spacing-2: 0.5rem;
+  /* 8px */
+  --spacing-3: 0.75rem;
+  /* 12px */
+  --spacing-4: 1rem;
+  /* 16px */
+  --spacing-5: 1.25rem;
+  /* 20px */
+  --spacing-6: 1.5rem;
+  /* 24px */
+  --spacing-8: 2rem;
+  /* 32px */
+  --spacing-10: 2.5rem;
+  /* 40px */
+  --spacing-12: 3rem;
+  /* 48px */
+  --spacing-16: 4rem;
+  /* 64px */
+  --spacing-20: 5rem;
+  /* 80px */
+  --spacing-24: 6rem;
+  /* 96px */
+
+  /* Semantic spacing aliases */
+  --spacing-xt: var(--spacing-0);
+  --spacing-xs: var(--spacing-1);
+  --spacing-sm: var(--spacing-2);
+  --spacing-md: var(--spacing-4);
+  --spacing-lg: var(--spacing-6);
+  --spacing-xl: var(--spacing-8);
+  --spacing-2xl: var(--spacing-12);
+  --spacing-3xl: var(--spacing-16);
+
+  /* Gap spacing for Grid/Flexbox */
+  --gap-sm: var(--spacing-4);
+  --gap-md: var(--spacing-6);
+  --gap-lg: var(--spacing-8);
+  --gap-xl: var(--spacing-12);
+
+  /* ================================ */
+  /* --- TYPOGRAPHY SCALE --- */
+  /* ================================ */
+
+  /* Font sizes - Modular scale (1.25 ratio) */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-md: 1.125rem;
+  /* 18px */
+  --font-size-lg: 1.25rem;
+  /* 20px */
+  --font-size-xl: 1.5rem;
+  /* 24px */
+  --font-size-2xl: 1.875rem;
+  /* 30px */
+  --font-size-3xl: 2.25rem;
+  /* 36px */
+  --font-size-4xl: 3rem;
+  /* 48px */
+  --font-size-5xl: 3.75rem;
+  /* 60px */
+
+  /* Semantic font sizes */
+  --font-size-body: var(--font-size-base);
+  --font-size-caption: var(--font-size-sm);
+  --font-size-small-article: var(--font-size-sm);
+
+  /* Heading sizes - Mobile first */
+  --font-size-h1: var(--font-size-3xl);
+  /* Main title */
+  --font-size-h2: var(--font-size-xl);
+  /* Article titles */
+  --font-size-h3: var(--font-size-lg);
+  /* Small article titles */
+
+  /* Heading sizes - Tablet (768px+) */
+  --font-size-h1-tablet: var(--font-size-4xl);
+  --font-size-h2-tablet: var(--font-size-2xl);
+  --font-size-h3-tablet: var(--font-size-xl);
+
+  /* Heading sizes - Desktop (1024px+) */
+  --font-size-h1-desktop: var(--font-size-5xl);
+  --font-size-h2-desktop: var(--font-size-3xl);
+  --font-size-h3-desktop: var(--font-size-2xl);
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* ================================ */
+  /* --- BORDERS & RADIUS --- */
+  /* ================================ */
+
+  /* Border widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  --border-width-bold: 4px;
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  /* 4px */
+  --radius-md: 0.375rem;
+  /* 6px */
+  --radius-lg: 0.5rem;
+  /* 8px */
+  --radius-xl: 0.75rem;
+  /* 12px */
+  --radius-2xl: 1rem;
+  /* 16px */
+  --radius-full: 9999px;
+  /* Pill shape */
+
+  /* ================================ */
+  /* --- INTERACTIVE STATES --- */
+  /* ================================ */
+
+  /* Hover states */
+  --hover-bg-light: rgba(217, 70, 239, 0.05);
+  /* Subtle magenta tint */
+  --hover-bg-medium: rgba(217, 70, 239, 0.1);
+  /* Light magenta tint */
+  --hover-text-primary: var(--color-brand-primary-dark);
+  --hover-border-accent: var(--color-brand-primary-dark);
+
+  /* Focus states (WCAG 2.1 SC 2.4.7) */
+  --focus-ring-color: var(--color-accent-primary);
+  /* Cyan - high contrast */
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-ring-style: solid;
+
+  /* Active states */
+  --active-bg: rgba(162, 28, 175, 0.15);
+  /* Pressed state */
+  --active-text: var(--color-brand-primary-dark);
+
+  /* Disabled states */
+  --disabled-text: var(--color-neutral-400);
+  --disabled-bg: var(--color-neutral-200);
+  --disabled-opacity: 0.5;
+
+  /* ================================ */
+  /* --- SHADOWS & ELEVATION --- */
+  /* ================================ */
+
+  /* Shadow system for depth */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Colored shadows for brand elements */
+  --shadow-brand: 0 4px 14px 0 rgba(217, 70, 239, 0.25);
+  --shadow-accent: 0 4px 14px 0 rgba(6, 182, 212, 0.25);
+
+  /* ================================ */
+  /* --- TRANSITIONS --- */
+  /* ================================ */
+
+  /* Transition durations */
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 350ms;
+  --transition-slower: 500ms;
+
+  /* Transition timing functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Common transition combinations */
+  --transition-colors: color var(--transition-base) var(--ease-in-out),
+    background-color var(--transition-base) var(--ease-in-out),
+    border-color var(--transition-base) var(--ease-in-out);
+
+  --transition-transform: transform var(--transition-base) var(--ease-out);
+
+  --transition-all: all var(--transition-base) var(--ease-in-out);
+
+  /* ================================ */
+  /* --- Z-INDEX SCALE --- */
+  /* ================================ */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* Normalize margin, padding and change box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+  text-size-adjust: none;
+  font-size: 100%;
+}
+
+/* Default body styles */
+body {
+  min-height: 100dvh;
+  line-height: var(--line-height-normal);
+  text-wrap: pretty;
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-normal);
+  font-style: normal;
+  font-size: var(--font-size-body);
+}
+
+/* Heading */
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-weight: var(--font-weight-black);
+  font-style: normal;
+  text-wrap: balance;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  color: var(--text-heading);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+
+/* Caption */
+figcaption {
+  font-size: var(--font-size-caption);
+  border-top: var(--border-width-thin) solid var(--border-light)
+}
+
+strong {
+  font-weight: bolder;
+}
+
+/* Links */
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-accent);
+}
+
+a:visited {
+  color: var(--text-accent);
+}
+
+a:hover {
+  background-color: var(--hover-bg-light);
+  color: var(--hover-text-primary);
+}
+
+a:focus-visible {
+  outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+a:active {
+  background-color: var(--active-bg);
+  color: var(--active-text);
+}
+
+/* Change display to better compatibility */
+img {
+  display: block;
+  height: auto;
+}
+
+/* Small articles */
+article[class*="small-article1"],
+article[class*="small-article2"],
+article[class*="small-article3"] {
+  background-color: var(--bg-tertiary);
+  border: var(--border-width-thin) solid var(--border-light);
+  font-size: var(--font-size-small-article);
+}
+
+article[class*="small-article1"]:hover,
+article[class*="small-article2"]:hover,
+article[class*="small-article3"]:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-header);
+  color: var(--text-on-dark);
+  border-top: var(--border-width-thick) solid var(--color-brand-primary);
+}
+
+/* Text on footer*/
+footer p {
+  margin-top: var(--spacing-xt);
+  margin-left: var(--spacing-md);
+}
+
+/* Layout and reusable elements */
+/*
+11. [x] Your .newspaper-layout should use CSS Grid with a grid-template-areas property to define the arrangement of sections:
+    
+    [x] - The .title should span across the top row.
+
+    [x] - The .feature-article should span two columns in the second row, with the .cover-image in the third column.
+
+    [x] - The .secondary-article should span two columns in the third row, with the .cover-image in the third column.
+
+    [x] - The three small articles should appear in the fourth row.
+
+12. [x] The .newspaper-layout should have a grid-template-columns property that divides the space into three equal columns.
+13. [x] You should set the .newspaper-layout's grid-template-rows property to auto for the first row and divide the remaining space into equal parts for the other rows.
+14. [x] You should add a gap between grid items.
+*/
+.newspaper-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto repeat(3, 1fr);
+  grid-template-areas: "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  gap: var(--gap-sm);
+  max-width: clamp(18rem, 90dvw, 1400px);
+  margin: 0 auto var(--spacing-md);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* 
+10. [x] The elements with the classes title, feature-article, secondary-article, cover-image, small-article1, small-article2, and small-article3 should have a grid-area property set to the same class name. 
+*/
+.title {
+  grid-area: title;
+  background-color: var(--bg-header);
+  color: var(--text-on-dark);
+  border-bottom: var(--border-width-thick) solid var(--color-brand-primary);
+}
+
+/* Main article */
+.feature-article {
+  grid-area: feature-article;
+  background-color: var(--bg-primary);
+  border-left: var(--border-width-bold) solid var(--color-brand-primary)
+}
+
+/* Secondary article */
+.secondary-article {
+  grid-area: secondary-article;
+}
+
+/* Figure image */
+.cover-image {
+  grid-area: cover-image;
+}
+
+/* Image
+15. [x] Ensure that the image inside .cover-image fits within the designated space by setting its max-width to 100%.
+*/
+.cover-image img {
+  max-width: 100%;
+}
+
+/* First small article */
+.small-article1 {
+  grid-area: small-article1;
+}
+
+/* Second small article */
+.small-article2 {
+  grid-area: small-article2;
+}
+
+/* Third small article */
+.small-article3 {
+  grid-area: small-article3;
+}
+
+/* Media Breackpoints */
+/* Mobile */
+@media screen and (width>320px) {
+  article {
+    padding: var(--spacing-xt);
+  }
+}
+
+/* Tablet */
+@media screen and (width>=425px) {
+  :root {
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-base);
+    --font-size-small-article: var(--font-size-base);
+  }
+
+  h1 {
+    font-size: var(--font-size-h1-tablet);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2-tablet);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3-tablet);
+  }
+
+  article {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* Desktop */
+@media screen and (width>=768px) {
+  :root {
+    --font-size-body: var(--font-size-lg);
+    --font-size-caption: var(--font-size-md);
+    --font-size-small-article: var(--font-size-md);
+  }
+
+  h1 {
+    font-size: var(--font-size-h1-desktop);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2-desktop);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3-desktop);
+  }
+
+  article {
+    padding: var(--spacing-sm);
+  }
+}

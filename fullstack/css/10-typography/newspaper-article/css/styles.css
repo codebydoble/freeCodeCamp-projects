@@ -1,0 +1,276 @@
+/*
+======================================================
+--- PALETTE: MODERN DIGITAL NEWSPAPER (LIGHT MODE) ---
+======================================================
+Project: Newspaper Article
+Author: Yoandy Doble Herrera
+Date: 19-10-2025
+*/
+:root {
+    /* -- Base Palette -- */
+
+    --color-paper-white: #FDFDFB;
+    /* A warm, soft off-white for the main background. */
+    --color-ink-black: #111111;
+    /* A deep, rich black for high-impact headlines. */
+    --color-body-gray: #333333;
+    /* A softer dark gray for optimal body text readability. */
+    --color-meta-gray: #6C757D;
+    /* A muted gray for bylines, dates, and captions. */
+    --color-press-blue: #005A9C;
+    /* An authoritative blue for links, branding, and section headers. */
+    --color-highlight-blue: #E6F0F8;
+    /* A very light blue for featured article backgrounds. */
+
+
+    /* --- Functional Assignment --- */
+
+    /* 1. Page & Layout */
+    --background-page: var(--color-paper-white);
+    --background-featured-article: var(--color-highlight-blue);
+
+    /* 2. Typography */
+    --text-headline: var(--color-ink-black);
+    --text-subheadline: var(--color-body-gray);
+    --text-body: var(--color-body-gray);
+    --text-meta: var(--color-meta-gray);
+    /* For author bylines, dates, categories. */
+    --text-blockquote: var(--color-ink-black);
+    --text-on-brand: #FFFFFF;
+    /* For text on top of press-blue elements. */
+
+    /* 3. Rules & Borders (Newspaper Layout) */
+    --rule-primary: #DEE2E6;
+    /* Standard horizontal rule for separating content. */
+    --rule-section-divider: var(--color-meta-gray);
+    /* A stronger rule for major section breaks. */
+    --border-image-caption: var(--rule-primary);
+
+    /* 4. Header & Footer */
+    --header-background: #FFFFFF;
+    --header-text-color: var(--text-headline);
+    --header-border-top: 3px solid var(--text-headline);
+    /* Classic newspaper style */
+    --header-border-bottom: 1px solid var(--rule-primary);
+
+    /* 5. Links & Interactive Elements */
+    --link-color: var(--color-press-blue);
+    --link-color-visited: var(--color-press-blue);
+    --link-color-hover: #003D6B;
+    /* A darker, more saturated blue. */
+    --link-color-active: #002B4D;
+    /* The darkest blue for the click state. */
+
+    /* 6. Buttons (e.g., for "Subscribe" or "Log In") */
+    /* -- Primary Button -- */
+    --button-primary-background: var(--color-press-blue);
+    --button-primary-text: var(--text-on-brand);
+    --button-primary-border: var(--color-press-blue);
+    --button-primary-background-hover: var(--link-color-hover);
+
+    /* -- Secondary Button (Text-based) -- */
+    --button-secondary-text: var(--link-color);
+    --button-secondary-background-hover: var(--color-highlight-blue);
+
+    /* 7. Focus State (WCAG/WAI-ARIA) */
+    --focus-ring-color: var(--color-press-blue);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General normalize*/
+html {
+    /* You should set the root font-size of your HTML document to 24px. */
+    font-size: 24px;
+    text-size-adjust: none;
+}
+
+body {
+    max-width: 100%;
+    min-height: 100dvh;
+    line-height: 1.5;
+    text-wrap: pretty;
+    background-color: var(--background-page);
+    color: var(--text-body);
+}
+
+/* Heading */
+h1,
+h2 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    color: var(--text-headline);
+}
+
+h2,
+h3,
+h4 {
+    color: var(--text-subheadline);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Lists */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Buttons */
+button {
+    font: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
+
+.header-page {
+    max-width: 100%;
+    height: auto;
+    background-color: var(--header-background);
+    border-bottom: 1px solid var(--rule-primary);
+}
+
+.header-page,
+.header-page_link {
+    color: var(--header-text-color);
+}
+
+/* Header container */
+.heading {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.3rem;
+}
+
+/* Navigation container*/
+/*.header-page_nav {}*/
+
+.header-page_link:visited {
+    color: var(--text-meta);
+}
+
+.header-page_link:hover {
+    color: var(--text-meta);
+}
+
+.header-page_link:active {
+    color: var(--link-color-active);
+}
+
+.header-page_list_desktop {
+    display: none;
+}
+
+/* Main styles hold all articles */
+.main-container {
+    max-width: 95dvw;
+    min-height: 100dvh;
+    margin: 0 auto 0.6rem;
+}
+
+.newspaper {
+    background-color: var(--background-featured-article);
+    /*Your .newspaper element should have a font-size of 16px and a font of Open Sans with a fallback font of sans-serif.*/
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 1rem 0.3rem 0.3rem;
+}
+
+/* Sub heading article */
+.name {
+    /*Your .name element should have a font-size that is twice the root element's font-size and should use the Times New Roman font, with a fallback font of serif.*/
+    font-family: 'Times New Roman', serif;
+    /*Your .author should use CSS to make it bold.*/
+    font-size: 2rem;
+}
+
+.name,
+.author {
+    /*Your .name and .author elements should use CSS to make all their characters uppercase.*/
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.headline {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.sub-headline {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+/* Paragraph content */
+.text {
+    text-indent: 20px;
+    line-height: 2em;
+}
+
+.text::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.footer-page {
+    border-top: 3px solid var(--text-headline);
+    padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    /* Header container */
+    .header-page_list_mobile {
+        justify-content: space-evenly;
+    }
+
+    /* Main styles hold all articles */
+    .main-container {
+        max-width: 60ch;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .heading {
+        align-items: center;
+    }
+
+    .header-page_list_mobile {
+        display: none;
+    }
+
+    .header-page_list_desktop {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .header-page_list li:first-child {
+        margin-right: 0.5rem;
+    }
+
+    /* Main styles hold all articles */
+    .main-container {
+        max-width: 70ch;
+    }
+}

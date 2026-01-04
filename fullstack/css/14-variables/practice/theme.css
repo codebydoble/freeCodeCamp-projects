@@ -1,0 +1,89 @@
+/* Custom properties are particularly useful in creating themeable designs.
+You can define a set of properties for different themes: 
+--CHECK ANOTHER APROCH WITH CLAUDE--
+*/
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+
+.dark-theme {
+    --bg-color: black;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Switching themes becomes as simple as adding or removing a class from the
+body element. */
+
+/*Custom properties can also be used with media queries to create responsive
+designs:*/
+:root {
+    --container-width: 100%;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --container-width: 750px;
+    }
+}
+
+.container {
+    width: var(--container-width);
+}
+
+/* For browsers that don't support the @property rule, you can provide a
+fallback by declaring the custom property in the traditional way: */
+:root {
+    /*fallback of @property*/
+    --bg-secondary: #037003;
+    --gradient-angle: 0deg;
+}
+
+@property --bg-secondary {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #037003;
+}
+
+div {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--bg-secondary);
+    color: white;
+}
+
+/*Animation*/
+@property --gradient-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.container-two {
+    /* Fallback in the linear gradient angle */
+    background: linear-gradient(var(--gradient-angle, 0deg), #07f507 0%, #037003 40%, #c9266d 100%);
+    animation: gradient-angle 0.5s;
+}
+
+.container-two:hover {
+    --gradient-angle: 90deg;
+}
+
+/* The @property rule also allows for more complex fallback scenarios. For
+instance, you can use it to provide type-safe fallbacks: */
+
+@property --padding {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 10px;
+}
+
+.box {
+    padding: var(--padding);
+}

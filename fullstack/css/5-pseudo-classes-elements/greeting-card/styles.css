@@ -1,0 +1,163 @@
+/* Greeting Card Project freeCodeCamp
+Author: Yoandy Doble Herrera
+*/
+
+:root {
+    --bg-color: brown;
+    --bg-color-card: white;
+    --bg-color-text: gray;
+    --bg-link: midnightblue;
+    --bg-color-section: whitesmoke;
+    /* States */
+    --bg-hover: khaki;
+    --bg-link-visited: crimson;
+    --bg-link-hover: orangered;
+    --bg-link-focus: yellow;
+    --bg-link-active: var(--bg-link);
+}
+
+/* CSS reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Core body defaults */
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+    background-color: var(--bg-color);
+    line-height: 1.5;
+}
+
+/* Typography styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    line-height: 1.1;
+}
+
+/* Paragraph style*/
+p {
+    text-wrap: pretty;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make images easier to work with */
+img,
+svg,
+picture,
+video {
+    max-width: 100dvw;
+    height: auto;
+    display: block;
+}
+
+section {
+    display: none;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: var(--bg-color-section);
+    border-radius: 10px;
+    transition: background-color 1s ease;
+}
+
+section:hover {
+    transform: skewX(10deg);
+    background-color: antiquewhite;
+}
+
+section:target {
+    display: block;
+}
+
+/* Reusable Components and Layout */
+.card {
+    background-color: var(--bg-color-card);
+    max-width: 400px;
+    padding: 40px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px gray;
+    transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: var(--bg-hover);
+}
+
+.card h1 {
+    margin-bottom: 1rem;
+}
+
+h1::before {
+    content: "🥳 ";
+}
+
+h1::after {
+    content: " 🥳";
+}
+
+.message {
+    font-size: 1.2em;
+    color: var(--bg-color-text);
+    margin-bottom: 20px;
+}
+
+.card-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-links a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--bg-color-card);
+    background-color: var(--bg-link);
+    transition: background-color 0.3s ease;
+}
+
+.card-links a:visited {
+    color: var(--bg-link-visited);
+}
+
+.card-links a:hover {
+    background-color: var(--bg-link-hover);
+}
+
+.card-links a:focus {
+    outline: 2px solid yellow;
+}
+
+.card-links a:active {
+    background-color: var(--bg-link-active);
+}

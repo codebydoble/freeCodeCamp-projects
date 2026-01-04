@@ -1,0 +1,431 @@
+/*
+Project freeCodeCamp: Colored Boxes
+Author: Yoandy Doble Herrera
+Date: 26-09-2025
+
+/*
+============================================
+--- PALETA DE COLORES: MODO CLARO (LIGHT MODE) ---
+============================================
+*/
+
+:root {
+    /* -- Colores Base (Palette) -- */
+    /* Color indigo. */
+    --color-indigo-deep: #27213C;
+
+    /* Rojo terracota. */
+    --color-brand-terracotta: #A93F55;
+
+    /* Color neutro. */
+    --color-gray-text: #5f5f6e;
+
+    /* Acento para estados de foco (focus) y highlights. */
+    --color-accent-gold: #D48A03;
+    --color-accent-one: #CCFF00;
+    --color-accent-two: #00FFFF;
+    --color-accent-three: #FFFF33;
+    --color-accent-four: #00FF7F;
+    --color-accent-five: #0099FF;
+
+    /* Color de fondo. */
+    --color-background-main: #F4F4F4;
+    --color-white: #FFFFFF;
+
+    /* Colores semánticos para feedback de usuario. */
+    --color-feedback-error: #C5221F;
+    --color-feedback-success: #188038;
+
+    /* --- Asignación Funcional (Functional Assignment) --- */
+
+    /* 1. Fondo y Texto (Background & Text) */
+    --background-primary: var(--color-background-main);
+    --background-secondary: var(--color-white);
+    /* Para tarjetas o modales que necesiten destacar. */
+    --text-primary: var(--color-indigo-deep);
+    --text-secondary: var(--color-gray-text);
+    --text-on-brand: var(--color-white);
+    --text-color1: #e5deff;
+    --text-color2: #010003;
+    --text-color3: #c6b6ff;
+    --text-color4: #fcfcfc;
+    --text-color5: #07060b;
+    /* Texto para usar sobre botones con color de marca. */
+
+    /* 2. Bordes y Separadores (Borders & Separators) */
+    --border-primary: #DCDCE0;
+    --border-interactive: #BDBDC4;
+
+    /* 3. Colores de Marca y Acentos (Brand & Accent) */
+    --brand-color: var(--color-brand-terracotta);
+    --focus-ring-color: var(--color-accent-gold);
+
+
+    /* 4. Estados de Enlaces (Link States) */
+    --link-color: var(--color-brand-terracotta);
+    --link-color-visited: var(--color-brand-terracotta);
+    --link-color-hover: #8c2b41;
+    /* Versión más oscura para indicar interacción. */
+    --link-color-active: #6f1a2e;
+
+    /* 5. Botones (Buttons) */
+    /* Botón Primario (ej. "Enviar") */
+    --button-primary-background: var(--color-brand-terracotta);
+    --button-primary-text: var(--text-on-brand);
+    --button-primary-background-hover: var(--link-color-hover);
+
+    /* Botón Secundario (ej. "Cancelar") */
+    --button-secondary-background: transparent;
+    --button-secondary-text: var(--color-brand-terracotta);
+    --button-secondary-border: var(--color-brand-terracotta);
+    --button-secondary-background-hover: #fdedf0;
+    /* Un tinte muy sutil del color de marca. */
+
+    /* 6. Campos de Formulario (Input Fields) */
+    --input-background: var(--color-white);
+    --input-text: var(--text-primary);
+    --input-placeholder: var(--text-secondary);
+    --input-border: var(--border-interactive);
+    --input-border-hover: var(--color-gray-text);
+    --input-border-focus: var(--brand-color);
+
+    /* 7. Estados de Feedback (Feedback States) */
+    /* Para mensajes de error */
+    --feedback-error-background: #FCE8E6;
+    --feedback-error-text: var(--color-feedback-error);
+    --input-border-error: var(--color-feedback-error);
+
+    /* Para mensajes de éxito */
+    --feedback-success-background: #E6F4EA;
+    --feedback-success-text: var(--color-feedback-success);
+    --input-border-success: var(--color-feedback-success);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid font inflation */
+html {
+    font-size: 16px;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Main content css*/
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    max-width: 100dvw;
+    min-height: 100dvh;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+/* Titles css*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-wrap: balance;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 1rem;
+}
+
+/* Text and paragraph */
+p {
+    font-size: 1rem;
+    text-wrap: pretty;
+}
+
+/* Make images easier to work */
+img,
+svg,
+figure,
+video {
+    display: block;
+    max-width: 100dvw;
+    height: auto;
+}
+
+/* Reusable Components and Layout */
+.header_title {
+    padding: 0.6rem;
+    text-align: center;
+}
+
+/* Main configuration*/
+.main {
+    max-width: 90dvw;
+    min-height: 80dvh;
+    margin: 0 auto;
+}
+
+.article-title {
+    margin-bottom: 0.5rem;
+}
+
+/* Grid for colors div*/
+.color-grid {
+    margin: 0.5rem auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+/* Each color box*/
+/* The .color-box class should have a set width and height so your div elements are visible on the page. */
+.color-box {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 0.6rem;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.color-box:hover {
+    font-weight: bolder;
+}
+
+/* The .color1 element should have a background-color that uses hexadecimal color value.*/
+.color1 {
+    background-color: #A93F55;
+    color: var(--text-color1);
+}
+
+.color1:hover {
+    outline: 0.2rem solid var(--color-accent-one);
+}
+
+/* The .color2 element should have a background-color that uses an RGB color value. */
+.color2 {
+    background-color: rgb(150, 138, 138);
+    color: var(--text-color2);
+}
+
+.color2:hover {
+    outline: 0.2rem solid var(--color-accent-two);
+}
+
+/* The .color3 element should have a background-color that uses a predefined (word) color value. */
+.color3 {
+    background-color: indigo;
+    color: var(--text-color3);
+}
+
+.color3:hover {
+    outline: 0.2rem solid var(--color-accent-three);
+}
+
+/* The .color4 element should have a background-color that uses a HSL color value. */
+.color4 {
+    background-color: hsl(0, 25%, 37%);
+    color: var(--text-color4);
+}
+
+.color4:hover {
+    outline: 0.2rem solid var(--color-accent-four);
+}
+
+/* The .color5 element should have a background-color set */
+.color5 {
+    background-color: #B86969;
+    color: var(--text-color5);
+    margin-bottom: 0;
+}
+
+.color5:hover {
+    outline: 0.2rem solid var(--color-accent-five);
+}
+
+.footer-text {
+    margin-left: 1rem;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.25rem;
+    }
+
+    /* Text and paragraph */
+    p {
+        font-size: 1.25rem;
+    }
+
+    /* Grid for colors div*/
+    .color-grid {
+        margin: 1rem auto;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    /* Each color box*/
+    /* The .color-box class should have a set width and height so your div elements are visible on the page. */
+    .color-box {
+        margin-bottom: 0;
+    }
+}
+
+/* Laptop - Desktop mode tiny */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.50rem;
+    }
+
+    /* Text and paragraph */
+    p {
+        font-size: 1.50rem;
+    }
+
+    /* Main configuration*/
+    .main {
+        min-height: 83dvh;
+    }
+
+    /* Each color box*/
+    /* The .color-box class should have a set width and height so your div elements are visible on the page. */
+    .color-box {
+        width: 7rem;
+        height: 7rem;
+    }
+}
+
+/* Laptop - Desktop mode large */
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 3.25rem;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+
+    h3 {
+        font-size: 2.25rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.75rem;
+    }
+
+    /* Text and paragraph */
+    p {
+        font-size: 1.75rem;
+    }
+
+    /* Each color */
+    .color-box {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+    h1 {
+        font-size: 3.75rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 2rem;
+    }
+
+    /* Text and paragraph */
+    p {
+        font-size: 2rem;
+    }
+
+    /* Main configuration*/
+    .main {
+        min-height: 91dvh;
+    }
+
+    /* Grid for colors div*/
+    .color-grid {
+        margin: 3rem auto;
+    }
+
+    /* Each color */
+    .color-box {
+        width: 10rem;
+        height: 10rem;
+    }
+}

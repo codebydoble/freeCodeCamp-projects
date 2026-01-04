@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes slide-in {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
+
+.box-one {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+    color: white;
+    text-align: center;
+}
+
+.box-one:hover {
+    animation: slide-in 2s ease-out;
+}
+
+.complex-animation {
+    width: 100px;
+    height: 100px;
+    animation-name: color-change;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Heading */
+.title {
+    animation: slide-in 3s ease-in infinite;
+}
+
+.text {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: midnightblue;
+    transition: color 4s ease linear;
+}
+
+.text:hover {
+    color: goldenrod;
+}

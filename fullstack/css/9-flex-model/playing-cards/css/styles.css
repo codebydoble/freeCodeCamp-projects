@@ -1,0 +1,228 @@
+/*
+===================================================
+--- COLOR PALETTE: POKER CARDS FLEXBOX PRACTICE ---
+===================================================
+Author: Yoandy Doble Herrera
+Section 7: The Flexbox Model 
+Date: 17-10-2025
+A classic, high-contrast palette for a card game interface.
+*/
+
+:root {
+  /* -- Base Palette -- */
+  /* A classic felt green for the main playing surface. */
+  --color-table-green: #35654d;
+  /* A soft, off-white for the card face to reduce eye strain. */
+  --color-card-white: #F8F8F8;
+  /* A deep, accessible red for hearts and diamonds. */
+  --color-suit-red: #D90429;
+  /* A simple, solid black for spades and clubs. */
+  --color-suit-black: #212121;
+  /* A classic, rich blue for the back of the cards. */
+  --color-card-back-blue: #2A4A87;
+  /* A very dark gray for borders and subtle shadows. */
+  --color-dark-gray: #333333;
+
+  /* 1. Background & Playing Surface */
+  --background-primary: var(--color-table-green);
+
+  /* 2. Playing Cards */
+  --card-face-background: var(--color-card-white);
+  --card-back-background: var(--color-card-back-blue);
+  --card-border-color: #D3D3D3;
+  /* A light gray for a subtle border. */
+  --card-shadow-color: rgba(0, 0, 0, 0.25);
+  --card-shadow-color-hover: rgba(0, 0, 0, 0.75);
+
+  /* 3. Card Suits & Ranks (Text/Icons) */
+  --suit-color-red: var(--color-suit-red);
+  --suit-color-black: var(--color-suit-black);
+
+  /* 4. Interactive States */
+  /* A highlight to apply on :hover or :focus to a specific card. */
+  --card-focus-highlight-color: #FFD700;
+  /* A vivid gold for a clear outline. */
+}
+
+/* CSS Normalize */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+  text-size-adjust: none;
+}
+
+/* General styles */
+body {
+  background-color: var(--background-primary);
+  color: var(--color-card-white);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100%;
+  line-height: 1.5;
+  text-wrap: balance;
+  max-width: 100%;
+  /* could by auto */
+  min-height: 100dvh;
+}
+
+/* Heading */
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1.1;
+  font-size: 2.5rem;
+}
+
+p {
+  text-wrap: pretty;
+  /*font-size: 2rem;*/
+}
+
+/* Layout and reusable components */
+
+/* Header */
+.header {
+  width: 100%;
+  height: fit-content;
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+/* Element awesome play */
+.fa-play {
+  color: var(--card-focus-highlight-color);
+}
+
+
+/* Main container of cards item -Bad practice- */
+#playing-cards {
+  width: 100%;
+  min-height: 90dvh;
+  margin-top: 1rem;
+  /* use flexbox */
+  display: flex;
+  /* horizontally center its children, allow them to wrap */
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  /* You should have a #playing-cards selector that sets its elements' gap to 20px. */
+  gap: 20px;
+}
+
+/* Card item -single- */
+.card {
+  background-color: var(--card-face-background);
+  color: var(--suit-color-black);
+  filter: drop-shadow(16px 16px 5px var(--card-shadow-color));
+  border: 2px solid var(--card-border-color);
+  border-radius: 5px;
+  padding: 5px;
+  width: 180px;
+  height: 250px;
+  cursor: pointer;
+  /* Each of your .card elements should use flexbox to justify its children using space-between.*/
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.card:hover {
+  border: 2px solid var(--card-focus-highlight-color);
+  filter: drop-shadow(16px 16px 5px var(--card-shadow-color-hover));
+}
+
+.card-heart,
+.card-diamond {
+  color: var(--suit-color-red);
+}
+
+/* Card elements styles */
+.card-letter,
+.card-figure,
+.card-figure_middle {
+  font-size: 2rem;
+}
+
+.card-figure_middle {
+  font-size: 2.5rem;
+}
+
+.card-figure_big {
+  font-size: 6rem;
+}
+
+/* Single card, left part */
+.left {
+  /*Each of your .left elements should use flexbox item properties to align itself at the start of its' parent container.*/
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: flex-start;
+}
+
+/* Single card, middle part */
+.middle {
+  /* Each of your .middle elements should use flexbox item properties to align itself in the center of its' parent container. */
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+}
+
+/* Inner container of middle */
+.middle-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* Top inner container of middle */
+.middle-container_top {
+  margin-bottom: 2rem;
+}
+
+/* First figure of inner container of middle */
+.card-figure_middle_one {
+  margin-right: 1.5rem;
+}
+
+/* Single card, right part */
+.right {
+  /* Each of your .right elements should use flexbox item properties to align itself at the end of its parent container. */
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  align-self: flex-end;
+}
+
+.card-letter_reverse {
+  transform: rotate(0.5turn);
+}
+
+/* Element awesome heart */
+.fa-heart {
+  color: var(--suit-color-red);
+}
+
+/* Footer text */
+.text {
+  margin: 1rem 1rem 0;
+  font-size: 1.1rem;
+}
+
+@media ((min-width: 1024px)) {
+
+  /* Main container of cards item -Bad practice- */
+  #playing-cards {
+    min-height: 82dvh;
+    align-content: center;
+  }
+}

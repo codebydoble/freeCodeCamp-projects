@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Book Inventory App: Keep track of your personal book library in one place. Begins the impressive path of books.">
+    <meta name="author" content="Yoandy Doble Herrera">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Book Inventory</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <i class="fa-solid fa-book" aria-hidden="true"></i>
+        <h1 class="page-header-title">Book Inventory</h1>
+    </header>
+    <main class="main">
+        <table class="main-table">
+            <caption>Book Inventory Index</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="read">
+                    <td>Dune</td>
+                    <td>Frank Herbert</td>
+                    <td>Epic Science Fiction, Space Opera</td>
+                    <td><span class="status">Read</span></td>
+                    <td>
+                        <!-- 1-star rating -->
+                        <span class="rate one">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="to-read">
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>Dystopian, Social Science Fiction</td>
+                    <td><span class="status">To Read</span></td>
+                    <td>
+                        <!-- 3-star rating -->
+                        <span class="rate three">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="in-progress">
+                    <td>Foundation</td>
+                    <td>Isaac Asimov</td>
+                    <td>Epic Science Fiction, Future History</td>
+                    <td><span class="status">In Progress</span></td>
+                    <td>
+                        <!-- 1-star rating -->
+                        <span class="rate one">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="read">
+                    <td>The Hitchhiker's Guide to the Galaxy</td>
+                    <td>Douglas Adams</td>
+                    <td>Comic Science Fiction</td>
+                    <td><span class="status">Read</span></td>
+                    <td>
+                        <!-- 2-star rating -->
+                        <span class="rate two">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="to-read">
+                    <td>Neuromancer</td>
+                    <td>William Gibson</td>
+                    <td>Cyberpunk</td>
+                    <td><span class="status">To Read</span></td>
+                    <td>
+                        <!-- 2-star rating -->
+                        <span class="rate two">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="read">
+                    <td>Brave New World</td>
+                    <td>Aldous Huxley</td>
+                    <td>Dystopian, Social Science Fiction</td>
+                    <td><span class="status">Read</span></td>
+                    <td>
+                        <!-- 1-star rating -->
+                        <span class="rate one">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="in-progress">
+                    <td>A Clockwork Orange</td>
+                    <td>Anthony Burgess</td>
+                    <td>Dystopian</td>
+                    <td><span class="status">In Progress</span></td>
+                    <td>
+                        <!-- 3-star rating -->
+                        <span class="rate three">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="to-read">
+                    <td>Do Androids Dream of Electric Sheep?</td>
+                    <td>Philip K. Dick</td>
+                    <td>Cyberpunk, Philosophical SF</td>
+                    <td><span class="status">To Read</span></td>
+                    <td>
+                        <!-- 3-star rating -->
+                        <span class="rate three">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="read">
+                    <td>The Martian</td>
+                    <td>Andy Weir</td>
+                    <td>Hard Science Fiction, Survival</td>
+                    <td><span class="status">Read</span></td>
+                    <td>
+                        <!-- 3-star rating -->
+                        <span class="rate three">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="in-progress">
+                    <td>Childhood's End</td>
+                    <td>Arthur C. Clarke</td>
+                    <td>First Contact, Space Opera</td>
+                    <td><span class="status">In Progress</span></td>
+                    <td>
+                        <!-- 1-star rating -->
+                        <span class="rate one">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer class="page-footer">
+        <p class="para">&copy; 2025 Book Inventory. All rigths reserved. Made by <strong>@codebydoble</strong> <i
+                class="fa-solid fa-rocket" aria-hidden="true"></i></p>
+    </footer>
+</body>
+
+</html>

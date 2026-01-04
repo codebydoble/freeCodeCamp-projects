@@ -1,0 +1,412 @@
+/*
+==============================================
+--- PALETTE: "FEATURE" (LIGHT MODE) ---
+==============================================
+Project: ModulA: Selection Feature Page
+Author: Yoandy Doble Herrera
+Date: 13-11-2025
+*/
+
+
+:root {
+  /* -- Base Palette (5 Colors) -- */
+  --color-white: #FFFFFF;
+  /* 1. Base for backgrounds */
+  --color-dark-slate: #1f2937;
+  /* 2. Base for primary text */
+  --color-brand-blue: #2563EB;
+  /* 3. Primary action & interactive elements */
+  --color-secure-green: #059669;
+  /* 4. Success feedback */
+  --color-mid-gray: #6B7280;
+  /* 5. Secondary text & non-interactive UI elements */
+
+
+  /* --- Functional Assignment --- */
+
+  /* 1. Backgrounds */
+  --background-primary: var(--color-white);
+  --background-secondary: #F9FAFB;
+  /* A subtle gray for section differentiation */
+
+  /* 2. Typography */
+  --text-primary: var(--color-dark-slate);
+  /* (Contrast: 15.6:1 -> Passes AAA) */
+  --text-secondary: var(--color-mid-gray);
+  /* (Contrast: 4.63:1 -> Passes AA) */
+  --text-on-brand: var(--color-white);
+  /* (Contrast: 4.54:1 -> Passes AA) */
+
+  /* 3. Borders & Separators */
+  --border-primary: #E5E7EB;
+  /* For static dividers and containers. */
+  --border-interactive: #D1D5DB;
+  /* For elements the user can interact with. */
+
+
+  /* 4. Header & Footer */
+  --header-background: var(--color-white);
+  --header-text-color: var(--text-primary);
+  --header-border-bottom: var(--border-primary);
+
+  /* 5. Links & Interactive Elements */
+  --link-color: var(--color-brand-blue);
+  --link-color-visited: var(--color-brand-blue);
+  --link-color-hover: var(--color-dark-slate);
+  --link-color-focus: var(--color-dark-slate);
+  --link-color-active: var(--color-dark-slate);
+
+  /* 6. Buttons */
+  /* -- Primary Button -- */
+  --button-primary-background: var(--color-brand-blue);
+  --button-primary-text: var(--text-on-brand);
+  --button-primary-border: var(--color-brand-blue);
+  --button-primary-background-hover: #1D4ED8;
+  /* Darker blue */
+
+  /* 7. Secondary Buttons */
+  --button-secondary-background: var(--color-white);
+  --button-secondary-text: var(--text-secondary);
+  --button-secondary-border: var(--border-interactive);
+  --button-secondary-background-hover: var(--background-secondary);
+  --button-secondary-border-hover: var(--text-secondary);
+
+  /* 8. Focus State (WCAG/WAI-ARIA) */
+  --focus-ring-color: var(--color-brand-blue);
+  /* Used for outline: 2px solid var(--focus-ring-color); */
+
+  /* 9. Feedback States */
+  /* -- Success -- */
+  /* Derived from --color-secure-green */
+  --feedback-success-text: var(--color-secure-green);
+  --feedback-success-background: #D1FAE5;
+  --feedback-success-border: #6EE7B7;
+
+  /* 10. Input checkbox */
+  --checkbox-background: var(--color-white);
+  --checkbox-border: var(--border-interactive);
+  --checkbox-background-checked: var(--color-brand-blue);
+  --checkbox-border-checked: var(--color-brand-blue);
+  --checkbox-color-content: var(--color-white);
+  /* The checkmark icon */
+
+}
+
+/* Normalize CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+  text-size-adjust: none;
+  font-size: 100%;
+}
+
+/* Core styles */
+body {
+  min-height: 100dvh;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Heading */
+h1,
+h2 {
+  font-family: "Zilla Slab", serif;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1.1;
+}
+
+/* Aligment */
+h1,
+h2,
+ul,
+.para {
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
+  margin-left: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(4vw, 2rem, 4rem);
+}
+
+/* Text style */
+p {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+}
+
+
+/*List */
+li {
+  list-style: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+/* Styling for better work */
+picture,
+img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+label,
+button,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Input checkbox inside feature card container 
+ [x] Create a selector that targets the checkboxes, and apply the following styling:    
+*/
+input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  /* [x] All of your checkbox elements should be set to appearance: none; in your CSS. */
+  appearance: none;
+  /* [x] All of your checkbox elements should have a border width, color and style of your choosing. */
+  border-width: 0.125rem;
+  border-color: var(--color-mid-gray);
+  border-style: solid;
+  /* border: 2px solid var(--color-mid-gray); shorthand */
+  background-color: var(--checkbox-background);
+  border-radius: 0.25rem;
+  transition: border-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--checkbox-background-checked);
+  border: 0.125rem solid var(--checkbox-border-checked);
+}
+
+input[type="checkbox"]:checked:hover {
+  border: 0.125rem solid var(--color-dark-slate);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  line-height: 1.4;
+}
+
+input[type="checkbox"]:hover {
+  border: 0.125rem solid var(--color-dark-slate);
+}
+
+input[type="checkbox"]:focus {
+  outline: 0.125rem solid var(--focus-ring-color);
+  outline-offset: 0.125rem;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 0.125rem solid var(--focus-ring-color);
+  outline-offset: 0.125rem;
+}
+
+button {
+  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+footer {
+  margin-left: 1rem;
+}
+
+/* Layout and reusable components */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+}
+
+.header-list li:last-child {
+  margin: 0.8rem auto 1.4rem;
+}
+
+.header-link:visited {
+  color: var(--link-color-visited);
+}
+
+.header-link:hover {
+  color: var(--link-color-hover);
+}
+
+.header-link_cta:hover {
+  color: var(--color-white);
+}
+
+.header-link:focus {
+  outline: 2px solid var(--link-color-focus);
+  border-radius: 2px;
+}
+
+.header-link:active {
+  color: var(--link-color-active);
+}
+
+.feature-card-container {
+  width: clamp(18rem, 90vw, 70ch);
+  min-height: 100dvh;
+  margin: 0.5rem auto;
+  padding: 0.6rem;
+  background-color: var(--background-secondary);
+  border: 0.25rem solid var(--border-primary);
+  border-radius: 0.6rem;
+  box-shadow: 0.625rem 0.3125rem 0.625rem rgba(31, 41, 55, 0.4);
+}
+
+/* Fieldset class */
+.fieldset-card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+/* Label class */
+.feature-card {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 0.125rem solid var(--border-primary);
+  border-radius: 0.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  border-color: var(--focus-ring-color);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 102, 204, 0.1);
+}
+
+.feature-card-last {
+  margin-bottom: 1.25rem;
+}
+
+.feature-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.feature-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.feature-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Button CTA */
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  background-color: var(--button-primary-background);
+  color: var(--button-primary-text);
+  font-weight: bold;
+  border: 0.25rem solid var(--button-primary-border);
+  border-radius: 0.4rem;
+}
+
+.btn:hover {
+  background-color: var(--button-primary-background-hover);
+}
+
+/* Media Breackpoints */
+@media screen and (width<=320px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (width>=768px) {
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .header-page,
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-page {
+    justify-content: space-around;
+  }
+
+  .header-list {
+    justify-content: center;
+
+  }
+
+  li:first-of-type {
+    margin-left: 0.5rem;
+  }
+
+  li {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (width>=1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (width>=1440px) {
+  .header-link {
+    font-size: 1.125rem;
+  }
+
+  .feature-title {
+    font-size: 1.125rem;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+  }
+}

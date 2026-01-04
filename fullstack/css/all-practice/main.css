@@ -1,0 +1,143 @@
+body {
+    background-image: url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: contain;
+    min-height: 100px;
+    background-repeat: no-repeat;
+    /* Background shorthand 
+
+    background: center top fixed url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
+    */
+}
+
+.linear-gradient {
+    /*background: linear-gradient(direction -xdeg, to right, to bottom-, color-stop1, color-stop2, ...);*/
+    background: linear-gradient(to top, red, #171717, blue);
+    height: 40dvh;
+}
+
+.radial-gradient {
+    /* shape -> circle or ellipse
+    size -> closest-side, closest-corner, farthest-side, farthest-corner, contain, or cover.
+    postition -> center, top left, bottom right
+    
+    background: radial-gradient(shape size at position, color-stop1, color-stop2, ...)*/
+    background: radial-gradient(ellipse closest-corner at center, red, yellow 50%, green);
+    /* Ejemplo de posicion arriba a la izquierda
+    background: radial-gradient(ellipse at top left, red, blue);*/
+    height: 60vh;
+}
+
+.background-image-text {
+    background-image: url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+img {
+    width: 60dvw;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* border proctice in img -shorthand-*/
+.img-background {
+    border: 2px solid black;
+}
+
+/* individual properties -border-*/
+.img-individual-control {
+    border-top: 3px solid red;
+    border-right: 2px dashed blue;
+    border-bottom: 1rem solid yellow;
+    border-left: 4mm ridge rgb(211 220 50 / 0.6);
+}
+
+/* Outline example*/
+.img-outline {
+    outline: 2px solid gold;
+}
+
+/* Border and border radius*/
+.img-radius {
+    border: 4px double chocolate;
+    border-radius: 8px;
+    outline: 8px solid rgb(228, 63, 13, 0.6);
+}
+
+
+/* Links pseudo class */
+section:target {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 10px;
+}
+
+/* Text */
+.text {
+    color: hsl(255, 100%, 0%);
+}
+
+div .light {
+    color: #171717;
+    background-color: hsl(240, 100%, 80%);
+}
+
+div .dark {
+    color: white;
+    background-color: hsl(240, 100%, 20%);
+    padding: 0.5rem;
+}
+
+.textalpha {
+    background-color: hsla(0, 100%, 50%, .2);
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cta-button::before {
+    content: "⭐";
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    font-size: 0.75rem;
+}
+
+.cta-button:hover:before {
+    transform: translateX(2px);
+}
+
+.cta-button_arrow {
+    background-color: orange;
+    padding: 10px 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta-button_arrow::after {
+    content: '➡️';
+    position: absolute;
+    right: 5px;
+    bottom: 6px;
+    font-size: 1.125rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button_arrow:hover::after {
+    transform: translateX(2px);
+}

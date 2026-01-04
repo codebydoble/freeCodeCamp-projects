@@ -1,0 +1,319 @@
+/*
+==============================================
+--- PALETTE: "DAYLIGHT SCENE" (LIGHT MODE) ---
+==============================================
+Project: House Painting
+Author: Yoandy Doble Herrera
+Date: 1-11-2025
+Un paisaje diurno con cielo azul claro, césped verde
+y una casa blanca con techo rojo.
+*/
+
+:root[data-theme="light"] {
+    /* -- Base Palette -- */
+    --color-sky: #87CEEB;
+    /* azul cielo */
+    --color-grass: #4CAF50;
+    /* verde césped */
+    --color-house-wall: #FFFFFF;
+    /* paredes blancas */
+    --color-chimney: #6a6563;
+    /* Chimney */
+    --color-roof: #E53935;
+    /* techo rojo */
+    --color-window: #87AFC7;
+    /* azul suave ventanas */
+    --color-door: #8B4513;
+    /* marrón madera */
+    --color-door-key: #acb2b4;
+    /* Puerta key */
+    --color-sun-moon: #FFD700;
+    /* sol dorado */
+
+    /* -- Neutrals -- */
+    --color-text-primary: #333333;
+    /* texto oscuro sobre fondo claro */
+    --color-text-secondary: #555555;
+    /* Negro */
+    --color-black: #000;
+    /* Color Heading */
+    --color-heading: #01070f;
+
+    /* --- Functional Assignment --- */
+    --background-primary: var(--color-sky);
+    --background-secondary: var(--color-grass);
+    --element-house: var(--color-house-wall);
+    --element-roof: var(--color-roof);
+    --element-window: var(--color-window);
+    --element-door: var(--color-door);
+    --element-sun-moon: var(--color-sun-moon);
+}
+
+:root[data-theme="dark"] {
+    /* -- Base Palette -- */
+    --color-sky: #0A1A2F;
+    /* azul noche profundo */
+    --color-grass: #1B4332;
+    /* verde oscuro */
+    --color-house-wall: #E0E0E0;
+    /* paredes gris claro (iluminadas) */
+    --color-chimney: #9CA3AF;
+    /* Chimney */
+    --color-roof: #8B1E1E;
+    /* rojo oscuro para el techo */
+    --color-window: #FFD700;
+    /* ventanas iluminadas en dorado */
+    --color-door: #5C4033;
+    /* marrón oscuro */
+    --color-door-key: #acb2b4;
+    /* Puerta key */
+    --color-sun-moon: #F0F2F5;
+    /* moon */
+    --color-moon: #F5E663;
+    /* luna amarilla suave */
+    --color-star: #FFD700;
+    /* estrellas doradas */
+    /* Negro */
+    --color-black: #fff;
+
+    /* -- Neutrals -- */
+    --color-text-primary: #F0F2F5;
+    /* texto claro sobre fondo oscuro */
+    --color-text-secondary: #9CA3AF;
+    /* Color Heading */
+    --color-heading: #01070f;
+
+    /* --- Functional Assignment --- */
+    --background-primary: var(--color-sky);
+    --background-secondary: var(--color-grass);
+    --element-house: var(--color-house-wall);
+    --element-roof: var(--color-roof);
+    --element-window: var(--color-window);
+    --element-door: var(--color-door);
+    --element-sun-moon: var(--color-sun-moon);
+    --element-moon: var(--color-moon);
+    --element-star: var(--color-star);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* Body configuration */
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100dvh;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+}
+
+/* Paragraph style */
+p {
+    text-wrap: pretty;
+}
+
+/* Layout */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--background-primary);
+    width: 100%;
+    height: 80dvh;
+}
+
+/* Sun element */
+.main-section_sun {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--element-sun-moon);
+    border-radius: 50%;
+}
+
+.main-heading {
+    color: #01070f;
+}
+
+#house {
+    /* 2. [] Your #house should have a position set to relative so its children can be positioned with respect to it.*/
+    position: relative;
+    top: 2rem;
+    /* 3. [] Your #house should have a width of 500px and a height of 400px. Do not set minimum or maximum values.*/
+    width: 70%;
+    height: 60%;
+    /* 4. [] Your #house should have a background color and a border set. */
+    background-color: var(--color-house-wall);
+    border: 1px solid var(--color-black);
+
+}
+
+/* 7. [] #roof, #chimney, #window-1, #window-2, and #door should have a width, height, border, and background color set. */
+#roof {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 0;
+    display: flex;
+    border: 0;
+    background-color: transparent;
+}
+
+.roof-left,
+.roof-right {
+    width: 50%;
+    background-color: var(--element-roof);
+}
+
+/* Roof left elemnt */
+.roof-left {
+    /*clip-path: polygon(0 0, 0 100%, 100% 0);*/
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Roof right element */
+.roof-right {
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+#chimney {
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    top: 0;
+    left: 65%;
+    z-index: 0;
+    border: 0;
+    background-color: var(--color-chimney);
+}
+
+/* DRY #window-1, #window-1 {} */
+#window-1 {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 45%;
+    right: 70%;
+    z-index: 1;
+    border: 0;
+    background-color: var(--color-black);
+}
+
+/* Container top window1/window2 glass 1 - 2, 3 - 4 */
+.top-glass1,
+.bottom-glass1,
+.top-glass2,
+.bottom-glass2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Each window1 glass */
+.window-1_glass1,
+.window-1_glass2,
+.window-1_glass3,
+.window-1_glass4,
+.window-2_glass1,
+.window-2_glass2,
+.window-2_glass3,
+.window-2_glass4 {
+    width: 40%;
+    height: 80%;
+}
+
+.window-1_glass1,
+.window-2_glass1 {
+    background-color: var(--element-window);
+}
+
+.window-1_glass2,
+.window-2_glass2 {
+    background-color: var(--element-window);
+}
+
+.window-1_glass3,
+.window-2_glass3 {
+    background-color: var(--element-window);
+}
+
+.window-1_glass4,
+.window-2_glass4 {
+    background-color: var(--element-window);
+}
+
+#window-2 {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 45%;
+    right: 5%;
+    z-index: 1;
+    border: 0;
+    background-color: var(--color-black);
+}
+
+#door {
+    position: absolute;
+    width: 30%;
+    height: 35%;
+    bottom: 0;
+    right: 35%;
+    border: 6px solid var(--color-black);
+    border-bottom: 0;
+    background-color: var(--element-door);
+}
+
+.door-key {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 50%;
+    right: 10%;
+    border-radius: 50%;
+    background-color: var(--color-door-key);
+}
+
+/* Grass footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 20dvh;
+    background-color: var(--color-grass);
+}
+
+.footer-text {
+    margin-left: 1rem;
+}
+
+@media screen and (width >=768px) {
+    #house {
+        /* 3. [] Your #house should have a width of 500px and a height of 400px. Do not set minimum or maximum values.*/
+        width: 500px;
+        height: 400px;
+    }
+}

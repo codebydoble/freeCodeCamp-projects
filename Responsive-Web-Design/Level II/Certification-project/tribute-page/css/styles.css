@@ -1,111 +1,280 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: center;
-}
-.fondogris {
-  background-color: #dfdfe2;
+/*
+=============================
+= freeCodeCamp Tribute Page =
+=============================
+Project: Steve Jobs tribute Page
+Author: Yoandy Doble Herrera
+Date: 24-10-2025
+*/
+
+:root {
+  /* The foundational colors Golden Twilight. */
+  --color-void-blue: #000814;
+  --color-navy-deep: #001D3D;
+  --color-navy-medium: #003566;
+  --color-gold-primary: #FFC300;
+  --color-gold-light: #FFD60A;
+
+  --color-text-bright: #F0F2F5;
+  /* A clean, soft white for primary text. */
+  --color-text-muted: #9CA3AF;
+  /* A muted gray-blue for secondary text. */
+
+  /* -- Feedback Colors (Added for Functionality) -- */
+  --color-feedback-success: #10B981;
+  /* A bright, accessible green. */
+  --color-feedback-error: #F87171;
+  /* A bright, accessible red. */
+
+
+  /* --- Functional Assignment --- */
+
+  /* 1. Backgrounds */
+  --background-primary: var(--color-void-blue);
+  /* The darkest color for the main UI. */
+  --background-secondary: var(--color-navy-deep);
+  /* For cards, modals, and input fields. */
+
+  /* 2. Typography */
+  --text-primary: var(--color-text-bright);
+  --text-secondary: var(--color-text-muted);
+  --text-on-brand: var(--color-void-blue);
+
+  /* 3. Borders & Separators */
+  --border-primary: var(--color-navy-medium);
+  --border-interactive: var(--color-text-muted);
+
+  /* 4. Brand & Focus (WAI-ARIA) */
+  --brand-color: var(--color-gold-primary);
+  --focus-ring-color: var(--color-gold-primary);
+
+  /* 5. Links */
+  --link-color: var(--color-gold-primary);
+  --link-color-visited: var(--color-gold-primary);
+  --link-color-hover: var(--color-gold-light);
+  --link-color-active: #FFE033;
+  /* An even lighter gold for the click state. */
+
+  /* 6. Buttons (Primary Action) */
+  --button-primary-background: var(--color-gold-primary);
+  --button-primary-text: var(--text-on-brand);
+  --button-primary-border: var(--color-gold-primary);
+  --button-primary-background-hover: var(--color-gold-light);
+
+  /* 7. Buttons (Secondary Action) */
+  --button-secondary-background: transparent;
+  --button-secondary-text: var(--color-text-bright);
+  --button-secondary-border: var(--border-primary);
+  --button-secondary-background-hover: var(--color-navy-medium);
+
+  /* 8. Input Fields */
+  --input-background: var(--background-secondary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-secondary);
+  --input-border: var(--border-primary);
+  --input-border-hover: var(--border-interactive);
+  --input-border-focus: var(--focus-ring-color);
+
+  /* 9. Feedback States (Crucial for Forms) */
+  /* -- Success -- */
+  --feedback-success-text: var(--color-feedback-success);
+  --feedback-success-background: rgba(16, 185, 129, 0.1);
+  --feedback-success-border: var(--color-feedback-success);
+
+  /* -- Error -- */
+  --feedback-error-text: var(--color-feedback-error);
+  --feedback-error-background: rgba(248, 113, 113, 0.1);
+  --feedback-error-border: var(--color-feedback-error);
 }
 
-.principal {
-  background-color: #dfdfe2;
-  margin: 30px 8px;
-  border-radius: 10px;
-  padding-top: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Normalize css */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+  text-size-adjust: none;
+  font-size: 100%;
+}
+
+body {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-wrap: balance;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  max-width: 100%;
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+/* Heading */
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.1;
 }
 
 h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 0;
-}
-.photo-fix {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: white;
-  width: 94vw;
+  font-size: clamp(5vw, 2.5rem, 5rem);
 }
 
-#img-div {
-  margin: 15px;
+h2 {
+  font-size: clamp(4vw, 2rem, 4rem);
 }
 
-#image {
+h3 {
+  font-size: clamp(3vw, 1.5rem, 3rem);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Image styles*/
+img {
   display: block;
+  /*Your #image should use max-width and height properties to resize responsively, relative to the width of its parent element,
+  without exceeding its original size */
+  /*max-width: clamp(90dvw, 60vw, 270px);*/
   max-width: 100%;
   height: auto;
 }
 
-.caption {
-  margin: 16px;
-}
-ul {
-  padding-left: 2rem;
-}
-
-ul li {
-  text-align: left;
-  width: 40vw;
-  padding: 10px 2rem 0 0;
-  line-height: 1.6;
-}
-
-.phrase {
-  text-align: justify;
-  width: 43vw;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-.promo {
-  font-size: larger;
-  padding: 15px;
-}
-
-footer {
-  background-color: #2a2a40;
-  color: #dfdfe2;
+/* Layout and reusable components */
+.header {
   display: flex;
-  justify-content: space-between;
-}
-
-.direction {
-  display: flex;
-  justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
-#logo-freecodecamp {
-  width: 15rem;
-  height: auto;
-  padding: 15px;
+/* Header elements only for tablet or desktop*/
+.header-link_desktop,
+.text-desktop {
+  display: none;
 }
 
-.site-title {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-#link-freecodecamp {
-  color: #dfdfe2;
+.header-link {
+  color: var(--link-color);
 }
 
-#link-freecodecamp:hover {
-  color: white;
+.header-link:visited {
+  color: var(--link-color-visited);
 }
 
-#yellow-title {
-  color: #f1be32;
-  font-size: xx-large;
+.header-link:hover {
+  color: var(--link-color-hover);
 }
 
-.author {
-  margin: 20px 20px;
-  margin-left: 0;
+.header-link:active {
+  color: var(--link-color-active);
+}
+
+.header-subtitle {
+  text-align: center;
+}
+
+/* Main configuration */
+.main {
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  width: clamp(18rem, 90vw, 70ch);
+  margin: 0 auto 1rem;
+  border: 3px solid var(--border-primary);
+  border-radius: 0.5rem;
+}
+
+/* Image Steve's*/
+.main-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-caption {
+  padding-left: 0.8rem;
+}
+
+.main-article {
+  margin: 0.5rem 1.5rem 0 clamp(2rem, 3rem, 5rem);
+  padding-bottom: 1rem;
+}
+
+.main-list li,
+.direction h3 {
+  margin-bottom: 0.7rem;
+}
+
+.promo,
+.footer-address,
+.footer-text {
+  margin-top: 0.6rem;
+}
+
+.footer {
+  width: clamp(90dvw, 95dvw, 98%);
+  margin: 0 auto;
+}
+
+.footer-img {
+  max-width: 15rem;
+}
+
+@media screen and (width >=768px) {
+  h1 {
+    font-size: clamp(4vw, 2rem, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(3vw, 1.75rem, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(2vw, 1.5rem, 2rem);
+  }
+
+  .header-link_desktop,
+  .text-desktop {
+    display: block;
+  }
+
+  .header-link_compound {
+    display: flex;
+
+    align-items: center;
+  }
+
+  .header-link_mobile {
+    display: none;
+  }
+
+  .footer-container {
+    max-width: 70dvw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .fa-magnifying-glass {
+    margin-right: 0.2rem;
+  }
+
+  .direction {
+    margin-right: 2rem;
+  }
 }

@@ -1,0 +1,163 @@
+/* GENERIC CSS 
+Author: Yoandy Doble Herrera*/
+
+/* Colors and typography variables*/
+:root {
+    /* Background and text */
+    --bg-color: #F8F9FA;
+    /* A very soft target reduces visual fatigue */
+    --bg-color-white: #fff;
+    /* White color alternative*/
+    --text-color: #343A40;
+    /* Dark gray for text, high readability */
+    --header-bg-color: rgb(233, 236, 239);
+    /* Gray a little darker than the background, creates separation */
+    --header-text-color: #212529;
+    /* Almost black gray for heading title */
+
+    /* Border y Separator */
+    --border-color: #DEE2E6;
+    /* A very clear gray for subtle edges */
+
+    /* Brand and Accent colors */
+    --brand-blue: #007BFF;
+    /* A primary blue for links, buttons, etc. */
+    --accent-green: #28A745;
+    /* A vibrant green for completed actions or success */
+
+    /* Link state */
+    --link-color: var(--brand-blue);
+    --link-visited-color: #6C757D;
+    /* Soft gray for a visited link */
+    --link-hover-color: #0056B3;
+    /* Dark blue for the 'hover' */
+    --link-focus-color: #0056B3;
+    /* Same as 'Hover', with an 'outline' for accessibility */
+    --link-active-color: #004085;
+    /* Very dark blue for the 'click' */
+}
+
+/*CSS reset. Default margin and padding*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Global styles */
+body {
+    min-height: 100vh;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    /* Baseline for body text*/
+}
+
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    color: var(--header-text-color);
+}
+
+.container-header {
+    line-height: 2;
+    /* Sobrescribe la regla anterior para este encabezado específico */
+    text-align: center;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* Inline styles*/
+img,
+svg,
+picture,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Heading styles */
+.heading-container {
+    background-color: var(--header-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.logo {
+    width: 5dvw;
+    height: auto;
+    margin: 20px;
+}
+
+/* Main Section Style*/
+.container {
+    max-width: 40dvw;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 4px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color-white);
+    box-shadow: 12px 12px 2px 1px rgb(233 236 239 / 0.8);
+}
+
+.todo-list li {
+    list-style: none;
+    background-color: var(--header-bg-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.sub-item li {
+    padding: 0;
+}
+
+/* Link styles DRY (Don't Repeat Yourself) */
+.sub-item-link {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.sub-item-link:visited {
+    color: var(--link-visited-color);
+}
+
+.sub-item-link:hover,
+.sub-item-link:focus {
+    color: var(--link-hover-color);
+    outline: 2px solid var(--link-focus-color);
+    /* Best accesibility */
+    outline-offset: 2px;
+}
+
+.sub-item-link:active {
+    color: var(--link-active-color);
+}

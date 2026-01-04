@@ -1,0 +1,143 @@
+/*
+======
+-GRID-
+======
+Author: Yoandy Doble Herrera
+Date: 10/12/2025
+*/
+
+
+:root {
+    /* Elements */
+    --bg-elements: #03a9f4;
+    --text-color: #000;
+    /* Spacing */
+    --spacing-md: 0.66rem;
+    --spacing-full: 1.2rem;
+    /* Border */
+    --border-color: #ccc;
+}
+
+
+/* Normalize CSS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Core body default */
+body {
+    min-height: 100dvh;
+    line-height: 1.5;
+    text-wrap: pretty;
+    scroll-behavior: smooth;
+    /* Add Inter and Roboto font family 
+    font-family: Inter, serif;
+    */
+}
+
+/* Heading */
+h1,
+h2,
+h3,
+h4 {
+    /*Roboto Slab*/
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-wrap: balance;
+    line-height: 1.4;
+}
+
+/* Page header */
+header {
+    text-align: center;
+    /*width: 100dvw;*/
+}
+
+/* Elements inherits */
+button,
+textarea,
+label,
+input {
+    font: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
+
+/* Img to blocks */
+img,
+iframe,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Make direct childs of main defaults */
+main {
+    width: 90dvw;
+    margin: 0 auto var(--spacing-md);
+}
+
+main>* {
+    margin-top: var(--spacing-md);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Layout and reusable components */
+
+/*GRID EXAMPLES*/
+.container-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.item {
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--bg-elements);
+    color: var(--text-color);
+    /*text-align: center;*/
+    padding: var(--spacing-full);
+    border: 2px solid var(--border-color);
+    /* Use flex for center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
