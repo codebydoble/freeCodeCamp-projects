@@ -27,3 +27,12 @@ let and const
 let user = "codebydoble"
 
 const maxScore = 100;
+
+**Excersices**
+Practice string section.
+
+- [x] Greeting Bot
+- [x] Teacher Chatbot
+- [x] String Inspector
+- [x] String Formatter
+- [x] String Transformer
