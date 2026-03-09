@@ -121,7 +121,7 @@ Requirements:
  */
 function maskCreditCard(cardNumber) {
   // Remove spaces, check length
-  const cleaned = cardNumber.replace(/\s/g, "")
+  const cleaned = cardNumber.replace(/\D/g, "")
   if (cleaned.length !== 16) {
     return "Invalid credit card number"
   }
@@ -239,7 +239,7 @@ Requirements:
  * @param {String} text any sentence.
  * @returns {Object}  object with word counts sorted by frequency.
  */
-function wordFrequencyTwo(text) {
+function wordFrequency(text) {
   // Step 1:  Use toLowerCase, trim, replace, split
   const sentenceArray = text
     .trim()
@@ -260,7 +260,7 @@ function wordFrequencyTwo(text) {
 // Test case:
 console.log(`Exercise 4: Word Frequency Counter`)
 console.log(wordFrequency("The quick brown fox jumps over the lazy dog. The dog was really lazy."))
-console.log(wordFrequencyTwo("The quick brown fox jumps over the lazy dog. The dog was really lazy."))
+console.log(wordFrequency("I love Claude AI. I enjoy coding with him. Claude AI is amazing."))
 
 // { the: 2, lazy: 2, dog: 2, quick: 1, brown: 1, ... }
 console.log("\n==================================\n")
@@ -357,7 +357,7 @@ function checkPasswordStrength(password) {
     uppercase: /[A-Z]/.test(password),
     lowercase: /[a-z]/.test(password),
     numbers: /[0-9]/.test(password),
-    special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+    special: /[^a-zA-Z0-9]/.test(password),
   }
 
   const score = Object.values(checks).filter(Boolean).length
@@ -373,7 +373,7 @@ function checkPasswordStrength(password) {
 
 // Test cases:
 console.log(`Exercise 2: Password Strength Checker`)
-console.log(checkPasswordStrength("pass"))
+console.log(checkPasswordStrength("pa_ss"))
 // { strength: "weak", missing: ["length", "uppercase", "numbers", "special"], score: 1 }
 console.log(checkPasswordStrength("fund1*"))
 // { strength: "medium", missing: ["length", "uppercase"], score: 3 }
@@ -400,7 +400,28 @@ Requirements:
  * @param {String} text any text.
  * @returns {String} A proper sentence case.
  */
-//Missing solution
+function toSentenceCase(text) {
+  const cleaned = text.trim().toLowerCase()
+
+  // Split by punctuation while keeping the punctuation
+  const sentences = cleaned.split(/([.!?]\s+)/)
+  // "hello. world! test?"
+  // → ["hello", ". ", "world", "! ", "test", "?"]
+
+  const processed = sentences.map((part) => {
+    // Punctuation parts: return as-is
+    if (/^[.!?]\s+$/.test(part)) return part
+
+    // Sentence parts: capitalize first letter
+    if (part.length > 0) {
+      return part.charAt(0).toUpperCase() + part.slice(1)
+    }
+
+    return part
+  })
+
+  return processed.join("")
+}
 
 // Test cases:
 console.log(`Exercise 8: Sentence Case Converter`)
@@ -411,8 +432,8 @@ console.log(toSentenceCase("hELLo WoRLD. hOW aRe YOU? I'm fine! Bye."))
 console.log(toSentenceCase("tHIS is A test! iS it WORking?"))
 console.log(
   toSentenceCase(
-    "strings are IMMutable primitives - any operation that appears to modify a string actually creates a new one, leaving the original intact. tHIS ensures data safety? but requires awareness for performance optimization."
-  )
+    "strings are IMMutable primitives - any operation that appears to modify a string actually creates a new one, leaving the original intact. tHIS ensures data safety? but requires awareness for performance optimization.",
+  ),
 )
 console.log("\n==================================\n")
 
@@ -453,31 +474,25 @@ function convertCase(str, type) {
  * @returns {String} string without double spaces.
  */
 function skipDoubleSpace(sentence) {
-  const str = []
-  for (const word of sentence.split(" ")) {
-    if (word.length > 0) {
-      str.push(word)
-    }
-  }
-  return str.join(" ")
+  return sentence.split(/\s+/g).join(" ")
 }
 
 /**
  * Function that convert string to camelCase.
- * @param {Array} str any sentence array.
+ * @param {Array} str any sentence array in lowercase.
  * @returns {String} return string converted to camelCase.
  */
 const camelCase = (str) => {
   //camelCase: "helloWorldTest"
-  if (str.length === 1) {
-    return str.join("")
-  } else {
-    const strArray = [str[0]]
-    for (let index = 1; index < str.length; index++) {
-      strArray.push(`${str[index][0].toUpperCase() + str[index].slice(1)}`)
-    }
-    return strArray.join("")
-  }
+  if (str.length === 1) return str.join("")
+  return str
+    .map((word, index) => {
+      if (index !== 0) {
+        return capitalize(word)
+      }
+      return word
+    })
+    .join("")
 }
 
 /**
@@ -487,15 +502,12 @@ const camelCase = (str) => {
  */
 const pascalCase = (str) => {
   //PascalCase: "HelloWorld"
-  if (str.length === 1) {
-    return `${str[0][0].toUpperCase() + str[0].slice(1)}`
-  } else {
-    const strArray = [`${str[0][0].toUpperCase() + str[0].slice(1)}`]
-    for (let index = 1; index < str.length; index++) {
-      strArray.push(`${str[index][0].toUpperCase() + str[index].slice(1)}`)
-    }
-    return strArray.join("")
-  }
+  if (str.length === 1) return capitalize(str[0])
+  return str
+    .map((word) => {
+      return capitalize(word)
+    })
+    .join("")
 }
 
 /**
@@ -505,11 +517,7 @@ const pascalCase = (str) => {
  */
 const snakeCase = (str) => {
   //snake_case: "hello_world"
-  if (str.length === 1) {
-    return str.join("")
-  } else {
-    return str.join("_")
-  }
+  return str.length === 1 ? str.join("") : str.join("_")
 }
 
 /**
@@ -519,19 +527,17 @@ const snakeCase = (str) => {
  */
 const kebabCase = (str) => {
   //kebab-case: "hello-world"
-  if (str.length === 1) {
-    return str.join("")
-  } else {
-    return str.join("-")
-  }
+  return str.length === 1 ? str.join("") : str.join("-")
 }
 
 // Test cases:
 console.log(`Exercise 10: Camel Case Converter`)
-console.log(convertCase("hello world", "camel")) // "helloWorld"
+console.log(convertCase("code", "pascal")) // "helloWorld"
+console.log(convertCase("hello  world", "camel")) // "helloWorld"
 console.log(convertCase("hello world", "pascal")) // "HelloWorld"
 console.log(convertCase("hello world", "snake")) // "hello_world"
-console.log(convertCase("hello world", "kebab")) // "hello-world"
+console.log(convertCase("hello-     world-test", "snake")) // "helloWorldTest"
+console.log(convertCase("hello wor      ld", "kebab")) // "hello-world"
 console.log(convertCase("hello-     world-test", "camel")) // "helloWorldTest"
 console.log("\n==================================\n")
 /*
@@ -552,35 +558,50 @@ Objective: Shorten text intelligently to specific length
  * @param {Number} maxLength specific length to shorten text.
  */
 function abbreviate(text, maxLength) {
-  if (text.length <= maxLength) return text
-
-  // Find last space before maxLength
-  let truncated = text.slice(0, maxLength)
-  const lastSpace = truncated.lastIndexOf(" ")
-
-  if (lastSpace > 0) {
-    truncated = truncated.slice(0, lastSpace)
+  // Return original if short enough
+  if (text.length <= maxLength) {
+    return text
   }
-  // Else: preserve whole first word even if it exceeds maxLength
+  // Get substring up to maxLength
+  const substring = text.slice(0, maxLength)
+  // Find last space (word boundary)
+  const lastSpace = substring.lastIndexOf(" ")
+  // Handle edge case: no spaces found
 
-  // Remove trailing punctuation
-  truncated = truncated.replace(/[.,!?;:-]+$/, "")
+  if (lastSpace === -1) {
+    // Check if entire text has no spaces
+    if (!text.includes(" ")) {
+      // Single word longer than maxLength - return it all
+      return removeTrailingAtEnd(text) + "..."
+    }
+    // First word exceeds maxLength - preserve it
+    const firstSpace = text.indexOf(" ", maxLength)
+    return removeTrailingAtEnd(text.slice(0, firstSpace)) + "..."
+  }
 
-  return truncated + "..."
+  // Truncate at last word boundary
+  return removeTrailingAtEnd(substring.slice(0, lastSpace)) + "..."
 }
+
+/**
+ * Function that remove trailing punctuation in strings.
+ * @param {String} word any string word.
+ * @returns {String} words without trailing punctuation.
+ */
+const removeTrailingAtEnd = (word) => word.replace(/[.,!?;:\-]+$/, "").trim()
 
 // Test cases:
 console.log(`Exercise 11: Text Abbreviator`)
 console.log(abbreviate("The quick brown fox...) jumps over the lazy dog", 21))
 // "The quick brown fox..."
 console.log(abbreviate("Hello", 10)) // "Hello"
-console.log(abbreviate("This is a very long sentence that needs truncation", 27))
+console.log(abbreviate("This is a very, long! sentence. That needs truncation", 27))
 // "This is a very long sentence..."
 console.log(
   abbreviate(
     "Trailing punctuation refers to punctuation marks (like commas, periods, semicolons, colons, etc.) that appear at the end of a word, phrase, or sentence.",
-    93
-  )
+    93,
+  ),
 )
 console.log("\n==================================\n")
 /*
@@ -852,20 +873,20 @@ console.log(extractHashtags("No hashtags here"))
 // []
 console.log(
   extractHashtags(
-    "Just finished an amazing coding session! Built a password validator from scratch using JavaScript. The feeling when your code finally works perfectly is unbeatable. Time to celebrate with some coffee! #coding #javascript #webdevelopment #programming #developerlife #coffeecode"
-  )
+    "Just finished an amazing coding session! Built a password validator from scratch using JavaScript. The feeling when your code finally works perfectly is unbeatable. Time to celebrate with some coffee! #coding #javascript #webdevelopment #programming #developerlife #coffeecode",
+  ),
 )
 // ["coding", "javascript "webdevelopment", "programming", "developerlife", "coffeecode"]
 console.log(
   extractHashtags(
-    "Exploring the beautiful mountains this weekend was exactly what I needed. Fresh air, stunning views, and complete disconnection from #technology. Nature has a way of resetting your mind and soul. Can't wait for the next adventure! #hiking #nature #mountains #adventure #outdoorlife #weekendvibes #naturelover #TECHNOLOGY"
-  )
+    "Exploring the beautiful mountains this weekend was exactly what I needed. Fresh air, stunning views, and complete disconnection from #technology. Nature has a way of resetting your mind and soul. Can't wait for the next adventure! #hiking #nature #mountains #adventure #outdoorlife #weekendvibes #naturelover #TECHNOLOGY",
+  ),
 )
 // ["hiking", "nature", "mountains", "adventure", "outdoorlife", "weekendvibes", "naturelover", "TECHNOLOGY"]
 console.log(
   extractHashtags(
-    "Finally tried that new Italian restaurant downtown and wow, the pasta was incredible! Homemade fettuccine with truffle sauce that melted in my mouth. The tiramisu for dessert was the perfect ending. Highly recommend it to all food lovers! #foodie #italianfood #pasta #restaurant #foodlover #delicious #foodphotography"
-  )
+    "Finally tried that new Italian restaurant downtown and wow, the pasta was incredible! Homemade fettuccine with truffle sauce that melted in my mouth. The tiramisu for dessert was the perfect ending. Highly recommend it to all food lovers! #foodie #italianfood #pasta #restaurant #foodlover #delicious #foodphotography",
+  ),
 )
 // [#foodie", #italianfood", #pasta", #restaurant", #foodlover", #delicious", #foodphotography]
 console.log("\n==================================\n")

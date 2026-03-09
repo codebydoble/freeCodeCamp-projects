@@ -861,8 +861,8 @@ console.log(toSentenceCase("hELLo WoRLD. hOW aRe YOU? I'm fine! Bye."))
 console.log(toSentenceCase("tHIS is A test! iS it WORking?"))
 console.log(
   toSentenceCase(
-    "strings are IMMutable primitives - any operation that appears to modify a string actually creates a new one, leaving the original intact. tHIS ensures data safety? but requires awareness for performance optimization."
-  )
+    "strings are IMMutable primitives - any operation that appears to modify a string actually creates a new one, leaving the original intact. tHIS ensures data safety? but requires awareness for performance optimization.",
+  ),
 )
 console.log("\n==================================\n")
 
@@ -1015,6 +1015,8 @@ function abbreviate(text, maxLength) {
         return `${text.slice(0, maxLength)}...`
       }
     } else {
+      console.log(text.slice(0, maxLength))
+
       // Preserve at least one word even if it exceeds maxLength
       const textBeforeIndex = text.slice(0, maxLength).split(" ")
       // Delete last element to check trailing puntuation
@@ -1035,6 +1037,8 @@ function abbreviate(text, maxLength) {
  * @returns {String} an string without trailing punctuation.
  */
 function removeTrailingPunctuation(word) {
+  return word.replace(/[a-zA-Z0-9]/g, "")
+
   const trailingPunctuation = [".", ",", "!", "?", ";", ":", "...", "…", "-", "_", ")", "]", "}", "'", '"', "*", "/"]
   let wordArray = []
   for (const char of word) {
@@ -1047,17 +1051,17 @@ function removeTrailingPunctuation(word) {
 
 // Test cases:
 console.log(`Exercise 11: Text Abbreviator`)
-console.log(abbreviate("The quick brown fox...) jumps over the lazy dog", 21))
+//console.log(abbreviate("The quick brown fox...) jumps over the lazy dog", 21))
 // "The quick brown fox..."
-console.log(abbreviate("Hello", 10)) // "Hello"
-console.log(abbreviate("This is a very long sentence that needs truncation", 27))
+//console.log(abbreviate("Hello", 10)) // "Hello"
+console.log(abbreviate("This is a very long senten.e that needs truncation", 27))
 // "This is a very long sentence..."
-console.log(
+/*console.log(
   abbreviate(
     "Trailing punctuation refers to punctuation marks (like commas, periods, semicolons, colons, etc.) that appear at the end of a word, phrase, or sentence.",
-    93
-  )
-)
+    93,
+  ),
+)*/
 console.log("\n==================================\n")
 /*
 Exercise 12: Phone Number Formatter
@@ -1308,20 +1312,20 @@ console.log(extractHashtags("No hashtags here"))
 // []
 console.log(
   extractHashtags(
-    "Just finished an amazing coding session! Built a password validator from scratch using JavaScript. The feeling when your code finally works perfectly is unbeatable. Time to celebrate with some coffee! #coding #javascript #webdevelopment #programming #developerlife #coffeecode"
-  )
+    "Just finished an amazing coding session! Built a password validator from scratch using JavaScript. The feeling when your code finally works perfectly is unbeatable. Time to celebrate with some coffee! #coding #javascript #webdevelopment #programming #developerlife #coffeecode",
+  ),
 )
 // ["coding", "javascript "webdevelopment", "programming", "developerlife", "coffeecode"]
 console.log(
   extractHashtags(
-    "Exploring the beautiful mountains this weekend was exactly what I needed. Fresh air, stunning views, and complete disconnection from #technology. Nature has a way of resetting your mind and soul. Can't wait for the next adventure! #hiking #nature #mountains #adventure #outdoorlife #weekendvibes #naturelover #TECHNOLOGY"
-  )
+    "Exploring the beautiful mountains this weekend was exactly what I needed. Fresh air, stunning views, and complete disconnection from #technology. Nature has a way of resetting your mind and soul. Can't wait for the next adventure! #hiking #nature #mountains #adventure #outdoorlife #weekendvibes #naturelover #TECHNOLOGY",
+  ),
 )
 // ["hiking", "nature", "mountains", "adventure", "outdoorlife", "weekendvibes", "naturelover", "TECHNOLOGY"]
 console.log(
   extractHashtags(
-    "Finally tried that new Italian restaurant downtown and wow, the pasta was incredible! Homemade fettuccine with truffle sauce that melted in my mouth. The tiramisu for dessert was the perfect ending. Highly recommend it to all food lovers! #foodie #italianfood #pasta #restaurant #foodlover #delicious #foodphotography"
-  )
+    "Finally tried that new Italian restaurant downtown and wow, the pasta was incredible! Homemade fettuccine with truffle sauce that melted in my mouth. The tiramisu for dessert was the perfect ending. Highly recommend it to all food lovers! #foodie #italianfood #pasta #restaurant #foodlover #delicious #foodphotography",
+  ),
 )
 // [#foodie", #italianfood", #pasta", #restaurant", #foodlover", #delicious", #foodphotography]
 console.log("\n==================================\n")
