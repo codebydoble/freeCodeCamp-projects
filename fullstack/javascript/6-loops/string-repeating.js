@@ -10,7 +10,7 @@ const repeatStringNumTimes = (sentence, times) => {
   for (let index = 0; index < times; index++) {
     result.push(sentence)
   }
-  return result.join(" ")
+  return result.join("")
 }
 
 // --- Test Cases ---

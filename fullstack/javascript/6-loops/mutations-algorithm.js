@@ -7,15 +7,7 @@ const mutation = (arr) => {
   const [firstWord, secondWord] = arr
   const firstWordMapped = lettersMap(firstWord)
   const secondWordMapped = lettersMap(secondWord)
-  // 1. Compare occurrences each map
-  for (const [key, value] of secondWordMapped.entries()) {
-    if (!firstWordMapped.has(key)) {
-      return false
-    } else if (firstWordMapped.get(key) !== value) {
-      return false
-    }
-  }
-  return true
+  return compareMaps(firstWordMapped, secondWordMapped)
 }
 
 /**
@@ -24,19 +16,36 @@ const mutation = (arr) => {
  * @returns {Map} groupBy letter occurrences.
  */
 const lettersMap = (str) => {
-  let strMapped = new Map()
-  const strArr = str.toLowerCase().split("")
-  strArr.forEach((letter) => {
-    strMapped.set(letter, (strMapped.get(letter) || 0) + 1)
-  })
-  return strMapped
+  const strArr = str.trim().toLowerCase().split("")
+  return strArr.reduce((map, letter) => {
+    letter in map ? map[letter]++ : (map[letter] = 1)
+    return map
+  }, {})
+}
+
+/**
+ * Function that compare two objects. Loop second object and return true if the string in the first element of the object contains all of the letters of the string in the second element of the object, and false otherwise.
+ * @param {Object} firstMap any object mapped.
+ * @param {Object} secondMap any object mapped.
+ * @returns {Boolean} true|false
+ */
+const compareMaps = (firstMap, secondMap) => {
+  let chek = true
+  for (const [key, value] of Object.entries(secondMap)) {
+    if (!(key in firstMap)) {
+      return false
+    }
+  }
+  return true
 }
 // --- Test Cases ---
 console.log("--- Mutations Algorithm ---")
-const checkWords = mutation(["hello", "HeLlo"])
-console.log(checkWords)
-const checkWordsFalse = mutation(["hello", "hey"])
-console.log(checkWordsFalse)
-const checkWordsTrue = mutation(["Alien", "line"])
-console.log(checkWordsTrue)
+const case1 = mutation(["hello", "HeLlo"])
+console.log(case1)
+const case2 = mutation(["hello", "hey"])
+console.log(case2)
+const case3 = mutation(["Alien", "line"])
+console.log(case3)
+const case4 = mutation(["Mary", "Aarmy"])
+console.log(case4)
 console.log("\n====================================")

@@ -5,7 +5,7 @@
  */
 const findLongestWordLength = (str) => {
   const strArr = str.replace(/[^A-Za-z\s+]/g, "").split(/\s+/)
-  return strArr.sort((a, b) => b.length - a.length)[0]
+  return strArr.sort((a, b) => b.length - a.length)[0].length
 }
 
 const longestWordLength = findLongestWordLength("The quick, brown fox. Jumped over the lazy dog")
