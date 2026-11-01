@@ -76,7 +76,7 @@ const validateManifest = (manifest) => {
       // 2. check isValid value
       switch (key) {
         case "containerId":
-          if (typeof manifest[key] !== "number" || manifest[key] < 0) {
+          if (typeof manifest[key] !== "number" || manifest[key] <= 0 || !Number.isInteger(manifest[key])) {
             missingInvalid[key] = "Invalid"
           }
           break
@@ -86,7 +86,7 @@ const validateManifest = (manifest) => {
           }
           break
         case "weight":
-          if (typeof manifest[key] !== "number" || manifest[key] < 0) {
+          if (typeof manifest[key] !== "number" || manifest[key] <= 0 || Number.isNaN(manifest[key])) {
             missingInvalid[key] = "Invalid"
           }
           break
@@ -114,6 +114,9 @@ const validateManifest = (manifest) => {
 console.log(`Exercise 2: Validate Manifest`)
 const isValidManifest = validateManifest(manifest)
 console.log(isValidManifest)
+console.log(validateManifest({ containerId: 0, destination: 405, weight: -84, unit: "pounds", hazmat: "no" }))
+console.log(validateManifest({ containerId: 3.5 }))
+console.log(validateManifest({ weight: NaN }))
 console.log("\n==================================\n")
 
 /**
@@ -124,11 +127,11 @@ console.log("\n==================================\n")
 const processManifest = (manifest) => {
   const isValid = Object.keys(validateManifest(manifest))
   if (isValid.length === 0) {
-    console.log(`Validation success: ${manifest.containerId} Total weight: ${normalizeUnits(manifest).weight} kg`)
-    return `Validation success: ${manifest.containerId} Total weight: ${normalizeUnits(manifest).weight} kg`
+    console.log(`Validation success: ${manifest.containerId}`)
+    console.log(`Total weight: ${normalizeUnits(manifest).weight} kg`)
   } else {
-    console.log(`Validation error: ${manifest.containerId} ${validateManifest(manifest)}`)
-    return `Validation error: ${manifest.containerId} ${validateManifest(manifest)}`
+    console.log(`Validation error: ${manifest.containerId}`)
+    console.log(validateManifest(manifest))
   }
 }
 
@@ -136,4 +139,6 @@ console.log(`Exercise 3: Process Manifest`)
 // Test cases:
 const processedManifest = processManifest(manifest)
 console.log(processedManifest)
+console.log(processManifest({ containerId: 55, destination: "Carmel", weight: 400, unit: "lb", hazmat: false }))
+console.log(processManifest({ containerId: -88, destination: "Soledad", weight: NaN }))
 console.log("\n==================================\n")
