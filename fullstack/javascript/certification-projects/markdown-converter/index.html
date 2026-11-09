@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Certification project: A Markdown to HTML Converter.">
+    <meta name="author" content="Yoandy Doble Herrera | @codebydoble">
+    <meta name="robots" content="index follow">
+    <meta name="apple-mobile-web-app-title" content="Markdown">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Markdown to HTMl Convverter">
+    <meta property="og:url"
+        content="https://www.freecodecamp.org/learn/javascript-v9/lab-markdown-to-html-converter/build-a-markdown-to-html-converter">
+    <meta property="og:image" content="./markdown-to-html-converter.png">
+    <meta property="og:description"
+        content="Markdown is a markup language used to add formatting elements to plain-text documents. For this lab, all the HTML and CSS has been provided to you. You will use JavaScript to complete the Markdown to HTML Converter app so that it can handle the conversion of basic Markdown constructs into HTML elements.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Markdown to HTML Converter">
+    <meta name="twitter:site"
+        content="@https://www.freecodecamp.org/learn/javascript-v9/lab-markdown-to-html-converter/build-a-markdown-to-html-converter">
+    <meta name="twitter:description"
+        content="Markdown is a markup language used to add formatting elements to plain-text documents. For this lab, all the HTML and CSS has been provided to you. You will use JavaScript to complete the Markdown to ">
+    <meta name="twitter:image" content="./markdown-to-html-converter.png">
+    <meta name="twitter:image:alt" content="Markdown logo">
+    <title>Markdown to HTML Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="./favicon-96x96.png?v=20261031" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=20261031">
+    <link rel="shortcut icon" href="./favicon.ico?v=20261031">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=20261031">
+    <link rel="manifest" href="./site.webmanifest?v=20261031">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Markdown to HTML Converter</h1>
+        <nav>
+            <button type="button" class="theme-switcher-button light-button" data-title="Light mode"
+                aria-label="Light mode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="tabler-icon tabler-icon-sun">
+                    <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                    <path
+                        d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7">
+                    </path>
+                </svg>
+            </button>
+            <button type="button" class="theme-switcher-button dark-button" data-title="Dark mode"
+                aria-label="Dark mode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="tabler-icon tabler-icon-moon-stars">
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008">
+                    </path>
+                    <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+                    <path d="M19 11h2m-1 -1v2"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main id="container" class="main">
+        <section class="main-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-markdown">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                    <path d="M7 15v-6l2 2l2 -2v6" />
+                    <path d="M14 13l2 2l2 -2m-2 2v-6" />
+                </svg> Markdown Input:
+            </h2>
+            <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
+        </section>
+        <section class="main-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-file-text">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+                    <path d="M9 9l1 0" />
+                    <path d="M9 13l6 0" />
+                    <path d="M9 17l6 0" />
+                </svg> Raw HTML Output:
+            </h2>
+            <p id="html-output"></p>
+        </section>
+        <section class="main-container">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-html5">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5l16 0" />
+                    <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
+                </svg> HTML Preview:
+            </h2>
+            <p id="preview"></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>All rigths reserved &copy; 2026. freeCodeCamp.</p>
+        <p class="footer-text">
+            Made with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-heart">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+            </svg> by <strong>@codebydoble</strong>
+        </p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
