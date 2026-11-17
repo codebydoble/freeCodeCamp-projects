@@ -5,7 +5,6 @@ const checkbox = document.getElementById("check-power")
 const padBank = document.querySelector("#pad-bank")
 const drumPadBtns = document.querySelectorAll(".drum-pad")
 const drumPadBtnsArr = [...drumPadBtns]
-const audio = new Audio()
 
 const drumPad = [
   { id: "Q", src: "https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3" },
@@ -72,8 +71,10 @@ document?.addEventListener("keydown", (e) => {
   if (!padPressed) {
     return
   } else {
-    playPad(keyId)
-    display.innerText = `${keyId}`
+    const audioEl = padPressed.querySelector("audio")
+    const id = audioEl.getAttribute("id")
+    audioEl.play()
+    display.innerText = `${id}`
     padPressed.classList.add("is-active")
   }
 })
@@ -103,7 +104,7 @@ drumPadBtnsArr.forEach((pad) => {
     // Get audio element and id
     const audioEl = pad.querySelector("audio")
     const id = audioEl.getAttribute("id")
-    playPad(id)
+    audioEl.play()
     display.innerText = `${id}`
   })
 })
