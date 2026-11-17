@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A drum machine is a fun project to practice your Javascript skills.">
+    <meta name="author" content="Yoandy Doble Herrera | @codebydoble">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Drum Machine">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="A drum machine is a fun project to practice your Javascript skills.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Drum Machine">
+    <meta name="twitter:site" content="@YoandyDoble">
+    <meta name="twitter:description" content="A drum machine is a fun project to practice your Javascript skills.">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:image:alt" content="Drum Machine poster light mode by @codebydoble">
+    <link rel="icon" type="image/png" href="./assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Drum">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Drum Machine</title>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Drum Machine</h1>
+        <div class="switch-mode">
+            <button type="button" class="button-light-mode" aria-label="Activate light mode" aria-pressed="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-sun" aria-hidden="true">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                    <path
+                        d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                </svg>
+            </button>
+            <button type="button" class="button-dark-mode" aria-label="Activate dark mode" aria-pressed="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-moon-stars" aria-hidden="true">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" />
+                    <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+                    <path d="M19 11h2m-1 -1v2" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div id="drum-machine">
+            <section class="main-display">
+                <h2 class="main-display_text">Display: </h2>
+                <p id="display" aria-live="polite"></p>
+                <article class="power-card">
+                    <h3 class="power-card_status on">Power: On</h3>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input id="check-power" role="switch" type="checkbox" aria-label="Power switch" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </article>
+            </section>
+            <div id="pad-bank">
+                <button type="button" id="heater-1" class="drum-pad" aria-label="Heater 1, key Q">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    Q
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3" class="clip" id="Q"></audio>
+                </button>
+                <button type="button" id="heater-2" class="drum-pad" aria-label="Heater 2, key W">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    W
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3" class="clip" id="W"></audio>
+                </button>
+                <button type="button" id="heater-3" class="drum-pad" aria-label="Heater 3, key E">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    E
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3" class="clip" id="E"></audio>
+                </button>
+                <button type="button" id="heater-4" class="drum-pad" aria-label="Heater 4, key A">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    A
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3" class="clip"
+                        id="A"></audio>
+                </button>
+                <button type="button" id="clap" class="drum-pad" aria-label="Clap, key S">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    S
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3" class="clip" id="S"></audio>
+                </button>
+                <button type="button" id="open-hh" class="drum-pad" aria-label="Open HH, key D">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    D
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3" class="clip" id="D"></audio>
+                </button>
+                <button type="button" id="kick-n-hat" class="drum-pad" aria-label="Kick n' Hat, key Z">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    Z
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3" class="clip"
+                        id="Z"></audio>
+                </button>
+                <button type="button" id="kick" class="drum-pad" aria-label="Kick, key X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    X
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3" class="clip"
+                        id="X"></audio>
+                </button>
+                <button type="button" id="closed-hh" class="drum-pad" aria-label="Closed HH, key C">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-piano" aria-hidden="true">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                        <path d="M9 19v-6" />
+                        <path d="M8 5v8h2v-8" />
+                        <path d="M15 19v-6" />
+                        <path d="M14 5v8h2v-8" />
+                    </svg>
+                    C
+                    <audio src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3" class="clip" id="C"></audio>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <small>
+            <p>&copy; freeCodeCamp 2026. All rights reserved.</p>
+            <p class="text">Made with
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-heart-flame" aria-hidden="true">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M10.016 18.035l-5.516 -5.463c-1.349 -1.312 -1.846 -3.271 -1.288 -5.068c.559 -1.797 2.079 -3.128 3.935 -3.444c1.855 -.316 3.731 .436 4.853 1.946c1.127 -1.499 2.999 -2.241 4.847 -1.922c1.848 .319 3.363 1.646 3.922 3.436c.244 .781 .288 1.593 .149 2.37" />
+                    <path
+                        d="M15.5 16q 2.5 1.5 2.5 -1v-2c0 0 4 1.06 4 5c0 1.664 -.649 3.338 -2 4v-.25c0 -.957 -1.053 -1.75 -2 -1.75c-.947 0 -2 .793 -2 1.75v.25c-1.351 -.662 -2 -2 -2 -3.5c0 -1.5 1.5 -2.5 1.5 -2.5" />
+                </svg> by <strong>@codebydoble</strong> from <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-flag" aria-hidden="true">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9" />
+                    <path d="M5 21v-7" />
+                </svg> Cuba
+            </p>
+        </small>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

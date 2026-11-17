@@ -1,0 +1,425 @@
+/*
+==========================================================
+====        DRUM MACHINE - PROJECT CERTIFICATION      ====
+====        Author: Yoandy Doble Herrera              ====
+==========================================================  
+*/
+
+:root {
+    /* Light Mode (Studio Daylight - Warm Neutral Chassis) */
+    --bg-page: #e5e7eb;
+    --bg-chassis: #f8fafc;
+    --bg-pad: #ffffff;
+    --bg-pad-active: #fef3c7;
+    --bg-display: #1e293b;
+    --text-primary: #0f172a;
+    --text-muted: #475569;
+    --text-display: #38bdf8;
+    --accent-primary: #d97706;
+    --accent-power-on: #15803d;
+    --border-chassis: #cbd5e1;
+    --shadow-pad: 0 4px 0 #94a3b8;
+    --shadow-pad-active: 0 1px 0 #94a3b8;
+    --focus-ring: #2563eb;
+
+    /* Fonts */
+    --font-header: "Syne", sans-serif;
+    --font-body: "Space Grotesk", sans-serif;
+    --font-drum-pad: "Space Mono", monospace;
+
+    /* Dynamic Sizing Tokens (Mobile First) */
+    --chassis-max-width: 460px;
+    --pad-size: 64px;
+    --header-font-size: 1.5rem;
+    --footer-font-size: 0.875rem;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode (Night Studio - Matte Slate & Amber LED) */
+    --bg-page: #090d16;
+    --bg-chassis: #131b2e;
+    --bg-pad: #1e293b;
+    --bg-pad-active: #451a03;
+    --bg-display: #020617;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-display: #fbbf24;
+    --accent-primary: #f59e0b;
+    --accent-power-on: #22c55e;
+    --border-chassis: #334155;
+    --shadow-pad: 0 4px 0 #020617;
+    --shadow-pad-active: 0 1px 0 #020617;
+    --focus-ring: #38bdf8;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Avoid text inflation */
+html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100dvh;
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "main" "footer";
+    text-wrap: pretty;
+    line-height: 1.5;
+}
+
+header,
+.main-display,
+.power-card,
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    font-family: var(--font-header);
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    grid-area: header;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+
+main {
+    margin: 0 auto;
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+footer {
+    font-weight: 300;
+    font-size: var(--footer-font-size);
+    grid-area: footer;
+    flex-flow: column wrap;
+    margin: 0 1rem;
+    padding: 0 0 1rem 0;
+}
+
+h1 {
+    text-wrap: balance;
+    text-align: center;
+    line-height: 1.6;
+    font-size: var(--header-font-size);
+}
+
+button {
+    background-color: var(--bg-pad);
+    color: var(--text-primary);
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--focus-ring);
+    color: var(--bg-chassis);
+}
+
+button:active {
+    background-color: var(--bg-pad-active);
+    color: var(--text-primary);
+}
+
+.main-display {
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+}
+
+#display {
+    background-color: var(--bg-display);
+    color: var(--text-display);
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-family: var(--font-drum-pad);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.power-card {
+    justify-content: flex-start;
+    gap: 0.5rem;
+    /*width: 100%;
+    */
+    padding: 0 1rem;
+}
+
+/* div element that contains all other elements */
+#drum-machine {
+    background-color: var(--bg-chassis);
+    border: 2px solid var(--border-chassis);
+    padding: 1.5rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1.25rem;
+    width: min(92vw, var(--chassis-max-width));
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 3x3 Tactile Matrix*/
+#pad-bank {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 1rem;
+}
+
+/* Buttons */
+.drum-pad {
+    padding-bottom: 0.5rem;
+    box-shadow: var(--shadow-pad);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: var(--pad-size);
+    height: var(--pad-size);
+    font-family: var(--font-drum-pad);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.drum-pad:active {
+    padding-bottom: 0.5rem;
+    box-shadow: var(--shadow-pad-active);
+    transform: translateY(3px);
+}
+
+/* Footer */
+.text {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    gap: 0.2rem;
+}
+
+/* Key press active pad */
+.is-active {
+    transform: translateY(3px);
+    box-shadow: var(--shadow-pad-active);
+    background-color: var(--bg-pad-active);
+    border-color: var(--accent-primary);
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--accent-power-on);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--accent-power-on);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYER
+   ========================================================================== */
+
+/* 468px | Tablet / Large Phone */
+@media (min-width: 29.25rem) {
+    :root {
+        --chassis-max-width: 90vw;
+        --pad-size: 90px;
+        --header-font-size: 1.75rem;
+    }
+
+    #drum-machine {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    #pad-bank {
+        gap: 1.25rem;
+    }
+
+    footer {
+        padding: 1rem 0;
+    }
+}
+
+/* 1024px | Laptop / Desktop */
+@media (min-width: 64rem) {
+    :root {
+        --chassis-max-width: 600px;
+        --pad-size: 110px;
+        --header-font-size: 2rem;
+    }
+
+    #drum-machine {
+        flex-flow: row wrap;
+        justify-content: center;
+        padding: 2rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .controls-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        min-width: 200px;
+    }
+
+
+    .main-display {
+        width: 200px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #display {
+        width: 100%;
+        height: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .power-card {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #pad-bank {
+        flex: 1;
+        max-width: 400px;
+    }
+}
+
+/* 1440px | Large Desktop */
+@media (min-width: 90rem) {
+    :root {
+        --chassis-max-width: 700px;
+        --pad-size: 130px;
+        --header-font-size: 2.25rem;
+        --footer-font-size: 1rem;
+    }
+
+    #drum-machine {
+        padding: 2.5rem 4rem;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    #pad-bank {
+        gap: 1.5rem;
+    }
+
+    .drum-pad {
+        font-size: 1.1rem;
+    }
+}
+
+/* 2560px | 4K Ultra HD */
+@media (min-width: 160rem) {
+    :root {
+        --chassis-max-width: 900px;
+        --pad-size: 160px;
+        --header-font-size: 2.75rem;
+        --footer-font-size: 1.25rem;
+    }
+
+    .drum-pad {
+        font-size: 1.25rem;
+        letter-spacing: 0.1em;
+    }
+
+    #drum-machine {
+        padding: 3rem 5rem;
+        border-radius: 20px;
+    }
+
+    #pad-bank {
+        gap: 2rem;
+    }
+}
